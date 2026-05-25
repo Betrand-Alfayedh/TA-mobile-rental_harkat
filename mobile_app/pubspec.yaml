@@ -1,0 +1,71 @@
+name: harkat_rental
+description: Harkat Car Rental — Mobile App for booking cars easily.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # HTTP & API
+  http: ^1.2.1
+  dio: ^5.4.3+1
+
+  # State Management
+  provider: ^6.1.2
+
+  # Google Sign-In
+  google_sign_in: ^6.2.1
+
+  # Local Storage
+  shared_preferences: ^2.2.3
+  flutter_secure_storage: ^9.2.2
+
+  # Images
+  cached_network_image: ^3.3.1
+  image_picker: ^1.1.2
+
+  # UI
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.10+1
+  shimmer: ^3.0.0
+  lottie: ^3.1.2
+  fluttertoast: ^8.2.8
+  badges: ^3.1.2
+  carousel_slider: ^4.2.1
+
+  # Date/Time
+  intl: ^0.19.0
+  table_calendar: ^3.1.2
+
+  # Utilities
+  gap: ^3.0.1
+  url_launcher: ^6.3.0
+  path_provider: ^2.1.4
+  connectivity_plus: ^6.0.5
+
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: false
+  image_path: "assets/images/favicon.png"
+  min_sdk_android: 21
+
