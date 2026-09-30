@@ -47,7 +47,7 @@ class _BookingListScreenState extends State<BookingListScreen> {
             return _ErrorView(message: prov.error, onRetry: prov.loadBookings);
           }
           if (prov.bookings.isEmpty) {
-            return _EmptyView(
+            return const _EmptyView(
               icon: Icons.bookmark_border_rounded,
               title: 'Belum Ada Booking',
               subtitle: 'Booking mobil favorit Anda sekarang!',

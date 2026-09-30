@@ -89,7 +89,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   void dispose() {
-    for (final c in [_nameCtrl, _noHpCtrl, _alamatCtrl, _kotaCtrl]) c.dispose();
+    for (final c in [_nameCtrl, _noHpCtrl, _alamatCtrl, _kotaCtrl]) {
+      c.dispose();
+    }
     super.dispose();
   }
 

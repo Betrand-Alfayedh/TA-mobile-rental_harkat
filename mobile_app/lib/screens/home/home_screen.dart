@@ -217,14 +217,14 @@ class _PromoBanner extends StatelessWidget {
 class _QuickStats extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+    return const Padding(
+      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
       child: Row(
         children: [
           _StatCard(icon: Icons.verified_outlined,     label: 'Armada',  value: '50+',   color: AppColors.primaryLight),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           _StatCard(icon: Icons.star_outline_rounded,  label: 'Rating',  value: '4.9★',  color: AppColors.accent),
-          const SizedBox(width: 12),
+          SizedBox(width: 12),
           _StatCard(icon: Icons.support_agent_outlined, label: '24/7',   value: 'Support', color: AppColors.success),
         ],
       ),

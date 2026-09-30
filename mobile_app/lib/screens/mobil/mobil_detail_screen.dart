@@ -80,7 +80,7 @@ class _MobilDetailScreenState extends State<MobilDetailScreen> {
           pinned: true,
           backgroundColor: AppColors.surface,
           leading: IconButton(
-            icon: Container(padding: const EdgeInsets.all(8), decoration: BoxDecoration(color: Colors.black45, shape: BoxShape.circle),
+            icon: Container(padding: const EdgeInsets.all(8), decoration: const BoxDecoration(color: Colors.black45, shape: BoxShape.circle),
               child: const Icon(Icons.arrow_back_ios_new_rounded, color: Colors.white, size: 18)),
             onPressed: () => Navigator.pop(context),
           ),
@@ -157,7 +157,7 @@ class _MobilDetailScreenState extends State<MobilDetailScreen> {
                       Row(
                         children: [
                           _SpecItem(icon: Icons.category_outlined, label: 'Tipe', value: m.tipeNama ?? '-'),
-                          _SpecItem(icon: Icons.person_outline,    label: 'Dengan Supir', value: 'Tersedia'),
+                          const _SpecItem(icon: Icons.person_outline,    label: 'Dengan Supir', value: 'Tersedia'),
                         ],
                       ),
                     ],

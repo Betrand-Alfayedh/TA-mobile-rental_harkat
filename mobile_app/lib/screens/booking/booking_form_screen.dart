@@ -68,8 +68,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       lastDate:    now.add(const Duration(days: 365)),
       builder: (ctx, child) => Theme(
         data: Theme.of(ctx).copyWith(
-          colorScheme: const ColorScheme.dark(primary: AppColors.accent, surface: AppColors.surface, onSurface: AppColors.textPrimary),
-          dialogBackgroundColor: AppColors.surface,
+          colorScheme: const ColorScheme.dark(primary: AppColors.accent, surface: AppColors.surface, onSurface: AppColors.textPrimary), dialogTheme: DialogThemeData(backgroundColor: AppColors.surface),
         ),
         child: child!,
       ),
@@ -81,8 +80,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
       initialTime: TimeOfDay.now(),
       builder: (ctx, child) => Theme(
         data: Theme.of(ctx).copyWith(
-          colorScheme: const ColorScheme.dark(primary: AppColors.accent, surface: AppColors.surface, onSurface: AppColors.textPrimary),
-          dialogBackgroundColor: AppColors.surface,
+          colorScheme: const ColorScheme.dark(primary: AppColors.accent, surface: AppColors.surface, onSurface: AppColors.textPrimary), dialogTheme: DialogThemeData(backgroundColor: AppColors.surface),
         ),
         child: child!,
       ),
@@ -148,7 +146,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
 
     if (booking != null) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text('Booking berhasil! Segera bayar DP.'),
+        content: const Text('Booking berhasil! Segera bayar DP.'),
         backgroundColor: AppColors.success,
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -188,7 +186,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             const SizedBox(height: 20),
 
             // ── Date pickers ────────────────────────────────
-            _SectionTitle('Jadwal Sewa'),
+            const _SectionTitle('Jadwal Sewa'),
             const SizedBox(height: 12),
             Row(
               children: [
@@ -211,7 +209,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             const SizedBox(height: 20),
 
             // ── With Driver toggle ──────────────────────────
-            _SectionTitle('Opsi Supir'),
+            const _SectionTitle('Opsi Supir'),
             const SizedBox(height: 8),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -233,7 +231,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             const SizedBox(height: 20),
 
             // ── Origin city ─────────────────────────────────
-            _SectionTitle('Asal Kota'),
+            const _SectionTitle('Asal Kota'),
             const SizedBox(height: 8),
             Container(
               decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(14), border: Border.all(color: AppColors.border)),
@@ -274,7 +272,7 @@ class _BookingFormScreenState extends State<BookingFormScreen> {
             const SizedBox(height: 20),
 
             // ── Collateral ──────────────────────────────────
-            _SectionTitle('Jaminan'),
+            const _SectionTitle('Jaminan'),
             const SizedBox(height: 8),
             Container(
               decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(14), border: Border.all(color: AppColors.border)),
@@ -366,7 +364,7 @@ class _SelectedCarCard extends StatelessWidget {
           children: [
             Text(mobil.merk, style: GoogleFonts.outfit(fontSize: 15, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
             Text(mobil.platNomor, style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textSecondary)),
-            Text(Formatters.toRupiah(mobil.hargaSewa) + '/hari', style: GoogleFonts.outfit(fontSize: 12, color: AppColors.accent, fontWeight: FontWeight.w600)),
+            Text('${Formatters.toRupiah(mobil.hargaSewa)}/hari', style: GoogleFonts.outfit(fontSize: 12, color: AppColors.accent, fontWeight: FontWeight.w600)),
           ],
         )),
         const Icon(Icons.check_circle_rounded, color: AppColors.success, size: 24),

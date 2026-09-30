@@ -217,7 +217,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
             width: double.infinity, height: 56,
             child: DecoratedBox(
               decoration: BoxDecoration(
-                gradient: _image != null ? AppColors.primaryGradient : LinearGradient(colors: [AppColors.surfaceLight, AppColors.surfaceLight]),
+                gradient: _image != null ? AppColors.primaryGradient : const LinearGradient(colors: [AppColors.surfaceLight, AppColors.surfaceLight]),
                 borderRadius: BorderRadius.circular(18),
                 boxShadow: _image != null ? [BoxShadow(color: AppColors.primary.withOpacity(0.4), blurRadius: 16, offset: const Offset(0, 6))] : [],
               ),
