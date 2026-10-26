@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 844 416" width="844" height="416" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f9dfaa"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6b4"/><stop offset="1" stop-color="#bdd68f"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="844" height="416" fill="#fff"/>
+<rect x="0.5" y="0.5" width="843" height="415" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H98 V16 L88,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">act Logout</text>
+<g transform="translate(14,0)">
+<rect x="0" y="34" width="408" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<rect x="408" y="34" width="408" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<text x="204" y="54" text-anchor="middle" font-size="13" fill="#333">Pelanggan / Admin / Sopir</text>
+<text x="612" y="54" text-anchor="middle" font-size="13" fill="#333">Sistem</text>
+<line x1="0" y1="34" x2="0" y2="410" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="408" y1="34" x2="408" y2="410" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="816" y1="34" x2="816" y2="410" stroke="#8e8e8e" stroke-width="3"/>
+<path d="M209.0,118.0 V152.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M318.9,178.0 H493.4" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M493.4,189.0 H386.0 V267.0 H218.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M229.0,278.0 H508.1" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,312.0 V338.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M508.1,356.0 H222.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M209.0,298.0 V342.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<circle cx="209.0" cy="103.0" r="14" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="229.0" y="107.5" fill="#444">Mulai</text>
+<rect x="99.1" y="152.0" width="219.8" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="174.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memilih &#x27;Keluar&#x27; pada menu</text>
+<text x="209.0" y="190.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Profil</text>
+<rect x="493.4" y="144.0" width="227.1" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="166.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan dialog</text>
+<text x="607.0" y="182.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">&#x27;Konfirmasi Logout&#x27;: Apakah</text>
+<text x="607.0" y="198.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Anda yakin ingin keluar?</text>
+<polygon points="209.0,258.0 229.0,278.0 209.0,298.0 189.0,278.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="222.0" y="250.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Yakin keluar?</text>
+<rect x="508.1" y="244.0" width="197.9" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="266.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengakhiri sesi dan</text>
+<text x="607.0" y="282.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">menghapus data pengguna</text>
+<text x="607.0" y="298.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dari perangkat</text>
+<rect x="508.1" y="338.0" width="197.9" height="36.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="360.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan layar login</text>
+<circle cx="209.0" cy="356.0" r="13" fill="#c9deA0" stroke="#7d7d6d" stroke-width="1.5"/>
+<circle cx="209.0" cy="356.0" r="6.5" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="209.0" y="386.0" text-anchor="middle" fill="#444">Selesai</text>
+<text x="368.5" y="273.0" text-anchor="middle" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="216.0" y="312.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+</g>
+</svg>

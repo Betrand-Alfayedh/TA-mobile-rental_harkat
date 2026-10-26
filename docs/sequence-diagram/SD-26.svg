@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1086" width="950" height="1086" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="11.5">
+<defs><linearGradient id="gi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#effbfc"/><stop offset="1" stop-color="#b9e8ee"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="2" dy="2" stdDeviation="1.3" flood-color="#000" flood-opacity="0.25"/></filter><marker id="fa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5 z" fill="#5b6785" stroke="#5b6785"/></marker><marker id="oa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="950" height="1086" fill="#fff"/>
+<rect x="0.5" y="0.5" width="949" height="1085" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H146 V16 L136,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">sd Menerima Tugas</text>
+<line x1="100" y1="112" x2="100" y2="1066" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="350" y1="112" x2="350" y2="1066" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="600" y1="112" x2="600" y2="1066" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="850" y1="112" x2="850" y2="1066" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<rect x="344" y="180.0" width="12" height="398.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="216.0" width="12" height="248.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="600" y="260.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="328.0" width="12" height="604.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="404.0" width="12" height="528.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="504.0" width="12" height="172.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="786.0" width="12" height="146.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="836.0" width="12" height="96.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="886.0" width="12" height="46.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="94" y="178.0" width="12" height="830.0" fill="#fdecd0" stroke="#8aa1a8" stroke-width="1"/>
+<line x1="40" y1="592" x2="910" y2="592" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="608" font-size="11.5" fill="#333">[Sopir tidak berstatus tersedia]</text>
+<line x1="40" y1="726" x2="910" y2="726" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="742" font-size="11.5" fill="#333">[Berhasil]</text>
+<rect x="40" y="354" width="870" height="664" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M40,354 H78 V365 L71,372 H40 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="46" y="367" font-weight="700" font-size="11.5" fill="#333">alt</text>
+<text x="48" y="386" font-size="11.5" fill="#333">[Tawaran tidak lagi terbuka, unit sudah bersopir, atau pesanan tidak aktif]</text>
+<line x1="106" y1="186" x2="344" y2="186" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="166" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memilih tawaran, menekan Terima, dan</text>
+<text x="225.0" y="180" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">mengonfirmasi()</text>
+<line x1="356" y1="222" x2="594" y2="222" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="216" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">POST /api/sopir/tawaran/{id}/terima()</text>
+<path d="M612,260 H648 V276 H614" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="656" y="260" font-size="11.5" fill="#333">Memeriksa peran sopir dan</text>
+<text x="656" y="274" font-size="11.5" fill="#333">persetujuan akun()</text>
+<line x1="606" y1="334" x2="844" y2="334" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="314" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memulai transaksi dan mengunci</text>
+<text x="725.0" y="328" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">tawaran serta unit()</text>
+<line x1="606" y1="410" x2="844" y2="410" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="404" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menutup tawaran()</text>
+<line x1="594" y1="460" x2="356" y2="460" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="440" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">409 &#x27;Job sudah diambil supir lain</text>
+<text x="475.0" y="454" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">atau booking tidak aktif.&#x27;</text>
+<line x1="356" y1="510" x2="594" y2="510" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="490" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">GET /api/sopir/tawaran (menyegarkan</text>
+<text x="475.0" y="504" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">daftar)</text>
+<line x1="344" y1="574" x2="106" y2="574" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="540" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan &#x27;Job sudah diambil</text>
+<text x="225.0" y="554" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">supir lain atau booking tidak aktif&#x27;</text>
+<text x="225.0" y="568" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">dan daftar terbaru()</text>
+<line x1="594" y1="672" x2="356" y2="672" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="638" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">422 &#x27;Akun supir belum disetujui.&#x27;</text>
+<text x="475.0" y="652" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">atau &#x27;Anda harus berstatus tersedia</text>
+<text x="475.0" y="666" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">untuk menerima job.&#x27;</text>
+<line x1="344" y1="708" x2="106" y2="708" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="702" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan penolakan()</text>
+<line x1="606" y1="792" x2="844" y2="792" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="772" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memasangkan sopir pada unit dan</text>
+<text x="725.0" y="786" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">menandai tawaran Diterima()</text>
+<line x1="606" y1="842" x2="844" y2="842" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="822" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menutup tawaran sopir lain untuk unit</text>
+<text x="725.0" y="836" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">yang sama()</text>
+<line x1="606" y1="892" x2="844" y2="892" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="872" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengubah status sopir menjadi</text>
+<text x="725.0" y="886" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Bertugas()</text>
+<line x1="844" y1="928" x2="606" y2="928" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="725.0" y="922" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Tersimpan()</text>
+<line x1="594" y1="964" x2="356" y2="964" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="958" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta tugas()</text>
+<line x1="344" y1="1000" x2="106" y2="1000" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="994" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan tugas pada tab Tugas()</text>
+<circle cx="100" cy="42" r="8" fill="#fff" stroke="#8a7a70" stroke-width="1.2"/><path d="M100,50 V72 M86,58 H114 M100,72 L89,88 M100,72 L111,88" stroke="#8a7a70" stroke-width="1.3" fill="none"/>
+<text x="100" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Sopir</text>
+<circle cx="350" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M318,46 V78 M318,62 H326" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="350" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Aplikasi Mobile</text>
+<circle cx="600" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M594,38 l7,-7 M594,38 l7,7" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="600" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">RESTful API</text>
+<circle cx="850" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M826,88 H874" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="850" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Basis Data</text>
+</svg>

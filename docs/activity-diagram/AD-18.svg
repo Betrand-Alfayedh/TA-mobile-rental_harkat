@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 858 1042" width="858" height="1042" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f9dfaa"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6b4"/><stop offset="1" stop-color="#bdd68f"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="858" height="1042" fill="#fff"/>
+<rect x="0.5" y="0.5" width="857" height="1041" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H278 V16 L268,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">act Mencatat Pengembalian dan Denda</text>
+<g transform="translate(14,0)">
+<rect x="0" y="34" width="408" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<rect x="408" y="34" width="422" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<text x="204" y="54" text-anchor="middle" font-size="13" fill="#333">Admin</text>
+<text x="619" y="54" text-anchor="middle" font-size="13" fill="#333">Sistem</text>
+<line x1="0" y1="34" x2="0" y2="1036" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="408" y1="34" x2="408" y2="1036" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="830" y1="34" x2="830" y2="1036" stroke="#8e8e8e" stroke-width="3"/>
+<path d="M209.0,118.0 V144.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M209.0,212.0 V238.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M318.9,264.0 H493.4" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M493.4,275.0 H386.0 V361.0 H311.6" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M311.6,372.0 H587.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,392.0 V424.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M508.1,450.0 H386.0 V974.0 H219.2" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M627.0,372.0 H790.0 V527.0 H607.0 V538.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,578.0 V604.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,672.0 V698.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M621.5,563.5 H804.0 V687.0 H607.0 V698.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,750.0 V812.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,852.0 V878.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M607.0,930.0 V956.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M627.0,832.0 H790.0 V945.0 H607.0 V956.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M519.0,982.0 H222.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<circle cx="209.0" cy="103.0" r="14" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="229.0" y="107.5" fill="#444">Mulai</text>
+<rect x="110.0" y="144.0" width="197.9" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="166.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memilih &#x27;Catat</text>
+<text x="209.0" y="182.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pengembalian&#x27; pada unit</text>
+<text x="209.0" y="198.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">yang sedang berjalan</text>
+<rect x="99.1" y="238.0" width="219.8" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="260.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengisi waktu kembali,</text>
+<text x="209.0" y="276.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">kondisi, catatan, dan foto</text>
+<rect x="493.4" y="238.0" width="227.1" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="260.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan pratinjau denda</text>
+<text x="607.0" y="276.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">keterlambatan</text>
+<rect x="106.4" y="346.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="368.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memeriksa ringkasan lalu</text>
+<text x="209.0" y="384.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">mengonfirmasi pencatatan</text>
+<polygon points="607.0,352.0 627.0,372.0 607.0,392.0 587.0,372.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="620.0" y="328.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Unit dapat dicatat</text>
+<text x="620.0" y="344.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">pengembaliannya?</text>
+<rect x="508.1" y="424.0" width="197.9" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="446.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menolak dan menampilkan</text>
+<text x="607.0" y="462.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">alasan penolakan</text>
+<polygon points="607.0,538.0 627.0,558.0 607.0,578.0 587.0,558.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="594.0" y="514.0" text-anchor="end" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Terlambat dari jadwal</text>
+<text x="594.0" y="530.0" text-anchor="end" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">kembali?</text>
+<rect x="500.8" y="604.0" width="212.5" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="626.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menghitung denda</text>
+<text x="607.0" y="642.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">keterlambatan dan</text>
+<text x="607.0" y="658.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">menambahkannya ke tagihan</text>
+<rect x="515.4" y="698.0" width="183.3" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="720.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengubah status unit,</text>
+<text x="607.0" y="736.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">mobil, dan sopir</text>
+<polygon points="607.0,812.0 627.0,832.0 607.0,852.0 587.0,832.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="620.0" y="788.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Semua unit dalam</text>
+<text x="620.0" y="804.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">pesanan sudah kembali?</text>
+<rect x="504.4" y="878.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="900.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengubah pesanan menjadi</text>
+<text x="607.0" y="916.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Done</text>
+<rect x="519.0" y="956.0" width="176.0" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="607.0" y="978.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan hasil</text>
+<text x="607.0" y="994.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pencatatan dan denda</text>
+<circle cx="209.0" cy="982.0" r="13" fill="#c9deA0" stroke="#7d7d6d" stroke-width="1.5"/>
+<circle cx="209.0" cy="982.0" r="6.5" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="209.0" y="1012.0" text-anchor="middle" fill="#444">Selesai</text>
+<text x="614.0" y="406.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+<text x="635.0" y="367.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="614.0" y="592.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="629.5" y="558.5" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+<text x="614.0" y="866.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="635.0" y="827.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+</g>
+</svg>

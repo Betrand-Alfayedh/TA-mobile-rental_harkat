@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 822" width="408" height="822" font-family="Arial, Helvetica, sans-serif"><rect width="408" height="822" fill="#FFFFFF"/>
+<g id="Layar Beranda Sopir" transform="translate(24,24)"><defs><clipPath id="clip-7415910575448934519"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-7415910575448934519)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="66" font-size="12" fill="#757575" text-anchor="start">Selamat bertugas</text>
+<text x="20" y="96" font-size="28" font-weight="700" fill="#212121" text-anchor="start">Joko Widodo</text>
+<g id="Status ketersediaan">
+<rect x="16" y="118" width="328" height="84" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48" cy="160" r="22" fill="#EEEEEE" stroke="none"/>
+<circle cx="48" cy="160" r="6" fill="#212121" stroke="none"/>
+<text x="82" y="152" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Available</text>
+<text x="82" y="170" font-size="10" fill="#757575" text-anchor="start">Anda dapat menerima tawaran tugas.</text>
+<rect x="284" y="148" width="46" height="26" rx="13" fill="#212121" stroke="none" />
+<circle cx="317" cy="161" r="10" fill="#FFFFFF" stroke="none"/>
+</g>
+<g id="Kartu ringkasan">
+<rect x="16" y="214" width="104" height="104" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="68" cy="244" r="16" fill="#EEEEEE" stroke="none"/>
+<text x="68" y="286" font-size="20" font-weight="700" fill="#212121" text-anchor="middle">2</text>
+<text x="68" y="304" font-size="9.5" fill="#757575" text-anchor="middle">Tawaran baru</text>
+</g>
+<g id="Kartu ringkasan">
+<rect x="128" y="214" width="104" height="104" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="180" cy="244" r="16" fill="#EEEEEE" stroke="none"/>
+<text x="180" y="286" font-size="20" font-weight="700" fill="#212121" text-anchor="middle">1</text>
+<text x="180" y="304" font-size="9.5" fill="#757575" text-anchor="middle">Tugas aktif</text>
+</g>
+<g id="Kartu ringkasan">
+<rect x="240" y="214" width="104" height="104" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="292" cy="244" r="16" fill="#EEEEEE" stroke="none"/>
+<text x="292" y="286" font-size="20" font-weight="700" fill="#212121" text-anchor="middle">5</text>
+<text x="292" y="304" font-size="9.5" fill="#757575" text-anchor="middle">Selesai</text>
+</g>
+<text x="20" y="350" font-size="16" font-weight="700" fill="#212121" text-anchor="start">Tugas berikutnya</text>
+<g id="Kartu unit Toyota Avanza">
+<rect x="16" y="362" width="328" height="214" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="30" y="376" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="50" y="402" font-size="14" fill="#757575" text-anchor="middle">▭</text>
+<text x="80" y="393" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Avanza</text>
+<text x="80" y="411" font-size="11" fill="#757575" text-anchor="start">AB 1234 CD</text>
+<rect x="222" y="380" width="108" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="276.0" y="395" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Sedang berjalan</text>
+<rect x="28" y="428" width="304" height="100" rx="12" fill="#F7F7F7" stroke="none" />
+<text x="40" y="446" font-size="10.5" fill="#757575" text-anchor="start">Mulai</text>
+<text x="112" y="446" font-size="11" font-weight="700" fill="#212121" text-anchor="start">12 Okt 2026 • 09:00</text>
+<text x="40" y="468" font-size="10.5" fill="#757575" text-anchor="start">Kembali</text>
+<text x="112" y="468" font-size="11" font-weight="700" fill="#212121" text-anchor="start">14 Okt 2026 • 09:00</text>
+<text x="40" y="490" font-size="10.5" fill="#757575" text-anchor="start">Lama</text>
+<text x="112" y="490" font-size="11" font-weight="700" fill="#212121" text-anchor="start">2 hari</text>
+<text x="40" y="512" font-size="10.5" fill="#757575" text-anchor="start">Asal kota</text>
+<text x="112" y="512" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Yogyakarta</text>
+<circle cx="40" cy="547" r="7" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="54" y="551" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Budi Santoso</text>
+<rect x="220" y="534" width="110" height="28" rx="14" fill="#EEEEEE" stroke="none" />
+<text x="275" y="553" font-size="10.5" font-weight="700" fill="#212121" text-anchor="middle">Telp. 0812 3456</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="48.8" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="48.8" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="114.39999999999999" y="715" font-size="9" fill="#757575" text-anchor="middle">Tawaran</text>
+<circle cx="180.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Tugas</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Riwayat</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Profil</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

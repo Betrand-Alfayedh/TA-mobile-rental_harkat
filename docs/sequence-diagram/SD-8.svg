@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1100" width="950" height="1100" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="11.5">
+<defs><linearGradient id="gi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#effbfc"/><stop offset="1" stop-color="#b9e8ee"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="2" dy="2" stdDeviation="1.3" flood-color="#000" flood-opacity="0.25"/></filter><marker id="fa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5 z" fill="#5b6785" stroke="#5b6785"/></marker><marker id="oa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="950" height="1100" fill="#fff"/>
+<rect x="0.5" y="0.5" width="949" height="1099" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H240 V16 L230,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">sd Mengunggah Bukti Pembayaran</text>
+<line x1="100" y1="112" x2="100" y2="1080" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="350" y1="112" x2="350" y2="1080" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="600" y1="112" x2="600" y2="1080" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="850" y1="112" x2="850" y2="1080" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<rect x="344" y="166.0" width="12" height="176.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="350" y="210.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="430.0" width="12" height="150.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="480.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="600" y="804.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="872.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="94" y="164.0" width="12" height="836.0" fill="#fdecd0" stroke="#8aa1a8" stroke-width="1"/>
+<line x1="40" y1="356" x2="910" y2="356" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="372" font-size="11.5" fill="#333">[Sesuai]</text>
+<line x1="52" y1="644" x2="898" y2="644" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="60" y="660" font-size="11.5" fill="#333">[Tagihan tidak boleh diunggah (sudah lunas, lewat batas, pesanan tidak aktif)]</text>
+<line x1="52" y1="750" x2="898" y2="750" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="60" y="766" font-size="11.5" fill="#333">[Boleh diunggah]</text>
+<rect x="52" y="506" width="846" height="504" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M52,506 H90 V517 L83,524 H52 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="58" y="519" font-weight="700" font-size="11.5" fill="#333">alt</text>
+<text x="60" y="538" font-size="11.5" fill="#333">[Pesanan bukan milik pelanggan]</text>
+<rect x="40" y="254" width="870" height="778" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M40,254 H78 V265 L71,272 H40 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="46" y="267" font-weight="700" font-size="11.5" fill="#333">alt</text>
+<text x="48" y="286" font-size="11.5" fill="#333">[Format atau ukuran tidak sesuai]</text>
+<line x1="106" y1="172" x2="344" y2="172" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="166" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memilih foto bukti pembayaran()</text>
+<path d="M362,210 H398 V226 H364" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="406" y="210" font-size="11.5" fill="#333">Memeriksa format (JPG atau PNG)</text>
+<text x="406" y="224" font-size="11.5" fill="#333">dan ukuran (paling besar 5 MB)</text>
+<line x1="344" y1="338" x2="106" y2="338" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="304" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan bahwa bukti harus</text>
+<text x="225.0" y="318" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">berformat JPG atau PNG dengan ukuran</text>
+<text x="225.0" y="332" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">paling besar 5 MB()</text>
+<line x1="356" y1="436" x2="594" y2="436" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="402" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">POST</text>
+<text x="475.0" y="416" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">/api/bookings/{id}/pembayaran/upload</text>
+<text x="475.0" y="430" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">(multipart)</text>
+<line x1="606" y1="486" x2="844" y2="486" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="466" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengambil pesanan milik pelanggan dan</text>
+<text x="725.0" y="480" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">tagihannya()</text>
+<line x1="594" y1="576" x2="356" y2="576" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="556" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">404 &#x27;Data pembayaran tidak</text>
+<text x="475.0" y="570" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">ditemukan.&#x27;</text>
+<line x1="344" y1="626" x2="106" y2="626" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="606" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan bahwa data</text>
+<text x="225.0" y="620" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">pembayaran tidak ditemukan()</text>
+<line x1="594" y1="696" x2="356" y2="696" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="690" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">422 beserta alasan unggahan ditolak()</text>
+<line x1="344" y1="732" x2="106" y2="732" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="726" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan alasan unggahan ditolak()</text>
+<path d="M612,804 H648 V820 H614" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="656" y="804" font-size="11.5" fill="#333">Menyimpan berkas bukti dan</text>
+<text x="656" y="818" font-size="11.5" fill="#333">menghapus bukti sebelumnya()</text>
+<line x1="606" y1="878" x2="844" y2="878" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="858" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menyimpan lokasi bukti dan status</text>
+<text x="725.0" y="872" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">&#x27;Menunggu verifikasi&#x27;</text>
+<line x1="594" y1="928" x2="356" y2="928" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="908" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 &#x27;Bukti pembayaran berhasil</text>
+<text x="475.0" y="922" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">diupload. Menunggu verifikasi admin.&#x27;</text>
+<line x1="344" y1="992" x2="106" y2="992" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="958" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan bahwa bukti</text>
+<text x="225.0" y="972" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">berhasil diunggah dan menunggu</text>
+<text x="225.0" y="986" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">verifikasi admin()</text>
+<circle cx="100" cy="42" r="8" fill="#fff" stroke="#8a7a70" stroke-width="1.2"/><path d="M100,50 V72 M86,58 H114 M100,72 L89,88 M100,72 L111,88" stroke="#8a7a70" stroke-width="1.3" fill="none"/>
+<text x="100" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Pelanggan</text>
+<circle cx="350" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M318,46 V78 M318,62 H326" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="350" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Aplikasi Mobile</text>
+<circle cx="600" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M594,38 l7,-7 M594,38 l7,7" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="600" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">RESTful API</text>
+<circle cx="850" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M826,88 H874" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="850" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Basis Data</text>
+</svg>

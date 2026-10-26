@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Laporan Kondisi Kendaraan" transform="translate(20,20)"><defs><clipPath id="clip-8133834616380070665"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-8133834616380070665)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Kondisi sesudah sewa</text>
+</g>
+<g id="Kartu unit">
+<rect x="16" y="94" width="328" height="64" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="28" y="106" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="82" y="124" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Avanza</text>
+<text x="82" y="142" font-size="11" fill="#757575" text-anchor="start">AB 1 CD</text>
+</g>
+<text x="20" y="190" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Kondisi kendaraan</text>
+<rect x="16" y="202" width="328" height="46" rx="16" fill="#EEEEEE" stroke="#212121" stroke-width="1.5" />
+<text x="32" y="230" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Baik</text>
+<circle cx="322" cy="225" r="9" fill="#212121" stroke="#212121" stroke-width="1"/>
+<rect x="16" y="256" width="328" height="46" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="284" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Lecet / perlu perhatian</text>
+<circle cx="322" cy="279" r="9" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<rect x="16" y="310" width="328" height="46" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="338" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Rusak</text>
+<circle cx="322" cy="333" r="9" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="20" y="388" font-size="11" fill="#757575" text-anchor="start">Catatan</text>
+<rect x="16" y="396" width="328" height="100" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="422" font-size="11" fill="#757575" text-anchor="start">Mis. lecet di bumper kiri depan</text>
+<text x="332" y="488" font-size="9" fill="#757575" text-anchor="end">0/500</text>
+<text x="20" y="524" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Foto (opsional)</text>
+<g id="Tombol ▣  Ambil / pilih foto">
+<rect x="16" y="536" width="328" height="46" rx="23.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="180.0" y="563.0" font-size="12" font-weight="700" fill="#212121" text-anchor="middle">▣  Ambil / pilih foto</text>
+</g>
+<g id="Bar aksi bawah">
+<rect x="0" y="648" width="360" height="92" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Tombol Kirim laporan">
+<rect x="24" y="668" width="312" height="46" rx="23.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="180.0" y="695.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Kirim laporan</text>
+</g>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

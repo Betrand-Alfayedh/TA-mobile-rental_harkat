@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Booking Aktif" transform="translate(20,20)"><defs><clipPath id="clip-873496385608100335"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-873496385608100335)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header tab">
+<text x="20" y="66" font-size="24" font-weight="700" fill="#212121" text-anchor="start">Booking Aktif</text>
+<circle cx="326" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="326" y="64" font-size="16" fill="#212121" text-anchor="middle">↻</text>
+</g>
+<g id="Kartu booking">
+<rect x="16" y="94" width="328" height="250" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="122" font-size="11" fill="#757575" text-anchor="start">Booking #21</text>
+<rect x="274" y="108" width="54" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="301.0" y="123" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Booked</text>
+<g id="Placeholder gambar">
+<rect x="32" y="136" width="80" height="60" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="44" y1="148" x2="100" y2="184" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="100" y1="148" x2="44" y2="184" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="126" y="160" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="126" y="178" font-size="11" fill="#757575" text-anchor="start">2 hari · Tanpa sopir</text>
+<text x="34" y="218" font-size="10.5" fill="#212121" text-anchor="start">▦ Senin, 12 Okt 2026 09:00</text>
+<text x="34" y="236" font-size="10.5" fill="#212121" text-anchor="start">▦ Rabu, 14 Okt 2026 09:00</text>
+<rect x="28" y="248" width="304" height="46" rx="14" fill="#F7F7F7" stroke="none" />
+<text x="42" y="266" font-size="10" fill="#757575" text-anchor="start">Total sewa</text>
+<text x="42" y="284" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp700.000</text>
+<rect x="216" y="260" width="102" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="267.0" y="275" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">DP Belum Bayar</text>
+<g id="Tombol Bayar DP Sekarang  →">
+<rect x="28" y="302" width="304" height="38" rx="19.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="180.0" y="325.0" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">Bayar DP Sekarang  →</text>
+</g>
+</g>
+<g id="Kartu booking">
+<rect x="16" y="358" width="328" height="190" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="386" font-size="11" fill="#757575" text-anchor="start">Booking #22</text>
+<rect x="274" y="372" width="54" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="301.0" y="387" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Booked</text>
+<g id="Placeholder gambar">
+<rect x="32" y="400" width="80" height="60" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="44" y1="412" x2="100" y2="448" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="100" y1="412" x2="44" y2="448" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="126" y="424" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Innova Reborn</text>
+<text x="126" y="442" font-size="11" fill="#757575" text-anchor="start">2 hari · Dengan sopir</text>
+<rect x="28" y="472" width="304" height="42" rx="14" fill="#F7F7F7" stroke="none" />
+<text x="42" y="498" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp700.000</text>
+<rect x="222" y="482" width="96" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="270.0" y="497" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Verifikasi DP</text>
+<rect x="28" y="522" width="304" height="20" rx="10" fill="#EEEEEE" stroke="none" />
+<text x="180" y="536" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">ⓘ Menunggu verifikasi admin</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="57.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="57.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Beranda</text>
+<circle cx="139.0" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="139.0" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="139.0" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Booking</text>
+<circle cx="221.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="221.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Riwayat</text>
+<circle cx="303.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="303.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Profil</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

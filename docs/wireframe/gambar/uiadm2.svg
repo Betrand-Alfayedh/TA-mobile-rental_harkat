@@ -1,0 +1,141 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 804 822" width="804" height="822" font-family="Arial, Helvetica, sans-serif"><rect width="804" height="822" fill="#FFFFFF"/>
+<g id="Layar Daftar Pesanan" transform="translate(24,24)"><defs><clipPath id="clip-6234231848894324417"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-6234231848894324417)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="66" font-size="24" font-weight="700" fill="#212121" text-anchor="start">Pesanan</text>
+<g id="Pencarian">
+<rect x="16" y="84" width="328" height="44" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="34" y="111" font-size="12" fill="#757575" text-anchor="start">⌕  Cari nama, no. HP, atau #id</text>
+</g>
+<rect x="16" y="142" width="55.0" height="30" rx="15" fill="#212121" stroke="none" />
+<text x="43.5" y="161" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Semua</text>
+<rect x="79.0" y="142" width="61.599999999999994" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="109.8" y="161" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Booked</text>
+<rect x="148.6" y="142" width="74.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="186.0" y="161" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Berjalan</text>
+<rect x="231.39999999999998" y="142" width="68.19999999999999" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="265.5" y="161" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Selesai</text>
+<g id="Kartu pesanan">
+<rect x="16" y="188" width="328" height="126" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="218" font-size="14" font-weight="700" fill="#212121" text-anchor="start">#31  Budi Santoso</text>
+<rect x="262" y="202" width="66" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="295.0" y="217" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Berjalan</text>
+<text x="32" y="240" font-size="11.5" fill="#757575" text-anchor="start">Toyota Avanza</text>
+<text x="32" y="264" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp800.000</text>
+<text x="328" y="264" font-size="10" fill="#757575" text-anchor="end">06 Okt 2026</text>
+<rect x="32" y="278" width="184.0" height="24" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="124.0" y="294" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Pembayaran menunggu verifikasi</text>
+<rect x="222.0" y="278" width="77.6" height="24" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="260.8" y="294" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Perlu sopir</text>
+</g>
+<g id="Kartu pesanan">
+<rect x="16" y="324" width="328" height="102" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="354" font-size="14" font-weight="700" fill="#212121" text-anchor="start">#32  Siti Aminah</text>
+<rect x="274" y="338" width="54" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="301.0" y="353" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Booked</text>
+<text x="32" y="376" font-size="11.5" fill="#757575" text-anchor="start">Toyota Avanza</text>
+<text x="32" y="400" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp800.000</text>
+<text x="328" y="400" font-size="10" fill="#757575" text-anchor="end">06 Okt 2026</text>
+</g>
+<g id="Kartu pesanan">
+<rect x="16" y="436" width="328" height="102" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="466" font-size="14" font-weight="700" fill="#212121" text-anchor="start">#33  Agus Wijaya</text>
+<rect x="268" y="450" width="60" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="298.0" y="465" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Selesai</text>
+<text x="32" y="488" font-size="11.5" fill="#757575" text-anchor="start">Toyota Avanza</text>
+<text x="32" y="512" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp800.000</text>
+<text x="328" y="512" font-size="10" fill="#757575" text-anchor="end">06 Okt 2026</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="48.8" y="715" font-size="9" fill="#757575" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="114.39999999999999" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="114.39999999999999" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Pesanan</text>
+<circle cx="180.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Bayar</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Armada</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Lainnya</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+<text x="204.0" y="790" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">(a) Daftar pesanan</text>
+<g id="Layar Rincian Pesanan" transform="translate(420,24)"><defs><clipPath id="clip-3588865160732511105"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-3588865160732511105)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Pesanan #31</text>
+</g>
+<g id="Kartu Ringkasan">
+<rect x="16" y="92" width="328" height="122" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="120" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Ringkasan</text>
+<rect x="262" y="104" width="66" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="295.0" y="119" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Berjalan</text>
+<text x="32" y="144" font-size="10.5" fill="#757575" text-anchor="start">Dipesan</text>
+<text x="120" y="144" font-size="11" font-weight="700" fill="#212121" text-anchor="start">06 Okt 2026</text>
+<text x="32" y="164" font-size="10.5" fill="#757575" text-anchor="start">Total</text>
+<text x="120" y="164" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Rp800.000</text>
+<text x="32" y="184" font-size="10.5" fill="#757575" text-anchor="start">Uang muka</text>
+<text x="120" y="184" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Rp400.000</text>
+<text x="32" y="204" font-size="10.5" fill="#757575" text-anchor="start">Sisa tagihan</text>
+<text x="120" y="204" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Rp400.000</text>
+</g>
+<g id="Kartu Penyewa">
+<rect x="16" y="224" width="328" height="82" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="252" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Penyewa</text>
+<text x="32" y="276" font-size="10.5" fill="#757575" text-anchor="start">Nama</text>
+<text x="120" y="276" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Budi Santoso</text>
+<text x="32" y="296" font-size="10.5" fill="#757575" text-anchor="start">No. HP</text>
+<text x="120" y="296" font-size="11" font-weight="700" fill="#212121" text-anchor="start">0812 3456 7890</text>
+</g>
+<g id="Kartu Pembayaran">
+<rect x="16" y="316" width="328" height="66" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="342" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Pembayaran</text>
+<text x="32" y="364" font-size="11.5" fill="#212121" text-anchor="start">DP  Rp400.000</text>
+<rect x="262" y="350" width="48" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="286.0" y="365" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Lunas</text>
+<text x="330" y="366" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<g id="Kartu unit">
+<rect x="16" y="392" width="328" height="214" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="420" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Toyota Avanza</text>
+<rect x="274" y="404" width="54" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="301.0" y="419" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Booked</text>
+<text x="32" y="444" font-size="10.5" fill="#757575" text-anchor="start">Plat</text>
+<text x="120" y="444" font-size="11" font-weight="700" fill="#212121" text-anchor="start">AB 1234 CD</text>
+<text x="32" y="463" font-size="10.5" fill="#757575" text-anchor="start">Mulai</text>
+<text x="120" y="463" font-size="11" font-weight="700" fill="#212121" text-anchor="start">8 Okt 2026 • 09:00</text>
+<text x="32" y="482" font-size="10.5" fill="#757575" text-anchor="start">Kembali</text>
+<text x="120" y="482" font-size="11" font-weight="700" fill="#212121" text-anchor="start">10 Okt 2026 • 09:00</text>
+<text x="32" y="501" font-size="10.5" fill="#757575" text-anchor="start">Sopir</text>
+<text x="120" y="501" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Belum ditugaskan</text>
+<text x="32" y="520" font-size="10.5" fill="#757575" text-anchor="start">Sebelum sewa</text>
+<text x="120" y="520" font-size="11" font-weight="700" fill="#212121" text-anchor="start">belum dilaporkan</text>
+<g id="Tombol Tugaskan sopir">
+<rect x="28" y="546" width="150" height="44" rx="22.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="103.0" y="572.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Tugaskan sopir</text>
+</g>
+<g id="Tombol Konfirmasi jemput">
+<rect x="186" y="546" width="146" height="44" rx="22.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="259.0" y="572.0" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Konfirmasi jemput</text>
+</g>
+</g>
+<g id="Tombol Batalkan pesanan">
+<rect x="16" y="614" width="328" height="40" rx="20.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="180.0" y="638.0" font-size="12" font-weight="700" fill="#212121" text-anchor="middle">Batalkan pesanan</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+<text x="600.0" y="790" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">(b) Rincian pesanan</text>
+</svg>

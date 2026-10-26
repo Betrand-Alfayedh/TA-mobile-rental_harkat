@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Beranda Pelanggan" transform="translate(20,20)"><defs><clipPath id="clip-1277531075340044838"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-1277531075340044838)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="40" y="60" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Yogyakarta</text>
+<text x="18" y="61" font-size="14" fill="#212121" text-anchor="start">⌖</text>
+<circle cx="326" cy="56" r="18" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="326" y="61" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">B</text>
+<text x="20" y="108" font-size="26" font-weight="700" fill="#212121" text-anchor="start">Sewa Mobil</text>
+<text x="20" y="138" font-size="26" font-weight="700" fill="#212121" text-anchor="start">Dengan Cara Anda</text>
+<circle cx="318" cy="110" r="24" fill="#212121" stroke="none"/>
+<text x="318" y="116" font-size="18" font-weight="700" fill="#FFFFFF" text-anchor="middle">→</text>
+<text x="20" y="160" font-size="10.5" fill="#757575" text-anchor="start">Halo, Betrand. Pilih mobil untuk setiap perjalanan Anda.</text>
+<g id="Pencarian">
+<rect x="16" y="176" width="284" height="44" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="34" y="203" font-size="12" fill="#757575" text-anchor="start">⌕  Cari mobil, merek, atau tipe…</text>
+<circle cx="322" cy="198" r="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="322" y="203" font-size="15" fill="#212121" text-anchor="middle">≡</text>
+</g>
+<rect x="16" y="236" width="55.0" height="30" rx="15" fill="#212121" stroke="none" />
+<text x="43.5" y="255" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Semua</text>
+<rect x="79.0" y="236" width="41.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="99.9" y="255" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">MPV</text>
+<rect x="128.8" y="236" width="41.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="149.70000000000002" y="255" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">SUV</text>
+<rect x="178.60000000000002" y="236" width="55.0" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="206.10000000000002" y="255" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Sedan</text>
+<g id="Banner armada">
+<g id="Placeholder gambar">
+<rect x="16" y="282" width="328" height="132" rx="20" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+</g>
+<text x="32" y="316" font-size="8.5" font-weight="700" fill="#757575" text-anchor="start">ARMADA PILIHAN</text>
+<text x="32" y="340" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="32" y="358" font-size="10.5" fill="#757575" text-anchor="start">Mulai Rp350.000 / hari</text>
+<rect x="32" y="370" width="92" height="28" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="78" y="388" font-size="9.5" font-weight="700" fill="#212121" text-anchor="middle">Lihat Detail →</text>
+</g>
+<text x="20" y="444" font-size="16" font-weight="700" fill="#212121" text-anchor="start">Mobil Tersedia</text>
+<text x="344" y="444" font-size="11" font-weight="700" fill="#212121" text-anchor="end">Lihat semua ›</text>
+<g id="Kartu mobil Avanza">
+<rect x="16" y="460" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="26" y="470" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="38" y1="482" x2="154" y2="542" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="154" y1="482" x2="38" y2="542" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="28" y="574" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="28" y="591" font-size="10.5" fill="#757575" text-anchor="start">MPV · 2020</text>
+<text x="28" y="616" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp350.000</text>
+<text x="100.39999999999999" y="616" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<g id="Kartu mobil Innova Reborn">
+<rect x="184" y="460" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="194" y="470" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="206" y1="482" x2="322" y2="542" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="322" y1="482" x2="206" y2="542" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="196" y="574" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Innova Reborn</text>
+<text x="196" y="591" font-size="10.5" fill="#757575" text-anchor="start">MPV · 2021</text>
+<text x="196" y="616" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp475.000</text>
+<text x="268.4" y="616" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="57.0" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="57.0" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="57.0" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Beranda</text>
+<circle cx="139.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="139.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Booking</text>
+<circle cx="221.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="221.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Riwayat</text>
+<circle cx="303.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="303.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Profil</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

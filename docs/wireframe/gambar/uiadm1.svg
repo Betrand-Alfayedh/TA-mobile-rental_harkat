@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 408 822" width="408" height="822" font-family="Arial, Helvetica, sans-serif"><rect width="408" height="822" fill="#FFFFFF"/>
+<g id="Layar Dasbor Admin" transform="translate(24,24)"><defs><clipPath id="clip-2174811977256871779"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-2174811977256871779)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="70" font-size="26" font-weight="700" fill="#212121" text-anchor="start">Halo, Admin</text>
+<text x="20" y="94" font-size="12" fill="#757575" text-anchor="start">3 hal perlu ditindak.</text>
+<text x="20" y="130" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Perlu ditindak</text>
+<g id="Baris tindakan">
+<rect x="16" y="142" width="328" height="44" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="40" cy="164" r="14" fill="#EEEEEE" stroke="none"/>
+<text x="64" y="169" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Pembayaran menunggu verifikasi</text>
+<text x="318" y="170" font-size="15" font-weight="700" fill="#212121" text-anchor="end">2</text>
+<text x="334" y="169" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<g id="Baris tindakan">
+<rect x="16" y="192" width="328" height="44" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="40" cy="214" r="14" fill="#EEEEEE" stroke="none"/>
+<text x="64" y="219" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Unit perlu penugasan sopir</text>
+<text x="318" y="220" font-size="15" font-weight="700" fill="#212121" text-anchor="end">1</text>
+<text x="334" y="219" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<g id="Baris tindakan">
+<rect x="16" y="242" width="328" height="44" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="40" cy="264" r="14" fill="#EEEEEE" stroke="none"/>
+<text x="64" y="269" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Terlambat dikembalikan</text>
+<text x="318" y="270" font-size="15" font-weight="700" fill="#757575" text-anchor="end">0</text>
+<text x="334" y="269" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<g id="Baris tindakan">
+<rect x="16" y="292" width="328" height="44" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="40" cy="314" r="14" fill="#EEEEEE" stroke="none"/>
+<text x="64" y="319" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Jemput hari ini</text>
+<text x="318" y="320" font-size="15" font-weight="700" fill="#212121" text-anchor="end">1</text>
+<text x="334" y="319" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<g id="Baris tindakan">
+<rect x="16" y="342" width="328" height="44" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="40" cy="364" r="14" fill="#EEEEEE" stroke="none"/>
+<text x="64" y="369" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Kembali hari ini</text>
+<text x="318" y="370" font-size="15" font-weight="700" fill="#757575" text-anchor="end">0</text>
+<text x="334" y="369" font-size="14" fill="#757575" text-anchor="end">›</text>
+</g>
+<text x="20" y="416" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Pesanan</text>
+<rect x="16.0" y="426" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="54.0" y="452" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">3</text>
+<text x="54.0" y="468" font-size="9" fill="#757575" text-anchor="middle">Masuk</text>
+<rect x="100.0" y="426" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="138.0" y="452" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">4</text>
+<text x="138.0" y="468" font-size="9" fill="#757575" text-anchor="middle">Booked</text>
+<rect x="184.0" y="426" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="222.0" y="452" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">1</text>
+<text x="222.0" y="468" font-size="9" fill="#757575" text-anchor="middle">Berjalan</text>
+<rect x="268.0" y="426" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="306.0" y="452" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">7</text>
+<text x="306.0" y="468" font-size="9" fill="#757575" text-anchor="middle">Selesai</text>
+<text x="20" y="496" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Armada (10 unit)</text>
+<rect x="16.0" y="506" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="54.0" y="532" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">6</text>
+<text x="54.0" y="548" font-size="9" fill="#757575" text-anchor="middle">Tersedia</text>
+<rect x="100.0" y="506" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="138.0" y="532" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">2</text>
+<text x="138.0" y="548" font-size="9" fill="#757575" text-anchor="middle">Disewa</text>
+<rect x="184.0" y="506" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="222.0" y="532" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">1</text>
+<text x="222.0" y="548" font-size="9" fill="#757575" text-anchor="middle">Maint.</text>
+<rect x="268.0" y="506" width="76.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="306.0" y="532" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">1</text>
+<text x="306.0" y="548" font-size="9" fill="#757575" text-anchor="middle">Rusak</text>
+<text x="20" y="576" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Sopir</text>
+<rect x="16.0" y="586" width="104.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="68.0" y="612" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">2</text>
+<text x="68.0" y="628" font-size="9" fill="#757575" text-anchor="middle">Tersedia</text>
+<rect x="128.0" y="586" width="104.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="180.0" y="612" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">1</text>
+<text x="180.0" y="628" font-size="9" fill="#757575" text-anchor="middle">Bertugas</text>
+<rect x="240.0" y="586" width="104.0" height="50" rx="14" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="292.0" y="612" font-size="17" font-weight="700" fill="#212121" text-anchor="middle">0</text>
+<text x="292.0" y="628" font-size="9" fill="#757575" text-anchor="middle">Libur</text>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="48.8" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="48.8" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="114.39999999999999" y="715" font-size="9" fill="#757575" text-anchor="middle">Pesanan</text>
+<circle cx="180.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Bayar</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Armada</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Lainnya</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

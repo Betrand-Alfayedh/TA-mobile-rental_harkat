@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 694" width="900" height="694" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f9dfaa"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6b4"/><stop offset="1" stop-color="#bdd68f"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="900" height="694" fill="#fff"/>
+<rect x="0.5" y="0.5" width="899" height="693" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H285 V16 L275,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">act Melihat Katalog dan Detail Mobil</text>
+<g transform="translate(14,0)">
+<rect x="0" y="34" width="436" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<rect x="436" y="34" width="436" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<text x="218" y="54" text-anchor="middle" font-size="13" fill="#333">Pelanggan</text>
+<text x="654" y="54" text-anchor="middle" font-size="13" fill="#333">Sistem</text>
+<line x1="0" y1="34" x2="0" y2="688" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="436" y1="34" x2="436" y2="688" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="872" y1="34" x2="872" y2="688" stroke="#8e8e8e" stroke-width="3"/>
+<path d="M209.0,118.0 V152.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M297.0,170.0 H549.5" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,196.0 V222.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M549.5,248.0 H304.3" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M304.3,259.0 H386.0 V326.0 H560.4" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,352.0 V398.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,438.0 V464.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M560.4,490.0 H400.0 V628.5 H220.8" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M643.0,418.0 H386.0 V557.0 H289.7" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M289.7,568.0 H560.4" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M560.4,579.0 H414.0 V639.5 H220.8" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<circle cx="209.0" cy="103.0" r="14" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="229.0" y="107.5" fill="#444">Mulai</text>
+<rect x="121.0" y="152.0" width="176.0" height="36.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="174.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Membuka menu &#x27;Mobil&#x27;</text>
+<rect x="549.5" y="144.0" width="227.1" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="166.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengambil daftar mobil yang</text>
+<text x="663.0" y="182.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">aktif</text>
+<rect x="549.5" y="222.0" width="227.1" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="244.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan daftar mobil</text>
+<text x="663.0" y="260.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">(foto, nama, tarif, status)</text>
+<rect x="113.7" y="222.0" width="190.6" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="244.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mencari mobil atau</text>
+<text x="209.0" y="260.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">memfilter menurut tipe</text>
+<rect x="560.4" y="300.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="322.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan hasil sesuai</text>
+<text x="663.0" y="338.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pencarian</text>
+<polygon points="663.0,398.0 683.0,418.0 663.0,438.0 643.0,418.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="676.0" y="390.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Ada mobil yang sesuai?</text>
+<rect x="560.4" y="464.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="486.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan pesan &#x27;Mobil</text>
+<text x="663.0" y="502.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">tidak ditemukan&#x27;</text>
+<rect x="128.3" y="550.0" width="161.4" height="36.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="572.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memilih satu mobil</text>
+<rect x="560.4" y="542.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="564.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan detail mobil</text>
+<text x="663.0" y="580.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">(galeri, tahun, tarif)</text>
+<circle cx="209.0" cy="634.0" r="13" fill="#c9deA0" stroke="#7d7d6d" stroke-width="1.5"/>
+<circle cx="209.0" cy="634.0" r="6.5" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="209.0" y="664.0" text-anchor="middle" fill="#444">Selesai</text>
+<text x="670.0" y="452.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+<text x="651.0" y="413.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+</g>
+</svg>

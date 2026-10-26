@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 986" width="950" height="986" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="11.5">
+<defs><linearGradient id="gi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#effbfc"/><stop offset="1" stop-color="#b9e8ee"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="2" dy="2" stdDeviation="1.3" flood-color="#000" flood-opacity="0.25"/></filter><marker id="fa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5 z" fill="#5b6785" stroke="#5b6785"/></marker><marker id="oa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="950" height="986" fill="#fff"/>
+<rect x="0.5" y="0.5" width="949" height="985" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H262 V16 L252,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">sd Mengonfirmasi Jemput Kendaraan</text>
+<line x1="100" y1="112" x2="100" y2="966" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="350" y1="112" x2="350" y2="966" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="600" y1="112" x2="600" y2="966" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="850" y1="112" x2="850" y2="966" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<rect x="344" y="180.0" width="12" height="250.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="216.0" width="12" height="164.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="266.0" width="12" height="566.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="786.0" width="12" height="46.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="94" y="178.0" width="12" height="730.0" fill="#fdecd0" stroke="#8aa1a8" stroke-width="1"/>
+<line x1="40" y1="444" x2="910" y2="444" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="460" font-size="11.5" fill="#333">[Uang muka belum lunas]</text>
+<line x1="40" y1="592" x2="910" y2="592" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="608" font-size="11.5" fill="#333">[Mobil sedang disewa, rusak, atau dalam perawatan]</text>
+<line x1="40" y1="726" x2="910" y2="726" stroke="#6b6b6b" stroke-width="1" stroke-dasharray="6 4"/>
+<text x="48" y="742" font-size="11.5" fill="#333">[Syarat terpenuhi]</text>
+<rect x="40" y="292" width="870" height="626" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M40,292 H78 V303 L71,310 H40 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="46" y="305" font-weight="700" font-size="11.5" fill="#333">alt</text>
+<text x="48" y="324" font-size="11.5" fill="#333">[Unit bukan Booked]</text>
+<line x1="106" y1="186" x2="344" y2="186" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="166" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memilih Konfirmasi jemput lalu</text>
+<text x="225.0" y="180" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">mengonfirmasi()</text>
+<line x1="356" y1="222" x2="594" y2="222" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="216" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">PATCH /api/admin/detail/{id}/jemput()</text>
+<line x1="606" y1="272" x2="844" y2="272" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="252" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengambil unit, mobil, dan pesanan</text>
+<text x="725.0" y="266" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">beserta uang muka()</text>
+<line x1="594" y1="376" x2="356" y2="376" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="342" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">422 &#x27;Unit ini tidak dalam status</text>
+<text x="475.0" y="356" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">booked (sudah dijemput, selesai, atau</text>
+<text x="475.0" y="370" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">dibatalkan).&#x27;</text>
+<line x1="344" y1="426" x2="106" y2="426" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="406" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan bahwa unit tidak</text>
+<text x="225.0" y="420" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">dapat dijemput()</text>
+<line x1="594" y1="524" x2="356" y2="524" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="490" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">422 &#x27;DP belum diverifikasi.</text>
+<text x="475.0" y="504" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Verifikasi pembayaran DP terlebih</text>
+<text x="475.0" y="518" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">dahulu.&#x27;</text>
+<line x1="344" y1="574" x2="106" y2="574" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="554" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan agar DP</text>
+<text x="225.0" y="568" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">diverifikasi lebih dulu()</text>
+<line x1="594" y1="658" x2="356" y2="658" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="638" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">422 &#x27;Mobil sedang disewa atau tidak</text>
+<text x="475.0" y="652" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">tersedia.&#x27;</text>
+<line x1="344" y1="708" x2="106" y2="708" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="688" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan bahwa mobil sedang</text>
+<text x="225.0" y="702" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">disewa atau tidak tersedia()</text>
+<line x1="606" y1="792" x2="844" y2="792" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="772" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengubah mobil menjadi Disewa serta</text>
+<text x="725.0" y="786" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">unit dan pesanan menjadi Ongoing()</text>
+<line x1="844" y1="828" x2="606" y2="828" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="725.0" y="822" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Tersimpan()</text>
+<line x1="594" y1="864" x2="356" y2="864" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="858" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta unit terbaru()</text>
+<line x1="344" y1="900" x2="106" y2="900" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="894" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan pesan &#x27;Unit dijemput.&#x27;</text>
+<circle cx="100" cy="42" r="8" fill="#fff" stroke="#8a7a70" stroke-width="1.2"/><path d="M100,50 V72 M86,58 H114 M100,72 L89,88 M100,72 L111,88" stroke="#8a7a70" stroke-width="1.3" fill="none"/>
+<text x="100" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Admin</text>
+<circle cx="350" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M318,46 V78 M318,62 H326" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="350" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Aplikasi Mobile</text>
+<circle cx="600" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M594,38 l7,-7 M594,38 l7,7" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="600" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">RESTful API</text>
+<circle cx="850" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M826,88 H874" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="850" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Basis Data</text>
+</svg>

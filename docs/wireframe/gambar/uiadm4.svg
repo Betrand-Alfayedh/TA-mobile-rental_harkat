@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 804 822" width="804" height="822" font-family="Arial, Helvetica, sans-serif"><rect width="804" height="822" fill="#FFFFFF"/>
+<g id="Layar Catat Pengembalian" transform="translate(24,24)"><defs><clipPath id="clip-1187296172467847521"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-1187296172467847521)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Catat pengembalian</text>
+</g>
+<g id="Kartu unit">
+<rect x="16" y="94" width="328" height="96" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="30" y="108" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="84" y="126" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Avanza</text>
+<text x="84" y="144" font-size="11" fill="#757575" text-anchor="start">AB 1234 CD</text>
+<text x="32" y="176" font-size="10.5" fill="#757575" text-anchor="start">Jadwal kembali</text>
+<text x="120" y="176" font-size="11" font-weight="700" fill="#212121" text-anchor="start">10 Okt 2026 • 09:00</text>
+</g>
+<text x="20" y="220" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Waktu kembali aktual</text>
+<rect x="16" y="230" width="328" height="52" rx="18" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+<text x="34" y="261" font-size="12" font-weight="700" fill="#212121" text-anchor="start">◷  Kembali: 11 Okt 2026 13:34</text>
+<text x="326" y="262" font-size="13" fill="#757575" text-anchor="end">✎</text>
+<g id="Banner denda">
+<rect x="16" y="292" width="328" height="46" rx="16" fill="#EEEEEE" stroke="none" />
+<text x="32" y="312" font-size="11" font-weight="700" fill="#212121" text-anchor="start">⚠ Terlambat 29 jam. Denda Rp1.450.000</text>
+<text x="46" y="328" font-size="11" font-weight="700" fill="#212121" text-anchor="start">akan ditagihkan.</text>
+</g>
+<text x="20" y="368" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Kondisi kendaraan</text>
+<rect x="16" y="378" width="160" height="48" rx="16" fill="#EEEEEE" stroke="#212121" stroke-width="1.5" />
+<text x="30" y="407" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Baik</text>
+<circle cx="156" cy="402" r="8" fill="#212121" stroke="#212121" stroke-width="1"/>
+<rect x="184" y="378" width="160" height="48" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="198" y="407" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Rusak</text>
+<circle cx="324" cy="402" r="8" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="20" y="458" font-size="11" fill="#757575" text-anchor="start">Catatan (opsional)</text>
+<rect x="16" y="466" width="328" height="90" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="332" y="548" font-size="9" fill="#757575" text-anchor="end">0/500</text>
+<g id="Tombol ▣  Foto kondisi (opsional)">
+<rect x="16" y="574" width="328" height="44" rx="22.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="180.0" y="600.0" font-size="12" font-weight="700" fill="#212121" text-anchor="middle">▣  Foto kondisi (opsional)</text>
+</g>
+<g id="Bar aksi bawah">
+<rect x="0" y="648" width="360" height="92" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Tombol Catat pengembalian">
+<rect x="24" y="668" width="312" height="46" rx="23.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="180.0" y="695.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Catat pengembalian</text>
+</g>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+<text x="204.0" y="790" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">(a) Catat pengembalian</text>
+<g id="Layar Rekap Bulanan" transform="translate(420,24)"><defs><clipPath id="clip-5512479548748293479"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-5512479548748293479)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Rekap bulanan</text>
+</g>
+<circle cx="100" cy="124" r="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="100" y="129" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">‹</text>
+<text x="180" y="130" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">Oktober 2026</text>
+<circle cx="260" cy="124" r="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="260" y="129" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">›</text>
+<g id="Kartu Pesanan (12)">
+<rect x="16" y="160" width="328" height="134" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="188" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Pesanan (12)</text>
+<text x="32" y="214" font-size="11" fill="#757575" text-anchor="start">Booked</text>
+<text x="328" y="214" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">4</text>
+<text x="32" y="236" font-size="11" fill="#757575" text-anchor="start">Berjalan</text>
+<text x="328" y="236" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">1</text>
+<text x="32" y="258" font-size="11" fill="#757575" text-anchor="start">Selesai</text>
+<text x="328" y="258" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">7</text>
+<text x="32" y="280" font-size="11" fill="#757575" text-anchor="start">Dibatalkan</text>
+<text x="328" y="280" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">0</text>
+</g>
+<g id="Kartu Pendapatan (pembayaran lunas)">
+<rect x="16" y="306" width="328" height="134" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="334" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Pendapatan (pembayaran lunas)</text>
+<text x="32" y="360" font-size="11" fill="#757575" text-anchor="start">DP</text>
+<text x="328" y="360" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">Rp2.800.000</text>
+<text x="32" y="382" font-size="11" fill="#757575" text-anchor="start">Pelunasan</text>
+<text x="328" y="382" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">Rp5.600.000</text>
+<text x="32" y="404" font-size="11" fill="#757575" text-anchor="start">Total</text>
+<text x="328" y="404" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">Rp8.400.000</text>
+<text x="32" y="426" font-size="11" fill="#757575" text-anchor="start">Denda tercatat</text>
+<text x="328" y="426" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">Rp150.000</text>
+</g>
+<g id="Kartu Pemakaian armada">
+<rect x="16" y="452" width="328" height="112" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="480" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Pemakaian armada</text>
+<text x="32" y="506" font-size="11" fill="#757575" text-anchor="start">Unit disewa</text>
+<text x="328" y="506" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">12</text>
+<text x="32" y="528" font-size="11" fill="#757575" text-anchor="start">Total hari sewa</text>
+<text x="328" y="528" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">28</text>
+<text x="32" y="550" font-size="11" fill="#757575" text-anchor="start">Utilisasi</text>
+<text x="328" y="550" font-size="11.5" font-weight="700" fill="#212121" text-anchor="end">42,5%</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+<text x="600.0" y="790" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">(b) Rekap bulanan</text>
+</svg>

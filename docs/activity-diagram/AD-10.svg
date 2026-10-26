@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 960" width="900" height="960" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f9dfaa"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6b4"/><stop offset="1" stop-color="#bdd68f"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="900" height="960" fill="#fff"/>
+<rect x="0.5" y="0.5" width="899" height="959" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H192 V16 L182,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">act Membatalkan Pesanan</text>
+<g transform="translate(14,0)">
+<rect x="0" y="34" width="436" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<rect x="436" y="34" width="436" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<text x="218" y="54" text-anchor="middle" font-size="13" fill="#333">Pelanggan / Admin</text>
+<text x="654" y="54" text-anchor="middle" font-size="13" fill="#333">Sistem</text>
+<line x1="0" y1="34" x2="0" y2="954" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="436" y1="34" x2="436" y2="954" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="872" y1="34" x2="872" y2="954" stroke="#8e8e8e" stroke-width="3"/>
+<path d="M209.0,118.0 V182.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M318.9,200.0 H643.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,220.0 V246.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M549.5,280.0 H386.0 V892.0 H219.2" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M683.0,200.0 H846.0 V381.0 H663.0 V392.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,432.0 V458.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M549.5,524.0 H414.0 V892.0 H219.2" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M643.0,412.0 H400.0 V639.0 H311.6" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M311.6,650.0 H560.4" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,676.0 V710.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,762.0 V788.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M663.0,840.0 V866.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M553.1,900.0 H222.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<circle cx="209.0" cy="103.0" r="14" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="229.0" y="107.5" fill="#444">Mulai</text>
+<rect x="99.1" y="182.0" width="219.8" height="36.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="204.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memilih &#x27;Batalkan pesanan&#x27;</text>
+<polygon points="663.0,180.0 683.0,200.0 663.0,220.0 643.0,200.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="676.0" y="156.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Pesanan berstatus</text>
+<text x="676.0" y="172.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Booked?</text>
+<rect x="549.5" y="246.0" width="227.1" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="268.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menolak dengan pesan &#x27;Hanya</text>
+<text x="663.0" y="284.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">booking berstatus Booked</text>
+<text x="663.0" y="300.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">yang dapat dibatalkan&#x27;</text>
+<polygon points="663.0,392.0 683.0,412.0 663.0,432.0 643.0,412.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="650.0" y="352.0" text-anchor="end" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Pembatal pelanggan dan</text>
+<text x="650.0" y="368.0" text-anchor="end" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">uang muka sudah</text>
+<text x="650.0" y="384.0" text-anchor="end" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">terverifikasi?</text>
+<rect x="549.5" y="458.0" width="227.1" height="132.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="480.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menolak dengan pesan bahwa</text>
+<text x="663.0" y="496.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pesanan tidak dapat</text>
+<text x="663.0" y="512.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dibatalkan dari aplikasi</text>
+<text x="663.0" y="528.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">karena DP sudah dibayar</text>
+<text x="663.0" y="544.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">atau pesanan sudah</text>
+<text x="663.0" y="560.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">berjalan, dan meminta</text>
+<text x="663.0" y="576.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pelanggan menghubungi admin</text>
+<rect x="106.4" y="616.0" width="205.2" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="638.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengonfirmasi pembatalan</text>
+<text x="209.0" y="654.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">(admin dapat menulis</text>
+<text x="209.0" y="670.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">alasan)</text>
+<rect x="560.4" y="624.0" width="205.2" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="646.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Membatalkan seluruh unit</text>
+<text x="663.0" y="662.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dan pesanan</text>
+<rect x="549.5" y="710.0" width="227.1" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="732.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menutup tawaran tugas sopir</text>
+<text x="663.0" y="748.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dan membebaskan sopir</text>
+<rect x="567.7" y="788.0" width="190.6" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="810.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memberi tahu pelanggan</text>
+<text x="663.0" y="826.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">melalui surel</text>
+<rect x="553.1" y="866.0" width="219.8" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="663.0" y="888.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan pesan pesanan</text>
+<text x="663.0" y="904.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dibatalkan dan memperbarui</text>
+<text x="663.0" y="920.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">daftar pesanan</text>
+<circle cx="209.0" cy="900.0" r="13" fill="#c9deA0" stroke="#7d7d6d" stroke-width="1.5"/>
+<circle cx="209.0" cy="900.0" r="6.5" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="209.0" y="930.0" text-anchor="middle" fill="#444">Selesai</text>
+<text x="670.0" y="234.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+<text x="691.0" y="195.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="670.0" y="446.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+<text x="651.0" y="407.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+</g>
+</svg>

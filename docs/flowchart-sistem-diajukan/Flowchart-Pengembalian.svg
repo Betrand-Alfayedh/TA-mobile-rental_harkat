@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 1365" width="780" height="1365" font-family="Arial, Helvetica, sans-serif" font-size="14.5">
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#111"/></marker></defs>
+<rect width="780" height="1365" fill="#fff"/><rect x="1" y="1" width="778" height="1363" fill="none" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="26" text-anchor="middle" font-weight="700" font-size="16">Pelanggan</text>
+<line x1="260" y1="1" x2="260" y2="1365" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="26" text-anchor="middle" font-weight="700" font-size="16">Admin</text>
+<line x1="520" y1="1" x2="520" y2="1365" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="26" text-anchor="middle" font-weight="700" font-size="16">Sistem</text>
+<line x1="1" y1="40" x2="779" y2="40" stroke="#111" stroke-width="2"/>
+<polyline points="130,123 130,201" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="225,232 295,232" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="390,263 390,322" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="485,364 555,364" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="650,395 650,448" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="650,544 650,586" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="666" y="560" text-anchor="middle" font-size="12.5" paint-order="stroke" stroke="#fff" stroke-width="4">Ya</text>
+<polyline points="730,496 766,496 766,760 745,760" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="748" y="488" text-anchor="middle" font-size="12.5" paint-order="stroke" stroke="#fff" stroke-width="4">Tidak</text>
+<polyline points="650,670 650,707" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="650,813 650,850" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="555,892 485,892" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="295,892 225,892" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="130,923 130,976" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="130,1072 130,1125" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="146" y="1088" text-anchor="middle" font-size="12.5" paint-order="stroke" stroke="#fff" stroke-width="4">Ya</text>
+<polyline points="50,1024 14,1024 14,1288 68,1288" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<text x="32" y="1016" text-anchor="middle" font-size="12.5" paint-order="stroke" stroke="#fff" stroke-width="4">Tidak</text>
+<polyline points="225,1156 295,1156" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="390,1187 390,1261" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<polyline points="295,1288 192,1288" fill="none" stroke="#111" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="68.0" y="77.0" width="124" height="46" rx="23.0" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="105.0" text-anchor="middle" fill="#111">Mulai</text>
+<rect x="35.0" y="201.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="227.5" text-anchor="middle" fill="#111">Mengembalikan mobil ke</text>
+<text x="130.0" y="246.5" text-anchor="middle" fill="#111">pool Harkat</text>
+<rect x="295.0" y="201.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="227.5" text-anchor="middle" fill="#111">Memeriksa kondisi mobil</text>
+<text x="390.0" y="246.5" text-anchor="middle" fill="#111">secara langsung</text>
+<rect x="295.0" y="322.0" width="190" height="84" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="350.0" text-anchor="middle" fill="#111">Mengisi tanggal kembali</text>
+<text x="390.0" y="369.0" text-anchor="middle" fill="#111">aktual, kondisi mobil,</text>
+<text x="390.0" y="388.0" text-anchor="middle" fill="#111">dan catatan</text>
+<rect x="555.0" y="333.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="359.5" text-anchor="middle" fill="#111">Menyimpan data</text>
+<text x="650.0" y="378.5" text-anchor="middle" fill="#111">pengembalian</text>
+<polygon points="650.0,448.0 730.0,496 650.0,544.0 570.0,496" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="501.0" text-anchor="middle" fill="#111">Terlambat?</text>
+<rect x="555.0" y="586.0" width="190" height="84" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="614.0" text-anchor="middle" fill="#111">Menghitung denda</text>
+<text x="650.0" y="633.0" text-anchor="middle" fill="#111">Rp50.000 per jam dan</text>
+<text x="650.0" y="652.0" text-anchor="middle" fill="#111">menagihkannya</text>
+<rect x="555.0" y="707.0" width="190" height="106" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="736.5" text-anchor="middle" fill="#111">Mengatur status mobil</text>
+<text x="650.0" y="755.5" text-anchor="middle" fill="#111">(baik: Maintenance,</text>
+<text x="650.0" y="774.5" text-anchor="middle" fill="#111">rusak: Rusak) dan</text>
+<text x="650.0" y="793.5" text-anchor="middle" fill="#111">membebaskan sopir</text>
+<rect x="555.0" y="850.0" width="190" height="84" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="650.0" y="878.0" text-anchor="middle" fill="#111">Menyelesaikan pesanan</text>
+<text x="650.0" y="897.0" text-anchor="middle" fill="#111">bila semua unit sudah</text>
+<text x="650.0" y="916.0" text-anchor="middle" fill="#111">kembali</text>
+<rect x="295.0" y="850.0" width="190" height="84" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="878.0" text-anchor="middle" fill="#111">Menyampaikan hasil</text>
+<text x="390.0" y="897.0" text-anchor="middle" fill="#111">pengembalian dan</text>
+<text x="390.0" y="916.0" text-anchor="middle" fill="#111">tagihan denda</text>
+<rect x="35.0" y="861.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="887.5" text-anchor="middle" fill="#111">Menerima hasil</text>
+<text x="130.0" y="906.5" text-anchor="middle" fill="#111">pengembalian</text>
+<polygon points="130.0,976.0 210.0,1024 130.0,1072.0 50.0,1024" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="1019.5" text-anchor="middle" fill="#111">Ada tagihan</text>
+<text x="130.0" y="1038.5" text-anchor="middle" fill="#111">denda?</text>
+<rect x="35.0" y="1125.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="1151.5" text-anchor="middle" fill="#111">Membayar denda dan</text>
+<text x="130.0" y="1170.5" text-anchor="middle" fill="#111">mengunggah bukti</text>
+<rect x="295.0" y="1125.0" width="190" height="62" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="1151.5" text-anchor="middle" fill="#111">Memverifikasi</text>
+<text x="390.0" y="1170.5" text-anchor="middle" fill="#111">pembayaran denda</text>
+<rect x="295.0" y="1261.0" width="190" height="54" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="390.0" y="1293.0" text-anchor="middle" fill="#111">Mencatat pelunasan</text>
+<rect x="68.0" y="1265.0" width="124" height="46" rx="23.0" fill="#fff" stroke="#111" stroke-width="2"/>
+<text x="130.0" y="1293.0" text-anchor="middle" fill="#111">Selesai</text>
+</svg>

@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1170" width="950" height="1170" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="11.5">
+<defs><linearGradient id="gi" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#effbfc"/><stop offset="1" stop-color="#b9e8ee"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="150%" height="150%"><feDropShadow dx="2" dy="2" stdDeviation="1.3" flood-color="#000" flood-opacity="0.25"/></filter><marker id="fa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5 z" fill="#5b6785" stroke="#5b6785"/></marker><marker id="oa" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="950" height="1170" fill="#fff"/>
+<rect x="0.5" y="0.5" width="949" height="1169" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H161 V16 L151,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">sd Memantau Pesanan</text>
+<line x1="100" y1="112" x2="100" y2="1150" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="350" y1="112" x2="350" y2="1150" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="600" y1="112" x2="600" y2="1150" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<line x1="850" y1="112" x2="850" y2="1150" stroke="#9a9a9a" stroke-width="1" stroke-dasharray="6 5"/>
+<rect x="344" y="166.0" width="12" height="232.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="216.0" width="12" height="146.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="266.0" width="12" height="46.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="344" y="478.0" width="12" height="232.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="528.0" width="12" height="132.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="578.0" width="12" height="46.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="812.0" width="12" height="46.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="344" y="942.0" width="12" height="168.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="594" y="978.0" width="12" height="96.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="844" y="1014.0" width="12" height="16.0" fill="#d6eff2" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="94" y="164.0" width="12" height="950.0" fill="#fdecd0" stroke="#8aa1a8" stroke-width="1"/>
+<rect x="40" y="414" width="870" height="310" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M40,414 H78 V425 L71,432 H40 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="46" y="427" font-weight="700" font-size="11.5" fill="#333">opt</text>
+<text x="48" y="446" font-size="11.5" fill="#333">[Mencari atau memfilter]</text>
+<rect x="40" y="748" width="870" height="160" fill="none" stroke="#6b6b6b" stroke-width="1.2"/>
+<path d="M40,748 H78 V759 L71,766 H40 Z" fill="#e8f4e0" stroke="#6b6b6b" stroke-width="1.1"/>
+<text x="46" y="761" font-weight="700" font-size="11.5" fill="#333">opt</text>
+<text x="48" y="780" font-size="11.5" fill="#333">[Menggulir ke bawah]</text>
+<line x1="106" y1="172" x2="344" y2="172" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="166" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Membuka tab Pesanan()</text>
+<line x1="356" y1="222" x2="594" y2="222" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="202" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">GET /api/admin/bookings (halaman</text>
+<text x="475.0" y="216" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">pertama)</text>
+<line x1="606" y1="272" x2="844" y2="272" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="252" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengambil pesanan terbaru beserta</text>
+<text x="725.0" y="266" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">penyewa, pembayaran, dan unit()</text>
+<line x1="844" y1="308" x2="606" y2="308" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="725.0" y="302" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Data pesanan()</text>
+<line x1="594" y1="358" x2="356" y2="358" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="338" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta daftar dan informasi</text>
+<text x="475.0" y="352" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">halaman()</text>
+<line x1="344" y1="394" x2="106" y2="394" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="388" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan daftar pesanan()</text>
+<line x1="106" y1="484" x2="344" y2="484" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="464" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengisi kata kunci atau memilih</text>
+<text x="225.0" y="478" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">status()</text>
+<line x1="356" y1="534" x2="594" y2="534" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="514" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">GET /api/admin/bookings dengan</text>
+<text x="475.0" y="528" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">parameter q dan status()</text>
+<line x1="606" y1="584" x2="844" y2="584" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="564" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mencari berdasarkan nama, nomor HP,</text>
+<text x="725.0" y="578" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">nomor pesanan, atau status()</text>
+<line x1="844" y1="620" x2="606" y2="620" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="725.0" y="614" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Hasil()</text>
+<line x1="594" y1="656" x2="356" y2="656" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="650" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta hasil()</text>
+<line x1="344" y1="706" x2="106" y2="706" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="686" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan hasil atau pesan tidak</text>
+<text x="225.0" y="700" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">ada pesanan()</text>
+<line x1="356" y1="818" x2="594" y2="818" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="798" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">GET /api/admin/bookings halaman</text>
+<text x="475.0" y="812" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">berikutnya()</text>
+<line x1="594" y1="854" x2="356" y2="854" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="848" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta halaman berikutnya()</text>
+<line x1="344" y1="890" x2="106" y2="890" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="884" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menambahkan ke daftar()</text>
+<line x1="106" y1="948" x2="344" y2="948" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="225.0" y="942" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Memilih satu pesanan()</text>
+<line x1="356" y1="984" x2="594" y2="984" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="475.0" y="978" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">GET /api/admin/bookings/{id}()</text>
+<line x1="606" y1="1020" x2="844" y2="1020" stroke="#5b6785" stroke-width="1.1" marker-end="url(#fa)"/>
+<text x="725.0" y="1014" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Mengambil rincian lengkap pesanan()</text>
+<line x1="594" y1="1070" x2="356" y2="1070" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="475.0" y="1050" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">200 beserta penyewa, pembayaran,</text>
+<text x="475.0" y="1064" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">unit, sopir, dan laporan kondisi()</text>
+<line x1="344" y1="1106" x2="106" y2="1106" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#fa)"/>
+<text x="225.0" y="1100" text-anchor="middle" font-size="11.5" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Menampilkan rincian pesanan()</text>
+<circle cx="100" cy="42" r="8" fill="#fff" stroke="#8a7a70" stroke-width="1.2"/><path d="M100,50 V72 M86,58 H114 M100,72 L89,88 M100,72 L111,88" stroke="#8a7a70" stroke-width="1.3" fill="none"/>
+<text x="100" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Admin</text>
+<circle cx="350" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M318,46 V78 M318,62 H326" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="350" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Aplikasi Mobile</text>
+<circle cx="600" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M594,38 l7,-7 M594,38 l7,7" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="600" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">RESTful API</text>
+<circle cx="850" cy="62" r="24" fill="url(#gi)" stroke="#6f8f9a" stroke-width="1.3" filter="url(#sh)"/>
+<path d="M826,88 H874" stroke="#6f8f9a" stroke-width="1.5" fill="none"/>
+<text x="850" y="104" text-anchor="middle" font-weight="700" font-size="12" fill="#444">Basis Data</text>
+</svg>

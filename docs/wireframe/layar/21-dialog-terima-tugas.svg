@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Tawaran Tugas + Dialog" transform="translate(20,20)"><defs><clipPath id="clip-3698374759289710868"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-3698374759289710868)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="66" font-size="24" font-weight="700" fill="#212121" text-anchor="start">Tawaran Tugas</text>
+<g id="Kartu unit Toyota Brio">
+<rect x="16" y="84" width="328" height="272" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="30" y="98" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="50" y="124" font-size="14" fill="#757575" text-anchor="middle">▭</text>
+<text x="80" y="115" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Brio</text>
+<text x="80" y="133" font-size="11" fill="#757575" text-anchor="start">AB 1211 CD</text>
+<rect x="28" y="150" width="304" height="100" rx="12" fill="#F7F7F7" stroke="none" />
+<text x="40" y="168" font-size="10.5" fill="#757575" text-anchor="start">Mulai</text>
+<text x="112" y="168" font-size="11" font-weight="700" fill="#212121" text-anchor="start">12 Okt 2026 • 09:00</text>
+<text x="40" y="190" font-size="10.5" fill="#757575" text-anchor="start">Kembali</text>
+<text x="112" y="190" font-size="11" font-weight="700" fill="#212121" text-anchor="start">14 Okt 2026 • 09:00</text>
+<text x="40" y="212" font-size="10.5" fill="#757575" text-anchor="start">Lama</text>
+<text x="112" y="212" font-size="11" font-weight="700" fill="#212121" text-anchor="start">2 hari</text>
+<text x="40" y="234" font-size="10.5" fill="#757575" text-anchor="start">Asal kota</text>
+<text x="112" y="234" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Yogyakarta</text>
+<circle cx="40" cy="269" r="7" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="54" y="273" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Budi Santoso</text>
+<rect x="220" y="256" width="110" height="28" rx="14" fill="#EEEEEE" stroke="none" />
+<text x="275" y="275" font-size="10.5" font-weight="700" fill="#212121" text-anchor="middle">Telp. 0812 3456</text>
+<g id="Tombol Tolak">
+<rect x="28" y="304" width="146.0" height="40" rx="20.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="101.0" y="328.0" font-size="11.5" font-weight="700" fill="#212121" text-anchor="middle">Tolak</text>
+</g>
+<g id="Tombol Terima">
+<rect x="186.0" y="304" width="146.0" height="40" rx="20.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="259.0" y="328.0" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Terima</text>
+</g>
+</g>
+<g id="Kartu unit Toyota Avanza">
+<rect x="16" y="368" width="328" height="184" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="30" y="382" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="50" y="408" font-size="14" fill="#757575" text-anchor="middle">▭</text>
+<text x="80" y="399" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Avanza</text>
+<text x="80" y="417" font-size="11" fill="#757575" text-anchor="start">AB 1212 CD</text>
+<rect x="28" y="434" width="304" height="56" rx="12" fill="#F7F7F7" stroke="none" />
+<text x="40" y="452" font-size="10.5" fill="#757575" text-anchor="start">Mulai</text>
+<text x="112" y="452" font-size="11" font-weight="700" fill="#212121" text-anchor="start">12 Okt 2026 • 09:00</text>
+<text x="40" y="474" font-size="10.5" fill="#757575" text-anchor="start">Kembali</text>
+<text x="112" y="474" font-size="11" font-weight="700" fill="#212121" text-anchor="start">14 Okt 2026 • 09:00</text>
+<g id="Tombol Tolak">
+<rect x="28" y="500" width="146.0" height="40" rx="20.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="101.0" y="524.0" font-size="11.5" font-weight="700" fill="#212121" text-anchor="middle">Tolak</text>
+</g>
+<g id="Tombol Terima">
+<rect x="186.0" y="500" width="146.0" height="40" rx="20.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="259.0" y="524.0" font-size="11.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">Terima</text>
+</g>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="48.8" y="715" font-size="9" fill="#757575" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="114.39999999999999" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="114.39999999999999" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Tawaran</text>
+<circle cx="180.0" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180.0" y="715" font-size="9" fill="#757575" text-anchor="middle">Tugas</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Riwayat</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Profil</text>
+</g>
+<rect x="0" y="0" width="360" height="740" fill="#000" fill-opacity="0.45"/>
+<g id="Dialog">
+<rect x="30" y="240" width="300" height="214" rx="24" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="52" y="282" font-size="17" font-weight="700" fill="#212121" text-anchor="start">Terima tugas?</text>
+<text x="52" y="312" font-size="11.5" fill="#757575" text-anchor="start">Toyota Brio</text>
+<text x="52" y="329" font-size="11.5" fill="#757575" text-anchor="start">Mulai 12 Okt 2026 09:00</text>
+<text x="52" y="346" font-size="11.5" fill="#757575" text-anchor="start"></text>
+<text x="52" y="363" font-size="11.5" fill="#757575" text-anchor="start">Status Anda akan berubah menjadi</text>
+<text x="52" y="380" font-size="11.5" fill="#757575" text-anchor="start">&quot;Bertugas&quot;.</text>
+<text x="214" y="424" font-size="12" font-weight="700" fill="#757575" text-anchor="middle">Batal</text>
+<rect x="244" y="402" width="74" height="38" rx="19" fill="#212121" stroke="none" />
+<text x="281" y="425" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Terima</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Katalog Mobil" transform="translate(20,20)"><defs><clipPath id="clip-8939817738268320854"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-8939817738268320854)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Katalog Mobil</text>
+</g>
+<g id="Pencarian">
+<rect x="16" y="96" width="328" height="44" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="34" y="123" font-size="12" fill="#757575" text-anchor="start">⌕  Cari mobil, merek, atau tipe…</text>
+</g>
+<rect x="16" y="154" width="55.0" height="30" rx="15" fill="#212121" stroke="none" />
+<text x="43.5" y="173" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Semua</text>
+<rect x="79.0" y="154" width="41.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="99.9" y="173" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">MPV</text>
+<rect x="128.8" y="154" width="41.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="149.70000000000002" y="173" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">SUV</text>
+<rect x="178.60000000000002" y="154" width="55.0" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="206.10000000000002" y="173" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Sedan</text>
+<g id="Kartu mobil Avanza">
+<rect x="16" y="200" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="26" y="210" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="38" y1="222" x2="154" y2="282" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="154" y1="222" x2="38" y2="282" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="28" y="314" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="28" y="331" font-size="10.5" fill="#757575" text-anchor="start">MPV · 2020</text>
+<text x="28" y="356" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp350.000</text>
+<text x="100.39999999999999" y="356" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<g id="Kartu mobil Innova Reborn">
+<rect x="184" y="200" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="194" y="210" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="206" y1="222" x2="322" y2="282" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="322" y1="222" x2="206" y2="282" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="196" y="314" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Innova Reborn</text>
+<text x="196" y="331" font-size="10.5" fill="#757575" text-anchor="start">SUV · 2023</text>
+<text x="196" y="356" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp475.000</text>
+<text x="268.4" y="356" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<g id="Kartu mobil Brio">
+<rect x="16" y="390" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="26" y="400" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="38" y1="412" x2="154" y2="472" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="154" y1="412" x2="38" y2="472" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="28" y="504" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Brio</text>
+<text x="28" y="521" font-size="10.5" fill="#757575" text-anchor="start">MPV · 2020</text>
+<text x="28" y="546" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp350.000</text>
+<text x="100.39999999999999" y="546" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<g id="Kartu mobil Fortuner">
+<rect x="184" y="390" width="160" height="176" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="194" y="400" width="140" height="84" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="206" y1="412" x2="322" y2="472" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="322" y1="412" x2="206" y2="472" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="196" y="504" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Fortuner</text>
+<text x="196" y="521" font-size="10.5" fill="#757575" text-anchor="start">SUV · 2023</text>
+<text x="196" y="546" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Rp475.000</text>
+<text x="268.4" y="546" font-size="10" fill="#757575" text-anchor="start">/ hari</text>
+</g>
+<text x="180" y="636" font-size="10" fill="#757575" text-anchor="middle">▾ gulir untuk memuat lebih banyak</text>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

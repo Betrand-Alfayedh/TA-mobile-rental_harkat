@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Daftar Pembayaran" transform="translate(20,20)"><defs><clipPath id="clip-2915956180964812651"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-2915956180964812651)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="66" font-size="24" font-weight="700" fill="#212121" text-anchor="start">Pembayaran</text>
+<rect x="16" y="84" width="147.39999999999998" height="30" rx="15" fill="#212121" stroke="none" />
+<text x="89.69999999999999" y="103" font-size="11" font-weight="700" fill="#FFFFFF" text-anchor="middle">Menunggu verifikasi</text>
+<rect x="171.39999999999998" y="84" width="107.8" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="225.29999999999998" y="103" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Belum dibayar</text>
+<rect x="287.2" y="84" width="55.0" height="30" rx="15" fill="#EEEEEE" stroke="none" />
+<text x="314.7" y="103" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Lunas</text>
+<g id="Kartu pembayaran">
+<rect x="16" y="130" width="328" height="142" rx="20" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+<text x="32" y="160" font-size="14" font-weight="700" fill="#212121" text-anchor="start">DP</text>
+<rect x="196" y="144" width="132" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="262.0" y="159" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Menunggu verifikasi</text>
+<text x="32" y="190" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Rp400.000</text>
+<text x="32" y="214" font-size="11.5" fill="#757575" text-anchor="start">#31  Budi Santoso</text>
+<text x="32" y="232" font-size="10" fill="#757575" text-anchor="start">Jatuh tempo 13 Okt 2026 • 10:00</text>
+<text x="328" y="260" font-size="11" font-weight="700" fill="#212121" text-anchor="end">Lihat pesanan</text>
+</g>
+<g id="Kartu pembayaran">
+<rect x="16" y="282" width="328" height="142" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="312" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Pelunasan</text>
+<rect x="232" y="296" width="96" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="280.0" y="311" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Belum dibayar</text>
+<text x="32" y="342" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Rp300.000</text>
+<text x="32" y="366" font-size="11.5" fill="#757575" text-anchor="start">#32  Siti Aminah</text>
+<text x="32" y="384" font-size="10" fill="#757575" text-anchor="start">Jatuh tempo 13 Okt 2026 • 10:00</text>
+<text x="328" y="412" font-size="11" font-weight="700" fill="#212121" text-anchor="end">Lihat pesanan</text>
+</g>
+<g id="Kartu pembayaran">
+<rect x="16" y="434" width="328" height="142" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="464" font-size="14" font-weight="700" fill="#212121" text-anchor="start">DP</text>
+<rect x="280" y="448" width="48" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="304.0" y="463" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Lunas</text>
+<text x="32" y="494" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Rp400.000</text>
+<text x="32" y="518" font-size="11.5" fill="#757575" text-anchor="start">#33  Agus Wijaya</text>
+<text x="32" y="536" font-size="10" fill="#757575" text-anchor="start">Jatuh tempo 13 Okt 2026 • 10:00</text>
+<text x="328" y="564" font-size="11" font-weight="700" fill="#212121" text-anchor="end">Lihat pesanan</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="48.8" y="715" font-size="9" fill="#757575" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="114.39999999999999" y="715" font-size="9" fill="#757575" text-anchor="middle">Pesanan</text>
+<circle cx="180.0" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="180.0" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="180.0" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Bayar</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Armada</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Lainnya</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

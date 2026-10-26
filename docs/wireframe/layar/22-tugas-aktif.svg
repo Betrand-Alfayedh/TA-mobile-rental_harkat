@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Tugas Aktif" transform="translate(20,20)"><defs><clipPath id="clip-210772915265393130"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-210772915265393130)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<text x="20" y="66" font-size="24" font-weight="700" fill="#212121" text-anchor="start">Tugas Aktif</text>
+<g id="Kartu unit Toyota Brio">
+<rect x="16" y="84" width="328" height="214" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<rect x="30" y="98" width="40" height="40" rx="12" fill="#EEEEEE" stroke="none" />
+<text x="50" y="124" font-size="14" fill="#757575" text-anchor="middle">▭</text>
+<text x="80" y="115" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Toyota Brio</text>
+<text x="80" y="133" font-size="11" fill="#757575" text-anchor="start">AB 125 CD</text>
+<rect x="222" y="102" width="108" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="276.0" y="117" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Sedang berjalan</text>
+<rect x="28" y="150" width="304" height="100" rx="12" fill="#F7F7F7" stroke="none" />
+<text x="40" y="168" font-size="10.5" fill="#757575" text-anchor="start">Mulai</text>
+<text x="112" y="168" font-size="11" font-weight="700" fill="#212121" text-anchor="start">12 Okt 2026 • 09:00</text>
+<text x="40" y="190" font-size="10.5" fill="#757575" text-anchor="start">Kembali</text>
+<text x="112" y="190" font-size="11" font-weight="700" fill="#212121" text-anchor="start">14 Okt 2026 • 09:00</text>
+<text x="40" y="212" font-size="10.5" fill="#757575" text-anchor="start">Lama</text>
+<text x="112" y="212" font-size="11" font-weight="700" fill="#212121" text-anchor="start">2 hari</text>
+<text x="40" y="234" font-size="10.5" fill="#757575" text-anchor="start">Asal kota</text>
+<text x="112" y="234" font-size="11" font-weight="700" fill="#212121" text-anchor="start">Yogyakarta</text>
+<circle cx="40" cy="269" r="7" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="54" y="273" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Budi Santoso</text>
+<rect x="220" y="256" width="110" height="28" rx="14" fill="#EEEEEE" stroke="none" />
+<text x="275" y="275" font-size="10.5" font-weight="700" fill="#212121" text-anchor="middle">Telp. 0812 3456</text>
+</g>
+<g id="Ringkasan laporan kondisi">
+<rect x="16" y="302" width="328" height="72" rx="20" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="328" font-size="11" font-weight="700" fill="#212121" text-anchor="start">● Sebelum sewa: Lecet / perlu perhatian</text>
+<text x="32" y="350" font-size="11" fill="#757575" text-anchor="start">○ Sesudah sewa: belum dilaporkan</text>
+</g>
+<g id="Tombol Ubah laporan sebelum">
+<rect x="16" y="386" width="160" height="46" rx="23.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="96.0" y="413.0" font-size="10.5" font-weight="700" fill="#212121" text-anchor="middle">Ubah laporan sebelum</text>
+</g>
+<g id="Tombol Lapor sesudah">
+<rect x="184" y="386" width="160" height="46" rx="23.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="264.0" y="413.0" font-size="11" font-weight="700" fill="#212121" text-anchor="middle">Lapor sesudah</text>
+</g>
+<g id="Navigasi bawah">
+<rect x="16" y="662" width="328" height="62" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="48.8" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="48.8" y="715" font-size="9" fill="#757575" text-anchor="middle">Beranda</text>
+<circle cx="114.39999999999999" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="114.39999999999999" y="715" font-size="9" fill="#757575" text-anchor="middle">Tawaran</text>
+<circle cx="180.0" cy="683" r="17" fill="#212121" stroke="none"/>
+<text x="180.0" y="688" font-size="10" fill="#FFFFFF" text-anchor="middle">●</text>
+<text x="180.0" y="715" font-size="9" font-weight="700" fill="#212121" text-anchor="middle">Tugas</text>
+<circle cx="245.59999999999997" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="245.59999999999997" y="715" font-size="9" fill="#757575" text-anchor="middle">Riwayat</text>
+<circle cx="311.2" cy="683" r="8" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1"/>
+<text x="311.2" y="715" font-size="9" fill="#757575" text-anchor="middle">Profil</text>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

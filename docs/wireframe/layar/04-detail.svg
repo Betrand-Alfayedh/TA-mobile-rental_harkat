@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Detail Mobil" transform="translate(20,20)"><defs><clipPath id="clip-4976749821856879564"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-4976749821856879564)">
+<g id="Placeholder gambar">
+<rect x="0" y="0" width="360" height="270" rx="0" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="0" y1="0" x2="360" y2="270" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="360" y1="0" x2="0" y2="270" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180.0" y="139.0" font-size="11" fill="#757575" text-anchor="middle">Foto mobil (dapat digeser)</text>
+</g>
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<rect x="150" y="236" width="16" height="6" rx="3" fill="#212121" stroke="none" />
+<rect x="172" y="236" width="8" height="6" rx="3" fill="#FFFFFF" stroke="none" />
+<rect x="194" y="236" width="8" height="6" rx="3" fill="#FFFFFF" stroke="none" />
+<rect x="0" y="250" width="360" height="500" rx="28" fill="#FFFFFF" stroke="none" />
+<text x="20" y="300" font-size="26" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="20" y="322" font-size="12" fill="#757575" text-anchor="start">Toyota · MPV</text>
+<rect x="274" y="282" width="66" height="22" rx="11" fill="#EEEEEE" stroke="none" />
+<text x="307.0" y="297" font-size="10" font-weight="700" fill="#212121" text-anchor="middle">Tersedia</text>
+<text x="20" y="360" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Spesifikasi</text>
+<rect x="16" y="374" width="160" height="54" rx="16" fill="#EEEEEE" stroke="none" />
+<rect x="26" y="384" width="34" height="34" rx="10" fill="#FFFFFF" stroke="none" />
+<text x="70" y="398" font-size="10" fill="#757575" text-anchor="start">Tahun</text>
+<text x="70" y="416" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">2020</text>
+<rect x="184" y="374" width="160" height="54" rx="16" fill="#EEEEEE" stroke="none" />
+<rect x="194" y="384" width="34" height="34" rx="10" fill="#FFFFFF" stroke="none" />
+<text x="238" y="398" font-size="10" fill="#757575" text-anchor="start">Tipe</text>
+<text x="238" y="416" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">MPV</text>
+<rect x="16" y="436" width="160" height="54" rx="16" fill="#EEEEEE" stroke="none" />
+<rect x="26" y="446" width="34" height="34" rx="10" fill="#FFFFFF" stroke="none" />
+<text x="70" y="460" font-size="10" fill="#757575" text-anchor="start">Plat nomor</text>
+<text x="70" y="478" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">AB 1234 CD</text>
+<rect x="184" y="436" width="160" height="54" rx="16" fill="#EEEEEE" stroke="none" />
+<rect x="194" y="446" width="34" height="34" rx="10" fill="#FFFFFF" stroke="none" />
+<text x="238" y="460" font-size="10" fill="#757575" text-anchor="start">Dengan sopir</text>
+<text x="238" y="478" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Tersedia</text>
+<text x="20" y="520" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Harga sewa</text>
+<rect x="16" y="532" width="328" height="84" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="565" font-size="12" fill="#757575" text-anchor="start">Tanpa sopir</text>
+<text x="328" y="565" font-size="13" font-weight="700" fill="#212121" text-anchor="end">Rp350.000 / hari</text>
+<line x1="32" y1="574" x2="328" y2="574" stroke="#BDBDBD" stroke-width="1"/>
+<text x="32" y="600" font-size="12" fill="#757575" text-anchor="start">Dengan sopir</text>
+<text x="328" y="600" font-size="13" font-weight="700" fill="#212121" text-anchor="end">Rp500.000 / hari</text>
+<text x="20" y="632" font-size="10" fill="#757575" text-anchor="start">ⓘ Pilih opsi sopir saat mengisi form pemesanan.</text>
+<g id="Bar aksi bawah">
+<rect x="0" y="654" width="360" height="86" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="24" y="686" font-size="10" fill="#757575" text-anchor="start">Mulai dari</text>
+<text x="24" y="706" font-size="15" font-weight="700" fill="#212121" text-anchor="start">Rp350.000 / hari</text>
+<g id="Tombol Pesan Sekarang">
+<rect x="176" y="674" width="160" height="46" rx="23.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="256.0" y="701.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Pesan Sekarang</text>
+</g>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

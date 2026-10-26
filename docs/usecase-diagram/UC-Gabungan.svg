@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1340 1396" width="1340" height="1396" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="gu" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eef6ff"/><stop offset="1" stop-color="#b5d3f4"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="150%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="1340" height="1396" fill="#fff"/>
+<rect x="0.5" y="0.5" width="1339" height="1395" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H442 V16 L432,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">uc Use Case Sistem Informasi Manajemen Rental Mobil Harkat</text>
+<rect x="118" y="52" width="1044" height="1314" fill="none" stroke="#6b6b6b" stroke-width="1.3"/>
+<text x="130" y="72" font-size="12" fill="#666">Sistem Informasi Manajemen Rental Mobil Harkat</text>
+<line x1="82" y1="646" x2="168" y2="155" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="508" y2="604" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="508" y2="682" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="508" y2="760" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="168" y2="233" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="168" y2="311" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="168" y2="389" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="168" y2="467" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="168" y2="545" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="646" x2="508" y2="838" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="508" y2="604" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="508" y2="682" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="508" y2="760" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="508" y2="916" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="168" y2="975" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="168" y2="1131" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="168" y2="1053" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="168" y2="1209" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="82" y1="846" x2="168" y2="1287" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="772" y2="604" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="772" y2="682" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="772" y2="760" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="772" y2="838" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="233" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="311" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="389" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="467" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="545" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="975" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="772" y2="916" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="1053" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="1131" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="1209" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="1228" y1="746" x2="1112" y2="1287" stroke="#5b6785" stroke-width="1.1"/>
+<line x1="300.0" y1="360.0" x2="300.0" y2="340.0" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<line x1="300.0" y1="1082.0" x2="300.0" y2="1102.0" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<line x1="300.0" y1="1180.0" x2="300.0" y2="1160.0" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<line x1="756.4" y1="362.7" x2="863.6" y2="375.3" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<line x1="756.4" y1="415.3" x2="863.6" y2="402.7" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#p)"/>
+<ellipse cx="640" cy="604" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="608.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC2 Login</text>
+<ellipse cx="640" cy="682" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="686.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC3 Mengelola Profil</text>
+<ellipse cx="640" cy="760" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="764.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC4 Logout</text>
+<ellipse cx="640" cy="838" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="842.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC10 Membatalkan Pesanan</text>
+<ellipse cx="640" cy="916" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="912.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC19 Melaporkan Kondisi</text>
+<text x="640" y="928.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Kendaraan</text>
+<ellipse cx="300" cy="155" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="159.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC1 Registrasi Akun</text>
+<ellipse cx="300" cy="233" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="229.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC5 Melihat Katalog dan</text>
+<text x="300" y="245.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Detail Mobil</text>
+<ellipse cx="300" cy="311" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="307.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC6 Mengecek Ketersediaan</text>
+<text x="300" y="323.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dan Estimasi Biaya</text>
+<ellipse cx="300" cy="389" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="393.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC7 Memesan Mobil</text>
+<ellipse cx="300" cy="467" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="463.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC8 Mengunggah Bukti</text>
+<text x="300" y="479.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Pembayaran</text>
+<ellipse cx="300" cy="545" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="541.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC9 Melihat Pesanan dan</text>
+<text x="300" y="557.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Riwayat</text>
+<ellipse cx="300" cy="975" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="971.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC24 Mengatur Status</text>
+<text x="300" y="987.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Ketersediaan</text>
+<ellipse cx="300" cy="1053" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="1057.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC26 Menerima Tugas</text>
+<ellipse cx="300" cy="1131" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="1135.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC25 Melihat Tawaran Tugas</text>
+<ellipse cx="300" cy="1209" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="1213.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC27 Menolak Tugas</text>
+<ellipse cx="300" cy="1287" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="300" y="1283.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC28 Melihat Tugas dan</text>
+<text x="300" y="1299.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Riwayat</text>
+<ellipse cx="980" cy="233" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="237.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC11 Melihat Dashboard</text>
+<ellipse cx="980" cy="311" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="315.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC12 Memantau Pesanan</text>
+<ellipse cx="980" cy="389" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="385.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC13 Memverifikasi</text>
+<text x="980" y="401.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Pembayaran</text>
+<ellipse cx="980" cy="467" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="471.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC16 Menugaskan Sopir</text>
+<ellipse cx="980" cy="545" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="541.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC17 Mengonfirmasi Jemput</text>
+<text x="980" y="557.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Kendaraan</text>
+<ellipse cx="980" cy="975" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="971.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC18 Mencatat Pengembalian</text>
+<text x="980" y="987.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">dan Denda</text>
+<ellipse cx="980" cy="1053" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="1057.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC20 Mengelola Armada</text>
+<ellipse cx="980" cy="1131" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="1135.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC21 Mengelola Sopir</text>
+<ellipse cx="980" cy="1209" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="1213.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC22 Mengelola Penyewa</text>
+<ellipse cx="980" cy="1287" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="980" y="1291.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC23 Melihat Rekap Bulanan</text>
+<ellipse cx="640" cy="349" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="345.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC14 Menolak Bukti</text>
+<text x="640" y="361.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Pembayaran</text>
+<ellipse cx="640" cy="429" rx="132" ry="29" fill="url(#gu)" stroke="#7f8da6" stroke-width="1.2" filter="url(#sh)"/>
+<text x="640" y="425.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">UC15 Mencatat Pembayaran</text>
+<text x="640" y="441.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Langsung</text>
+<text x="308.0" y="354.0" text-anchor="start" font-size="11.5" fill="#444" stroke="#fff" stroke-width="4" paint-order="stroke">«include»</text>
+<text x="308.0" y="1096.0" text-anchor="start" font-size="11.5" fill="#444" stroke="#fff" stroke-width="4" paint-order="stroke">«include»</text>
+<text x="308.0" y="1174.0" text-anchor="start" font-size="11.5" fill="#444" stroke="#fff" stroke-width="4" paint-order="stroke">«include»</text>
+<text x="810.0" y="363.0" text-anchor="middle" font-size="11.5" fill="#444" stroke="#fff" stroke-width="4" paint-order="stroke">«extend»</text>
+<text x="810.0" y="403.0" text-anchor="middle" font-size="11.5" fill="#444" stroke="#fff" stroke-width="4" paint-order="stroke">«extend»</text>
+<circle cx="60" cy="622" r="13" fill="#fde3b8" stroke="#9b7b6b" stroke-width="1.3"/><path d="M60,635 V672 M38,646 H82 M60,672 L42,698 M60,672 L78,698" stroke="#9b7b6b" stroke-width="1.5" fill="none"/><text x="60" y="718" text-anchor="middle" font-weight="700" font-size="13" fill="#555">Pelanggan</text>
+<circle cx="60" cy="822" r="13" fill="#fde3b8" stroke="#9b7b6b" stroke-width="1.3"/><path d="M60,835 V872 M38,846 H82 M60,872 L42,898 M60,872 L78,898" stroke="#9b7b6b" stroke-width="1.5" fill="none"/><text x="60" y="918" text-anchor="middle" font-weight="700" font-size="13" fill="#555">Sopir</text>
+<circle cx="1250" cy="722" r="13" fill="#fde3b8" stroke="#9b7b6b" stroke-width="1.3"/><path d="M1250,735 V772 M1228,746 H1272 M1250,772 L1232,798 M1250,772 L1268,798" stroke="#9b7b6b" stroke-width="1.5" fill="none"/><text x="1250" y="818" text-anchor="middle" font-weight="700" font-size="13" fill="#555">Admin</text>
+</svg>

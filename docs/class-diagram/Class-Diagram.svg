@@ -1,0 +1,205 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 830" width="1320" height="830" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="11.5">
+<defs><linearGradient id="gk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffbf7"/><stop offset="1" stop-color="#f2e3d3"/></linearGradient><filter id="sh" x="-5%" y="-5%" width="115%" height="120%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.4" flood-color="#000" flood-opacity="0.25"/></filter><marker id="pt" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="1320" height="830" fill="#fff"/>
+<rect x="0.5" y="0.5" width="1319" height="829" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H161 V16 L151,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">class Class Diagram</text>
+<polyline points="213.0,270.0 293.0,270.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="522.0,270.0 602.0,270.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="775.0,245.0 855.0,245.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="1028.0,245.0 1108.0,245.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="407.0,334.0 407.0,430.0" fill="none" stroke="#5b6785" stroke-width="1.1"/><polygon points="407.0,334.0 402.0,343.0 407.0,352.0 412.0,343.0" fill="#5b6785" stroke="#5b6785" stroke-width="1"/>
+<polyline points="503.0,480.0 583.0,480.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="213.0,540.0 311.0,540.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="819.0,470.0 899.0,470.0" fill="none" stroke="#5b6785" stroke-width="1.1"/><polygon points="819.0,470.0 828.0,475.0 837.0,470.0 828.0,465.0" fill="#5b6785" stroke="#5b6785" stroke-width="1"/>
+<polyline points="407.0,616.0 407.0,666.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="700.0,616.0 700.0,666.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="760.0,710.0 840.0,710.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="455.0,430.0 455.0,376.0 941.5,376.0 941.5,302.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="485.0,430.0 485.0,402.0 1194.5,402.0 1194.5,278.0" fill="none" stroke="#5b6785" stroke-width="1.1"/>
+<polyline points="126.0,144.0 126.0,180.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="345.0,112.0 345.0,180.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="497.0,96.0 497.0,180.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="1194.0,128.0 1194.0,180.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="126.0,622.0 126.0,588.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="206.0,731.0 289.0,731.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<polyline points="244.0,393.0 285.0,393.0 285.0,476.0 311.0,476.0" fill="none" stroke="#5b6785" stroke-width="1.1" stroke-dasharray="6 4" marker-end="url(#pt)"/>
+<rect x="40" y="180" width="173" height="162" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="126.5" y="197" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">Pembayaran</text>
+<line x1="40" y1="204" x2="213" y2="204" stroke="#b8a99a"/>
+<text x="48" y="219" fill="#8a6d3b">+</text><text x="61" y="219" fill="#3a3a3a">id: int</text>
+<text x="48" y="235" fill="#8a6d3b">+</text><text x="61" y="235" fill="#3a3a3a">booking_id: int</text>
+<text x="48" y="251" fill="#8a6d3b">+</text><text x="61" y="251" fill="#3a3a3a">jumlah: decimal</text>
+<text x="48" y="267" fill="#8a6d3b">+</text><text x="61" y="267" fill="#3a3a3a">jenis: int</text>
+<text x="48" y="283" fill="#8a6d3b">+</text><text x="61" y="283" fill="#3a3a3a">status_pembayaran: int</text>
+<text x="48" y="299" fill="#8a6d3b">+</text><text x="61" y="299" fill="#3a3a3a">metode_pembayaran: int</text>
+<text x="48" y="315" fill="#8a6d3b">+</text><text x="61" y="315" fill="#3a3a3a">foto_bukti: string</text>
+<text x="48" y="331" fill="#8a6d3b">+</text><text x="61" y="331" fill="#3a3a3a">jatuh_tempo: datetime</text>
+<rect x="293" y="180" width="229" height="154" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="407.5" y="197" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">Booking</text>
+<line x1="293" y1="204" x2="522" y2="204" stroke="#b8a99a"/>
+<text x="301" y="219" fill="#8a6d3b">+</text><text x="314" y="219" fill="#3a3a3a">id: int</text>
+<text x="301" y="235" fill="#8a6d3b">+</text><text x="314" y="235" fill="#3a3a3a">user_id: int</text>
+<text x="301" y="251" fill="#8a6d3b">+</text><text x="314" y="251" fill="#3a3a3a">tanggal_booking: datetime</text>
+<text x="301" y="267" fill="#8a6d3b">+</text><text x="314" y="267" fill="#3a3a3a">status: int</text>
+<text x="301" y="283" fill="#8a6d3b">+</text><text x="314" y="283" fill="#3a3a3a">uang_muka: decimal</text>
+<text x="301" y="299" fill="#8a6d3b">+</text><text x="314" y="299" fill="#3a3a3a">total_harga: decimal</text>
+<line x1="293" y1="305" x2="522" y2="305" stroke="#b8a99a"/>
+<text x="301" y="320" fill="#8a6d3b">+</text><text x="314" y="320" fill="#3a3a3a">canBeCanceledByCustomer(): bool</text>
+<rect x="311" y="430" width="192" height="186" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="407.0" y="447" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">BookingDetail</text>
+<line x1="311" y1="454" x2="503" y2="454" stroke="#b8a99a"/>
+<text x="319" y="469" fill="#8a6d3b">+</text><text x="332" y="469" fill="#3a3a3a">id: int</text>
+<text x="319" y="485" fill="#8a6d3b">+</text><text x="332" y="485" fill="#3a3a3a">booking_id: int</text>
+<text x="319" y="501" fill="#8a6d3b">+</text><text x="332" y="501" fill="#3a3a3a">mobil_id: int</text>
+<text x="319" y="517" fill="#8a6d3b">+</text><text x="332" y="517" fill="#3a3a3a">supir_id: int</text>
+<text x="319" y="533" fill="#8a6d3b">+</text><text x="332" y="533" fill="#3a3a3a">pakai_supir: bool</text>
+<text x="319" y="549" fill="#8a6d3b">+</text><text x="332" y="549" fill="#3a3a3a">tanggal_sewa: datetime</text>
+<text x="319" y="565" fill="#8a6d3b">+</text><text x="332" y="565" fill="#3a3a3a">tanggal_kembali: datetime</text>
+<text x="319" y="581" fill="#8a6d3b">+</text><text x="332" y="581" fill="#3a3a3a">status: int</text>
+<line x1="311" y1="587" x2="503" y2="587" stroke="#b8a99a"/>
+<text x="319" y="602" fill="#8a6d3b">+</text><text x="332" y="602" fill="#3a3a3a">bebaskanSupir(): void</text>
+<rect x="1108" y="180" width="173" height="98" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="1194.5" y="197" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">JobOffer</text>
+<line x1="1108" y1="204" x2="1281" y2="204" stroke="#b8a99a"/>
+<text x="1116" y="219" fill="#8a6d3b">+</text><text x="1129" y="219" fill="#3a3a3a">id: int</text>
+<text x="1116" y="235" fill="#8a6d3b">+</text><text x="1129" y="235" fill="#3a3a3a">booking_detail_id: int</text>
+<text x="1116" y="251" fill="#8a6d3b">+</text><text x="1129" y="251" fill="#3a3a3a">supir_id: int</text>
+<text x="1116" y="267" fill="#8a6d3b">+</text><text x="1129" y="267" fill="#3a3a3a">status: int</text>
+<rect x="289" y="666" width="236" height="130" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="407.0" y="683" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">Pengembalian</text>
+<line x1="289" y1="690" x2="525" y2="690" stroke="#b8a99a"/>
+<text x="297" y="705" fill="#8a6d3b">+</text><text x="310" y="705" fill="#3a3a3a">id: int</text>
+<text x="297" y="721" fill="#8a6d3b">+</text><text x="310" y="721" fill="#3a3a3a">booking_detail_id: int</text>
+<text x="297" y="737" fill="#8a6d3b">+</text><text x="310" y="737" fill="#3a3a3a">tanggal_kembali_aktual: datetime</text>
+<text x="297" y="753" fill="#8a6d3b">+</text><text x="310" y="753" fill="#3a3a3a">kondisi: int</text>
+<text x="297" y="769" fill="#8a6d3b">+</text><text x="310" y="769" fill="#3a3a3a">nominal_denda: int</text>
+<text x="297" y="785" fill="#8a6d3b">+</text><text x="310" y="785" fill="#3a3a3a">gambar: string</text>
+<rect x="40" y="458" width="173" height="130" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="126.5" y="475" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">LaporanKondisi</text>
+<line x1="40" y1="482" x2="213" y2="482" stroke="#b8a99a"/>
+<text x="48" y="497" fill="#8a6d3b">+</text><text x="61" y="497" fill="#3a3a3a">id: int</text>
+<text x="48" y="513" fill="#8a6d3b">+</text><text x="61" y="513" fill="#3a3a3a">booking_detail_id: int</text>
+<text x="48" y="529" fill="#8a6d3b">+</text><text x="61" y="529" fill="#3a3a3a">jenis: int</text>
+<text x="48" y="545" fill="#8a6d3b">+</text><text x="61" y="545" fill="#3a3a3a">kondisi: int</text>
+<text x="48" y="561" fill="#8a6d3b">+</text><text x="61" y="561" fill="#3a3a3a">catatan: string</text>
+<text x="48" y="577" fill="#8a6d3b">+</text><text x="61" y="577" fill="#3a3a3a">foto: string</text>
+<rect x="602" y="180" width="173" height="170" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="688.5" y="197" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">User</text>
+<line x1="602" y1="204" x2="775" y2="204" stroke="#b8a99a"/>
+<text x="610" y="219" fill="#8a6d3b">+</text><text x="623" y="219" fill="#3a3a3a">id: int</text>
+<text x="610" y="235" fill="#8a6d3b">+</text><text x="623" y="235" fill="#3a3a3a">name: string</text>
+<text x="610" y="251" fill="#8a6d3b">+</text><text x="623" y="251" fill="#3a3a3a">email: string</text>
+<text x="610" y="267" fill="#8a6d3b">+</text><text x="623" y="267" fill="#3a3a3a">role: int</text>
+<text x="610" y="283" fill="#8a6d3b">+</text><text x="623" y="283" fill="#3a3a3a">no_hp: string</text>
+<text x="610" y="299" fill="#8a6d3b">+</text><text x="623" y="299" fill="#3a3a3a">aktif: bool</text>
+<line x1="602" y1="305" x2="775" y2="305" stroke="#b8a99a"/>
+<text x="610" y="320" fill="#8a6d3b">+</text><text x="623" y="320" fill="#3a3a3a">getRoleName(): string</text>
+<text x="610" y="336" fill="#8a6d3b">+</text><text x="623" y="336" fill="#3a3a3a">isRole(roleName): bool</text>
+<rect x="855" y="180" width="173" height="122" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="941.5" y="197" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">Supir</text>
+<line x1="855" y1="204" x2="1028" y2="204" stroke="#b8a99a"/>
+<text x="863" y="219" fill="#8a6d3b">+</text><text x="876" y="219" fill="#3a3a3a">id: int</text>
+<text x="863" y="235" fill="#8a6d3b">+</text><text x="876" y="235" fill="#3a3a3a">user_id: int</text>
+<text x="863" y="251" fill="#8a6d3b">+</text><text x="876" y="251" fill="#3a3a3a">status: int</text>
+<text x="863" y="267" fill="#8a6d3b">+</text><text x="876" y="267" fill="#3a3a3a">status_approval: int</text>
+<line x1="855" y1="273" x2="1028" y2="273" stroke="#b8a99a"/>
+<text x="863" y="288" fill="#8a6d3b">+</text><text x="876" y="288" fill="#3a3a3a">getIsAvailable(): bool</text>
+<rect x="583" y="430" width="236" height="186" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="701.0" y="447" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">Mobil</text>
+<line x1="583" y1="454" x2="819" y2="454" stroke="#b8a99a"/>
+<text x="591" y="469" fill="#8a6d3b">+</text><text x="604" y="469" fill="#3a3a3a">id: int</text>
+<text x="591" y="485" fill="#8a6d3b">+</text><text x="604" y="485" fill="#3a3a3a">master_mobil_id: int</text>
+<text x="591" y="501" fill="#8a6d3b">+</text><text x="604" y="501" fill="#3a3a3a">plat_nomor: string</text>
+<text x="591" y="517" fill="#8a6d3b">+</text><text x="604" y="517" fill="#3a3a3a">merk: string</text>
+<text x="591" y="533" fill="#8a6d3b">+</text><text x="604" y="533" fill="#3a3a3a">tahun: int</text>
+<text x="591" y="549" fill="#8a6d3b">+</text><text x="604" y="549" fill="#3a3a3a">harga_sewa: decimal</text>
+<text x="591" y="565" fill="#8a6d3b">+</text><text x="604" y="565" fill="#3a3a3a">status: int</text>
+<line x1="583" y1="571" x2="819" y2="571" stroke="#b8a99a"/>
+<text x="591" y="586" fill="#8a6d3b">+</text><text x="604" y="586" fill="#3a3a3a">getHargaPerHari(pakaiSupir): int</text>
+<text x="591" y="602" fill="#8a6d3b">+</text><text x="604" y="602" fill="#3a3a3a">isAvailableFor(start, end): bool</text>
+<rect x="640" y="666" width="120" height="82" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="700.0" y="683" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">MasterMobil</text>
+<line x1="640" y1="690" x2="760" y2="690" stroke="#b8a99a"/>
+<text x="648" y="705" fill="#8a6d3b">+</text><text x="661" y="705" fill="#3a3a3a">id: int</text>
+<text x="648" y="721" fill="#8a6d3b">+</text><text x="661" y="721" fill="#3a3a3a">nama: string</text>
+<text x="648" y="737" fill="#8a6d3b">+</text><text x="661" y="737" fill="#3a3a3a">tipe_id: int</text>
+<rect x="899" y="430" width="147" height="82" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="972.5" y="447" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">MobilImage</text>
+<line x1="899" y1="454" x2="1046" y2="454" stroke="#b8a99a"/>
+<text x="907" y="469" fill="#8a6d3b">+</text><text x="920" y="469" fill="#3a3a3a">id: int</text>
+<text x="907" y="485" fill="#8a6d3b">+</text><text x="920" y="485" fill="#3a3a3a">mobil_id: int</text>
+<text x="907" y="501" fill="#8a6d3b">+</text><text x="920" y="501" fill="#3a3a3a">image_path: string</text>
+<rect x="840" y="674" width="141" height="66" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="910.5" y="691" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">TipeMobil</text>
+<line x1="840" y1="698" x2="981" y2="698" stroke="#b8a99a"/>
+<text x="848" y="713" fill="#8a6d3b">+</text><text x="861" y="713" fill="#3a3a3a">id: int</text>
+<text x="848" y="729" fill="#8a6d3b">+</text><text x="861" y="729" fill="#3a3a3a">nama_tipe: string</text>
+<rect x="30" y="34" width="192" height="110" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="126.0" y="50" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="126.0" y="63" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">PembayaranService</text>
+<line x1="30" y1="70" x2="222" y2="70" stroke="#b8a99a"/>
+<text x="38" y="85" fill="#8a6d3b">+</text><text x="51" y="85" fill="#3a3a3a">verifikasi(): Pembayaran</text>
+<text x="38" y="101" fill="#8a6d3b">+</text><text x="51" y="101" fill="#3a3a3a">tandaiLunas(): Pembayaran</text>
+<text x="38" y="117" fill="#8a6d3b">+</text><text x="51" y="117" fill="#3a3a3a">tolak(): Pembayaran</text>
+<text x="38" y="133" fill="#8a6d3b">+</text><text x="51" y="133" fill="#3a3a3a">kirimInvoice(): string</text>
+<rect x="265" y="34" width="141" height="78" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="335.5" y="50" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="335.5" y="63" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">BookingService</text>
+<line x1="265" y1="70" x2="406" y2="70" stroke="#b8a99a"/>
+<text x="273" y="85" fill="#8a6d3b">+</text><text x="286" y="85" fill="#3a3a3a">create(): Booking</text>
+<text x="273" y="101" fill="#8a6d3b">+</text><text x="286" y="101" fill="#3a3a3a">cancel(): void</text>
+<rect x="430" y="34" width="135" height="62" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="497.5" y="50" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="497.5" y="63" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">RekapService</text>
+<line x1="430" y1="70" x2="565" y2="70" stroke="#b8a99a"/>
+<text x="438" y="85" fill="#8a6d3b">+</text><text x="451" y="85" fill="#3a3a3a">bulanan(): array</text>
+<rect x="40" y="362" width="204" height="62" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="142.0" y="378" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="142.0" y="391" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">JemputService</text>
+<line x1="40" y1="398" x2="244" y2="398" stroke="#b8a99a"/>
+<text x="48" y="413" fill="#8a6d3b">+</text><text x="61" y="413" fill="#3a3a3a">konfirmasi(): BookingDetail</text>
+<rect x="1127" y="34" width="135" height="94" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="1194.5" y="50" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="1194.5" y="63" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">PenugasanService</text>
+<line x1="1127" y1="70" x2="1262" y2="70" stroke="#b8a99a"/>
+<text x="1135" y="85" fill="#8a6d3b">+</text><text x="1148" y="85" fill="#3a3a3a">tawarkan(): int</text>
+<text x="1135" y="101" fill="#8a6d3b">+</text><text x="1148" y="101" fill="#3a3a3a">terima(): void</text>
+<text x="1135" y="117" fill="#8a6d3b">+</text><text x="1148" y="117" fill="#3a3a3a">tolak(): void</text>
+<rect x="40" y="720" width="166" height="62" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="123.0" y="736" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="123.0" y="749" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">PengembalianService</text>
+<line x1="40" y1="756" x2="206" y2="756" stroke="#b8a99a"/>
+<text x="48" y="771" fill="#8a6d3b">+</text><text x="61" y="771" fill="#3a3a3a">catat(): Pengembalian</text>
+<rect x="31" y="622" width="185" height="62" fill="url(#gk)" stroke="#8f7f72" stroke-width="1.2" filter="url(#sh)"/>
+<text x="123.5" y="638" text-anchor="middle" font-size="10.5" fill="#555">«Service»</text>
+<text x="123.5" y="651" text-anchor="middle" font-weight="700" font-size="12.5" fill="#333">LaporanKondisiService</text>
+<line x1="31" y1="658" x2="216" y2="658" stroke="#b8a99a"/>
+<text x="39" y="673" fill="#8a6d3b">+</text><text x="52" y="673" fill="#3a3a3a">simpan(): LaporanKondisi</text>
+<text x="219.0" y="265.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="287.0" y="265.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="528.0" y="265.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="596.0" y="265.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="781.0" y="240.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="849.0" y="240.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..1</text>
+<text x="1034.0" y="240.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="1102.0" y="240.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="413.0" y="362.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="413.0" y="424.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1..*</text>
+<text x="509.0" y="475.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="577.0" y="475.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="219.0" y="535.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..2</text>
+<text x="305.0" y="535.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="839.0" y="465.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="893.0" y="465.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="413.0" y="630.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="413.0" y="660.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..1</text>
+<text x="706.0" y="630.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="706.0" y="660.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="766.0" y="705.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="834.0" y="705.0" text-anchor="end" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="461.0" y="424.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+<text x="947.5" y="316.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..1</text>
+<text x="491" y="424" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">1</text>
+<text x="1200.5" y="292.0" text-anchor="start" font-size="11" fill="#2f4a8a" stroke="#fff" stroke-width="3" paint-order="stroke">0..*</text>
+</svg>

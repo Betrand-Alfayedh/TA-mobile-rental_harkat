@@ -1,0 +1,317 @@
+[
+ {
+  "name": "Pembayaran",
+  "st": null,
+  "w": 217.1,
+  "h": 248.0,
+  "attrs": [
+   "id: int",
+   "booking_id: int",
+   "jumlah: decimal",
+   "jenis: int",
+   "status_pembayaran: int",
+   "metode_pembayaran: int",
+   "foto_bukti: string",
+   "jatuh_tempo: datetime",
+   "tanggal_pembayaran: datetime",
+   "catatan_admin: string",
+   "keterangan: string",
+   "dicatat_oleh: int"
+  ],
+  "meth": [
+   "alasanTidakBisaUpload(): string"
+  ]
+ },
+ {
+  "name": "Booking",
+  "st": null,
+  "w": 217.1,
+  "h": 264.0,
+  "attrs": [
+   "id: int",
+   "user_id: int",
+   "tanggal_booking: datetime",
+   "asal_kota: int",
+   "nama_kota: string",
+   "status: int",
+   "jaminan: int",
+   "uang_muka: decimal",
+   "total_harga: decimal"
+  ],
+  "meth": [
+   "canBeCanceledByCustomer(): bool",
+   "pembayaranDp(): Pembayaran",
+   "pelunasan(): Pembayaran",
+   "details(): List<BookingDetail>",
+   "pembayarans(): List<Pembayaran>"
+  ]
+ },
+ {
+  "name": "BookingDetail",
+  "st": null,
+  "w": 265.9,
+  "h": 264.0,
+  "attrs": [
+   "id: int",
+   "booking_id: int",
+   "mobil_id: int",
+   "supir_id: int",
+   "pakai_supir: bool",
+   "tanggal_sewa: datetime",
+   "tanggal_kembali: datetime",
+   "lama_sewa: int",
+   "status: int"
+  ],
+  "meth": [
+   "bebaskanSupir(): void",
+   "getMenungguSupir(): bool",
+   "pengembalian(): Pengembalian",
+   "laporanKondisis(): List<LaporanKondisi>",
+   "jobOffers(): List<JobOffer>"
+  ]
+ },
+ {
+  "name": "JobOffer",
+  "st": null,
+  "w": 162.2,
+  "h": 96.0,
+  "attrs": [
+   "id: int",
+   "booking_detail_id: int",
+   "supir_id: int",
+   "status: int"
+  ],
+  "meth": []
+ },
+ {
+  "name": "Pengembalian",
+  "st": null,
+  "w": 223.2,
+  "h": 192.0,
+  "attrs": [
+   "DENDA_PER_JAM: int",
+   "id: int",
+   "booking_detail_id: int",
+   "tanggal_kembali_aktual: datetime",
+   "kondisi: int",
+   "denda_flag: bool",
+   "nominal_denda: int",
+   "catatan: string",
+   "gambar: string",
+   "dicatat_oleh: int"
+  ],
+  "meth": []
+ },
+ {
+  "name": "LaporanKondisi",
+  "st": null,
+  "w": 180.5,
+  "h": 216.0,
+  "attrs": [
+   "SEBELUM: int",
+   "SESUDAH: int",
+   "id: int",
+   "booking_detail_id: int",
+   "jenis: int",
+   "kondisi: int",
+   "catatan: string",
+   "foto: string",
+   "dibuat_oleh: int"
+  ],
+  "meth": [
+   "getKondisiLabel(): string",
+   "getJenisLabel(): string"
+  ]
+ },
+ {
+  "name": "User",
+  "st": null,
+  "w": 180.5,
+  "h": 264.0,
+  "attrs": [
+   "id: int",
+   "name: string",
+   "email: string",
+   "password: string",
+   "role: int",
+   "no_hp: string",
+   "alamat: string",
+   "asal_kota: string",
+   "aktif: bool",
+   "google_id: string"
+  ],
+  "meth": [
+   "getRoleName(): string",
+   "isRole(roleName): bool",
+   "supir(): Supir",
+   "bookings(): List<Booking>"
+  ]
+ },
+ {
+  "name": "Supir",
+  "st": null,
+  "w": 192.7,
+  "h": 184.0,
+  "attrs": [
+   "id: int",
+   "user_id: int",
+   "status: int",
+   "status_approval: int",
+   "gambar: string"
+  ],
+  "meth": [
+   "getIsAvailable(): bool",
+   "getStatusText(): string",
+   "user(): User",
+   "jobOffers(): List<JobOffer>"
+  ]
+ },
+ {
+  "name": "Mobil",
+  "st": null,
+  "w": 253.7,
+  "h": 280.0,
+  "attrs": [
+   "id: int",
+   "master_mobil_id: int",
+   "plat_nomor: string",
+   "merk: string",
+   "tahun: int",
+   "harga_sewa: decimal",
+   "harga_all_in: decimal",
+   "status: int",
+   "status_approval: int",
+   "gambar: string"
+  ],
+  "meth": [
+   "getHargaPerHari(pakaiSupir): int",
+   "isAvailableFor(start, end): bool",
+   "scopeFreeBetween(query, start, end)",
+   "images(): List<MobilImage>",
+   "bookingDetails(): List<BookingDetail>"
+  ]
+ },
+ {
+  "name": "MasterMobil",
+  "st": null,
+  "w": 156.1,
+  "h": 120.0,
+  "attrs": [
+   "id: int",
+   "nama: string",
+   "tipe_id: int"
+  ],
+  "meth": [
+   "tipe(): TipeMobil",
+   "mobils(): List<Mobil>"
+  ]
+ },
+ {
+  "name": "MobilImage",
+  "st": null,
+  "w": 137.8,
+  "h": 80.0,
+  "attrs": [
+   "id: int",
+   "mobil_id: int",
+   "image_path: string"
+  ],
+  "meth": []
+ },
+ {
+  "name": "TipeMobil",
+  "st": null,
+  "w": 229.3,
+  "h": 88.0,
+  "attrs": [
+   "id: int",
+   "nama_tipe: string"
+  ],
+  "meth": [
+   "masterMobils(): List<MasterMobil>"
+  ]
+ },
+ {
+  "name": "PembayaranService",
+  "st": "«Service»",
+  "w": 326.9,
+  "h": 120.0,
+  "attrs": [],
+  "meth": [
+   "verifikasi(pembayaran, oleh): Pembayaran",
+   "tandaiLunas(pembayaran, metode, oleh): Pembayaran",
+   "tolak(pembayaran, catatan, oleh): Pembayaran",
+   "kirimInvoice(pembayaran): string"
+  ]
+ },
+ {
+  "name": "BookingService",
+  "st": "«Service»",
+  "w": 204.9,
+  "h": 102.0,
+  "attrs": [
+   "MIN_LEAD_HOURS: int"
+  ],
+  "meth": [
+   "create(userId, data): Booking",
+   "cancel(booking, reason): void"
+  ]
+ },
+ {
+  "name": "RekapService",
+  "st": "«Service»",
+  "w": 156.1,
+  "h": 72.0,
+  "attrs": [],
+  "meth": [
+   "bulanan(bulan): array"
+  ]
+ },
+ {
+  "name": "JemputService",
+  "st": "«Service»",
+  "w": 229.3,
+  "h": 72.0,
+  "attrs": [],
+  "meth": [
+   "konfirmasi(detail): BookingDetail"
+  ]
+ },
+ {
+  "name": "PenugasanService",
+  "st": "«Service»",
+  "w": 198.8,
+  "h": 166.0,
+  "attrs": [
+   "TERBUKA: int",
+   "DITERIMA: int",
+   "DITUTUP: int",
+   "DITOLAK: int"
+  ],
+  "meth": [
+   "tawarkan(detail): int",
+   "terima(offerId, supir): void",
+   "tolak(offerId, supir): void"
+  ]
+ },
+ {
+  "name": "PengembalianService",
+  "st": "«Service»",
+  "w": 326.9,
+  "h": 72.0,
+  "attrs": [],
+  "meth": [
+   "catat(detailId, data, gambar, oleh): Pengembalian"
+  ]
+ },
+ {
+  "name": "LaporanKondisiService",
+  "st": "«Service»",
+  "w": 320.8,
+  "h": 72.0,
+  "attrs": [],
+  "meth": [
+   "simpan(detail, oleh, data, foto): LaporanKondisi"
+  ]
+ }
+]

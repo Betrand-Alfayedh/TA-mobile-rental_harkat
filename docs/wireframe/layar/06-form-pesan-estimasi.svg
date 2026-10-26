@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Form Pemesanan + Estimasi" transform="translate(20,20)"><defs><clipPath id="clip-8334872906452657553"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-8334872906452657553)">
+<clipPath id="area-gulir"><rect x="0" y="92" width="360" height="556"/></clipPath>
+<g clip-path="url(#area-gulir)"><g transform="translate(0,-200)">
+<g id="Mobil terpilih">
+<rect x="16" y="96" width="328" height="76" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Placeholder gambar">
+<rect x="26" y="106" width="84" height="56" rx="12" fill="#EEEEEE" stroke="#BDBDBD" stroke-width="1" />
+<line x1="38" y1="118" x2="98" y2="150" stroke="#BDBDBD" stroke-width="1"/>
+<line x1="98" y1="118" x2="38" y2="150" stroke="#BDBDBD" stroke-width="1"/>
+</g>
+<text x="124" y="130" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Avanza</text>
+<text x="124" y="148" font-size="11" fill="#757575" text-anchor="start">AB 1234 CD</text>
+<text x="124" y="164" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Rp350.000 / hari</text>
+</g>
+<text x="20" y="204" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Jadwal Sewa</text>
+<rect x="16" y="214" width="160" height="66" rx="18" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+<text x="30" y="234" font-size="10" fill="#757575" text-anchor="start">▦ Tanggal sewa</text>
+<text x="30" y="254" font-size="12" font-weight="700" fill="#212121" text-anchor="start">12 Okt 2026</text>
+<text x="30" y="269" font-size="12" font-weight="700" fill="#212121" text-anchor="start">09:00</text>
+<rect x="184" y="214" width="160" height="66" rx="18" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+<text x="198" y="234" font-size="10" fill="#757575" text-anchor="start">▦ Tanggal kembali</text>
+<text x="198" y="254" font-size="12" font-weight="700" fill="#212121" text-anchor="start">14 Okt 2026</text>
+<text x="198" y="269" font-size="12" font-weight="700" fill="#212121" text-anchor="start">09:00</text>
+<text x="20" y="298" font-size="10" fill="#757575" text-anchor="start">Waktu sewa minimal 3 jam dari sekarang.</text>
+<text x="20" y="332" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Opsi Sopir</text>
+<rect x="16" y="342" width="328" height="54" rx="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="366" font-size="13" font-weight="700" fill="#212121" text-anchor="start">Pakai sopir</text>
+<text x="32" y="384" font-size="10.5" fill="#757575" text-anchor="start">Rp350.000 / hari</text>
+<rect x="290" y="359" width="40" height="22" rx="11" fill="#BDBDBD" stroke="none" />
+<circle cx="301" cy="370" r="8" fill="#FFFFFF" stroke="none"/>
+<text x="20" y="424" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Asal Kota</text>
+<rect x="16" y="434" width="160" height="48" rx="16" fill="#EEEEEE" stroke="#212121" stroke-width="1.5" />
+<text x="30" y="463" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Yogyakarta</text>
+<circle cx="156" cy="458" r="8" fill="#212121" stroke="#212121" stroke-width="1"/>
+<rect x="184" y="434" width="160" height="48" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="198" y="463" font-size="12" font-weight="700" fill="#212121" text-anchor="start">Luar Kota</text>
+<circle cx="324" cy="458" r="8" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="20" y="510" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Jaminan</text>
+<rect x="16" y="520" width="160" height="48" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="30" y="549" font-size="12" font-weight="700" fill="#212121" text-anchor="start">KTP / Passport</text>
+<circle cx="156" cy="544" r="8" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<rect x="184" y="520" width="160" height="48" rx="16" fill="#EEEEEE" stroke="#212121" stroke-width="1.5" />
+<text x="198" y="549" font-size="12" font-weight="700" fill="#212121" text-anchor="start">KTP + Motor</text>
+<circle cx="324" cy="544" r="8" fill="#212121" stroke="#212121" stroke-width="1"/>
+<g id="Tombol Hitung Estimasi Harga">
+<rect x="16" y="592" width="328" height="46" rx="23.0" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="180.0" y="619.0" font-size="13" font-weight="700" fill="#212121" text-anchor="middle">Hitung Estimasi Harga</text>
+</g>
+<g id="Kartu estimasi biaya">
+<rect x="16" y="652" width="328" height="122" rx="22" fill="#EEEEEE" stroke="none" />
+<text x="34" y="682" font-size="13" font-weight="700" fill="#212121" text-anchor="start">▤ Estimasi Biaya</text>
+<text x="34" y="708" font-size="11.5" fill="#757575" text-anchor="start">Total sewa</text>
+<text x="326" y="708" font-size="12" fill="#212121" text-anchor="end">Rp700.000</text>
+<text x="34" y="730" font-size="11.5" fill="#757575" text-anchor="start">DP (50%)</text>
+<text x="326" y="730" font-size="12" fill="#212121" text-anchor="end">Rp350.000</text>
+<text x="34" y="752" font-size="11.5" fill="#757575" text-anchor="start">Sisa pelunasan</text>
+<text x="326" y="752" font-size="13" font-weight="700" fill="#212121" text-anchor="end">Rp350.000</text>
+</g>
+</g></g>
+<g id="Header">
+<rect x="0" y="0" width="360" height="92" rx="0" fill="#FFFFFF" stroke="none" />
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Form Pemesanan</text>
+</g>
+<g id="Bar aksi bawah">
+<rect x="0" y="648" width="360" height="92" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Tombol Konfirmasi Pemesanan">
+<rect x="24" y="668" width="312" height="46" rx="23.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="180.0" y="695.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Konfirmasi Pemesanan</text>
+</g>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

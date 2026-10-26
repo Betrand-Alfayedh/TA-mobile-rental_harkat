@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 780" width="400" height="780" font-family="Arial, Helvetica, sans-serif"><rect width="400" height="780" fill="#FFFFFF"/>
+<g id="Layar Pembayaran DP" transform="translate(20,20)"><defs><clipPath id="clip-7717596089622982822"><rect x="0" y="0" width="360" height="740" rx="30"/></clipPath></defs><rect x="0" y="0" width="360" height="740" rx="30" fill="#FFFFFF"/><g clip-path="url(#clip-7717596089622982822)">
+<g id="Status bar">
+<text x="20" y="18" font-size="11" font-weight="700" fill="#212121" text-anchor="start">09.41</text>
+<rect x="300" y="9" width="16" height="9" rx="2" fill="#212121" stroke="none" />
+<rect x="320" y="9" width="20" height="9" rx="2" fill="#FFFFFF" stroke="#212121" stroke-width="1" />
+</g>
+<g id="Header">
+<g id="Tombol kembali">
+<circle cx="34" cy="58" r="18" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="34" y="63" font-size="16" font-weight="700" fill="#212121" text-anchor="middle">←</text>
+</g>
+<text x="64" y="66" font-size="20" font-weight="700" fill="#212121" text-anchor="start">Pembayaran DP</text>
+</g>
+<g id="Kartu tagihan">
+<rect x="16" y="96" width="328" height="112" rx="24" fill="#212121" stroke="none" />
+<text x="36" y="126" font-size="11" fill="#CFCFCF" text-anchor="start">Jumlah DP</text>
+<text x="36" y="164" font-size="28" font-weight="700" fill="#FFFFFF" text-anchor="start">Rp350.000</text>
+<text x="36" y="188" font-size="10" fill="#CFCFCF" text-anchor="start">Jatuh tempo 13 Okt 2026</text>
+<text x="324" y="188" font-size="10" font-weight="700" fill="#FFFFFF" text-anchor="end">Menunggu Pembayaran</text>
+</g>
+<g id="Ringkasan booking">
+<rect x="16" y="220" width="328" height="112" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<text x="32" y="246" font-size="12.5" font-weight="700" fill="#212121" text-anchor="start">Ringkasan Booking #128</text>
+<text x="32" y="270" font-size="11.5" fill="#212121" text-anchor="start">▭ Avanza</text>
+<text x="328" y="270" font-size="11" fill="#757575" text-anchor="end">2 hari</text>
+<line x1="32" y1="280" x2="328" y2="280" stroke="#BDBDBD" stroke-width="1"/>
+<text x="32" y="299" font-size="11" fill="#757575" text-anchor="start">Total</text>
+<text x="328" y="299" font-size="12" font-weight="700" fill="#212121" text-anchor="end">Rp700.000</text>
+<text x="32" y="320" font-size="11" fill="#757575" text-anchor="start">DP (50%)</text>
+<text x="328" y="320" font-size="12" font-weight="700" fill="#212121" text-anchor="end">Rp350.000</text>
+</g>
+<text x="20" y="360" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Metode Pembayaran</text>
+<rect x="16" y="370" width="104" height="62" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="68" cy="390" r="9" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="68" y="421" font-size="11.5" font-weight="700" fill="#212121" text-anchor="middle">Cash</text>
+<rect x="128" y="370" width="104" height="62" rx="16" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<circle cx="180" cy="390" r="9" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="180" y="421" font-size="11.5" font-weight="700" fill="#212121" text-anchor="middle">Transfer</text>
+<rect x="240" y="370" width="104" height="62" rx="16" fill="#EEEEEE" stroke="#212121" stroke-width="1.5" />
+<circle cx="292" cy="390" r="9" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1"/>
+<text x="292" y="421" font-size="11.5" font-weight="700" fill="#212121" text-anchor="middle">QRIS</text>
+<text x="20" y="460" font-size="14" font-weight="700" fill="#212121" text-anchor="start">Upload Bukti Pembayaran</text>
+<g id="Area unggah bukti">
+<rect x="16" y="470" width="328" height="140" rx="22" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" stroke-dasharray="6 5"/>
+<circle cx="180" cy="522" r="22" fill="#EEEEEE" stroke="none"/>
+<text x="180" y="528" font-size="18" fill="#212121" text-anchor="middle">⇪</text>
+<text x="180" y="566" font-size="12" font-weight="700" fill="#212121" text-anchor="middle">Ketuk untuk upload foto</text>
+<text x="180" y="583" font-size="10" fill="#757575" text-anchor="middle">JPG, JPEG, PNG (maks. 5 MB)</text>
+</g>
+<g id="Bar aksi bawah">
+<rect x="0" y="648" width="360" height="92" rx="26" fill="#FFFFFF" stroke="#BDBDBD" stroke-width="1" />
+<g id="Tombol Kirim Bukti Pembayaran">
+<rect x="24" y="668" width="312" height="46" rx="23.0" fill="#212121" stroke="#212121" stroke-width="1" />
+<text x="180.0" y="695.0" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">Kirim Bukti Pembayaran</text>
+</g>
+</g>
+</g><rect x="0" y="0" width="360" height="740" rx="30" fill="none" stroke="#212121" stroke-width="2.5"/><rect x="130" y="728" width="100" height="4" rx="2" fill="#212121"/></g>
+</svg>

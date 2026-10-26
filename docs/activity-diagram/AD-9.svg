@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 872 558" width="872" height="558" font-family="Calibri, 'Segoe UI', Arial, sans-serif" font-size="12.5">
+<defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset="1" stop-color="#f9dfaa"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6e6b4"/><stop offset="1" stop-color="#bdd68f"/></linearGradient><filter id="sh" x="-10%" y="-10%" width="130%" height="140%"><feDropShadow dx="2.5" dy="2.5" stdDeviation="1.6" flood-color="#000" flood-opacity="0.28"/></filter><marker id="p" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto"><path d="M1,1.5 L11,6 L1,10.5" fill="none" stroke="#5b6785" stroke-width="1.2"/></marker></defs>
+<rect width="872" height="558" fill="#fff"/>
+<rect x="0.5" y="0.5" width="871" height="557" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<path d="M0.5,0.5 H249 V16 L239,24.5 H0.5 Z" fill="#fff" stroke="#3a3a3a" stroke-width="1"/>
+<text x="8" y="17" font-weight="700" font-size="13" fill="#222">act Melihat Pesanan dan Riwayat</text>
+<g transform="translate(14,0)">
+<rect x="0" y="34" width="422" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<rect x="422" y="34" width="422" height="32" fill="#fff" stroke="#8e8e8e" stroke-width="1.5"/>
+<text x="211" y="54" text-anchor="middle" font-size="13" fill="#333">Pelanggan</text>
+<text x="633" y="54" text-anchor="middle" font-size="13" fill="#333">Sistem</text>
+<line x1="0" y1="34" x2="0" y2="552" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="422" y1="34" x2="422" y2="552" stroke="#8e8e8e" stroke-width="3"/>
+<line x1="844" y1="34" x2="844" y2="552" stroke="#8e8e8e" stroke-width="3"/>
+<path d="M209.0,118.0 V144.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M318.9,170.0 H536.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M635.0,196.0 V242.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M635.0,282.0 V308.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M521.5,334.0 H386.0 V490.0 H219.2" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M655.0,262.0 H818.0 V375.0 H635.0 V386.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M525.1,412.0 H297.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M297.0,423.0 H400.0 V487.0 H525.1" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<path d="M525.1,498.0 H222.0" fill="none" stroke="#5b6785" stroke-width="1.1" marker-end="url(#p)"/>
+<circle cx="209.0" cy="103.0" r="14" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="229.0" y="107.5" fill="#444">Mulai</text>
+<rect x="99.1" y="144.0" width="219.8" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="166.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Membuka tab &#x27;Pesanan&#x27; atau</text>
+<text x="209.0" y="182.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">&#x27;Riwayat&#x27;</text>
+<rect x="536.0" y="144.0" width="197.9" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="635.0" y="166.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Mengambil pesanan milik</text>
+<text x="635.0" y="182.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pelanggan</text>
+<polygon points="635.0,242.0 655.0,262.0 635.0,282.0 615.0,262.0" fill="url(#gd)" stroke="#7f8f63" stroke-width="1.2" filter="url(#sh)"/>
+<text x="648.0" y="234.0" fill="#333" stroke="#fff" stroke-width="3" paint-order="stroke">Ada pesanan?</text>
+<rect x="521.5" y="308.0" width="227.1" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="635.0" y="330.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan pesan belum ada</text>
+<text x="635.0" y="346.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pesanan</text>
+<rect x="525.1" y="386.0" width="219.8" height="52.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="635.0" y="408.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan daftar pesanan</text>
+<text x="635.0" y="424.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">beserta status dan tagihan</text>
+<rect x="121.0" y="394.0" width="176.0" height="36.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="209.0" y="416.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Memilih satu pesanan</text>
+<rect x="525.1" y="464.0" width="219.8" height="68.0" rx="11" fill="url(#ga)" stroke="#a39382" stroke-width="1.2" filter="url(#sh)"/>
+<text x="635.0" y="486.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">Menampilkan rincian mobil,</text>
+<text x="635.0" y="502.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">jadwal, total, dan status</text>
+<text x="635.0" y="518.5" text-anchor="middle" font-weight="700" fill="#4a4a4a">pembayaran</text>
+<circle cx="209.0" cy="498.0" r="13" fill="#c9deA0" stroke="#7d7d6d" stroke-width="1.5"/>
+<circle cx="209.0" cy="498.0" r="6.5" fill="#9c8383" stroke="#7d6a6a" stroke-width="1"/>
+<text x="209.0" y="528.0" text-anchor="middle" fill="#444">Selesai</text>
+<text x="642.0" y="296.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Tidak</text>
+<text x="663.0" y="257.0" text-anchor="start" font-size="12" fill="#333" stroke="#fff" stroke-width="4" paint-order="stroke">Ya</text>
+</g>
+</svg>
