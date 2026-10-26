@@ -38,9 +38,9 @@ class TransaksiRequest extends FormRequest
 
             // Multi-mobil
             'mobils'                => 'required|array|min:1',
-            'mobils.*.mobil_id'     => 'required|exists:mobils,id',
-            'mobils.*.tanggal_sewa' => 'required|date',
-            'mobils.*.tanggal_kembali' => 'required|date|after_or_equal:mobils.*.tanggal_sewa',
+            'mobils.*.mobil_id'     => 'required|exists:mobils,id|distinct',
+            'mobils.*.tanggal_sewa' => 'required|date|after_or_equal:-10 minutes',
+            'mobils.*.tanggal_kembali' => 'required|date|after:mobils.*.tanggal_sewa',
             'mobils.*.pakai_supir'  => 'required|in:0,1',
             'mobils.*.supir_id'     => 'nullable|exists:supirs,id',
         ];
@@ -65,7 +65,9 @@ class TransaksiRequest extends FormRequest
             'mobils.*.mobil_id.exists'       => 'Mobil tidak valid.',
             'mobils.*.tanggal_sewa.required' => 'Tanggal sewa harus diisi.',
             'mobils.*.tanggal_kembali.required' => 'Tanggal kembali harus diisi.',
-            'mobils.*.tanggal_kembali.after_or_equal' => 'Tanggal kembali tidak boleh sebelum tanggal sewa.',
+            'mobils.*.tanggal_sewa.after_or_equal' => 'Tanggal sewa tidak boleh di masa lalu.',
+            'mobils.*.tanggal_kembali.after' => 'Tanggal kembali harus setelah tanggal sewa.',
+            'mobils.*.mobil_id.distinct' => 'Mobil yang sama tidak boleh dipilih dua kali.',
             'mobils.*.pakai_supir.required'  => 'Harus pilih apakah pakai supir atau tidak.',
             'mobils.*.pakai_supir.in'        => 'Pilihan pakai supir tidak valid.',
             'mobils.*.supir_id.exists'       => 'Supir tidak valid.',

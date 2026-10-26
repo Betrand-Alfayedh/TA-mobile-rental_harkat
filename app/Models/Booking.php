@@ -58,6 +58,13 @@ class Booking extends Model
      *  Relationships
      * ==============================
      */
+    /** Customer hanya boleh membatalkan sendiri selama booking masih "booked" dan DP belum lunas. */
+    public function canBeCanceledByCustomer(): bool
+    {
+        return $this->status === self::STATUS_BOOKED
+            && (int) $this->pembayaranDp?->status_pembayaran !== 1;
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
@@ -65,6 +72,10 @@ class Booking extends Model
     public function details()
     {
         return $this->hasMany(BookingDetail::class);
+    }
+    public function pembayarans()
+    {
+        return $this->hasMany(Pembayaran::class);
     }
     public function pembayaranDp()
     {

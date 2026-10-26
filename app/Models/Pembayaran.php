@@ -21,6 +21,7 @@ class Pembayaran extends Model
         'catatan_admin',
         'jatuh_tempo',
         'keterangan',
+        'dicatat_oleh',
     ];
 
     protected $casts = [
@@ -76,6 +77,33 @@ class Pembayaran extends Model
         return Attribute::get(fn() => $this->jatuh_tempo
             ? Carbon::parse($this->jatuh_tempo)->translatedFormat('l, d F Y H:i')
             : null);
+    }
+
+    /** Alasan bukti bayar tidak boleh diupload sekarang, atau null jika boleh. */
+    public function alasanTidakBisaUpload(): ?string
+    {
+        $booking = $this->booking;
+        $isDp    = (int) $this->jenis === 1;
+
+        if ($isDp && $booking->status !== Booking::STATUS_BOOKED) {
+            return 'Booking ini sudah dibatalkan atau tidak aktif.';
+        }
+        if (! $isDp) { // pelunasan/denda: dibayar saat atau setelah sewa, setelah DP lunas
+            if ($booking->status === Booking::STATUS_CANCELED) {
+                return 'Booking ini sudah dibatalkan.';
+            }
+            if ((int) $booking->pembayaranDp?->status_pembayaran !== 1) {
+                return 'Selesaikan pembayaran DP terlebih dahulu.';
+            }
+        }
+        if ((int) $this->status_pembayaran === 1) {
+            return 'Pembayaran sudah dikonfirmasi oleh admin.';
+        }
+        // Batas waktu hanya berlaku untuk DP (pelunasan tetap harus dibayar walau terlambat).
+        if ($isDp && (int) $this->status_pembayaran === 0 && $this->jatuh_tempo && $this->jatuh_tempo->isPast()) {
+            return 'Batas waktu pembayaran sudah lewat.';
+        }
+        return null;
     }
 
     // 🔗 Relasi

@@ -5,11 +5,20 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PembayaranController extends Controller
 {
+    /** Booking hanya boleh diakses pemiliknya (404 agar keberadaan booking orang lain tidak terbongkar). */
+    private function milikSendiri(Booking $booking): void
+    {
+        abort_unless($booking->user_id === Auth::id(), 404);
+    }
+
     public function show(Booking $booking)
     {
+        $this->milikSendiri($booking);
+
         // pastiin booking ini punya pembayaran DP
         $pembayaran = $booking->pembayaranDp()->first();
 
@@ -21,6 +30,8 @@ class PembayaranController extends Controller
     }
     public function uploadBukti(Request $request, Booking $booking)
     {
+        $this->milikSendiri($booking);
+
         $request->validate([
             'bukti_bayar' => 'required|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -28,6 +39,10 @@ class PembayaranController extends Controller
         $pembayaran = $booking->pembayaranDp;
         if (!$pembayaran) {
             abort(404, 'Data pembayaran DP tidak ditemukan.');
+        }
+
+        if ($alasan = $pembayaran->alasanTidakBisaUpload()) {
+            return back()->with('error', $alasan);
         }
 
         // Upload file

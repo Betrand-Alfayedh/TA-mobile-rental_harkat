@@ -9,185 +9,160 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}">
 
-    <title>Harkat Rental Yogyakarta</title>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <title>@yield('title', 'Harkat Rent Car Yogyakarta | Sewa Mobil Lepas Kunci & dengan Supir')</title>
+    <meta name="description"
+        content="Sewa mobil di Yogyakarta. Booking online, DP 50%, lepas kunci atau dengan supir. Ambil kunci di Sewon, Bantul.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    {{-- Animasi masuk hanya aktif bila JS jalan; tanpa JS konten tetap terlihat. --}}
+    <script>
+        document.documentElement.classList.add('js')
+    </script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body
-    class="bg-[#ffffff] flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-100 to-gray-200 text-gray-800 font-sans">
-    <!-- Loading Screen -->
-    <div id="loading-screen"
-        class="fixed inset-0 flex flex-col items-center justify-center z-50 bg-gradient-to-b from-green-900 to-green-500 text-white opacity-100 transition-opacity duration-700">
-        <img src="/images/logo.png" alt="Harkat Rent Car" class="w-24 h-24 animate-bounce" />
-        <p class="mt-4 text-lg font-semibold animate-pulse">Memuat...</p>
-    </div>
-    <!-- Header -->
+<body class="site flex min-h-screen flex-col">
     <x-layouts.header />
 
-    {{-- Customer Login Modal --}}
-    <div id="customerLoginModal" class="fixed inset-0 hidden items-center justify-center z-50">
-        <!-- Overlay -->
-        <div id="modalOverlay" class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-        <div class="relative w-full max-w-md bg-white rounded-lg shadow-lg overflow-auto">
-            <button id="closeLoginModal"
-                class="absolute top-2 right-2 text-gray-700 text-3xl font-bold hover:text-gray-500">&times;</button>
-
-            {{-- Form login customer --}}
+    {{-- Modal login customer --}}
+    <div id="customerLoginModal" class="fixed inset-0 z-50 hidden items-center justify-center overflow-y-auto p-4"
+        role="dialog" aria-modal="true" aria-label="Masuk">
+        <div id="modalOverlay" class="absolute inset-0 bg-forest-deep/70 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-md">
+            <button id="closeLoginModal" type="button" aria-label="Tutup"
+                class="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full text-2xl leading-none text-ink/50 transition-colors duration-500 ease-spring hover:bg-mint hover:text-forest">&times;</button>
             <x-auth.login-form :roleName="'Customer'" :color="'green'" :loginFrom="'customer'" />
         </div>
     </div>
 
-    {{-- Lengkapi Profile Modal --}}
-    <div id="profileModal" class="fixed inset-0 hidden items-center justify-center z-50">
-        <!-- Overlay -->
-        <div id="profileOverlay" class="absolute inset-0 bg-black bg-opacity-50"></div>
-        <div class="relative w-full max-w-md bg-white rounded-lg shadow-lg p-6">
-            <button id="closeProfileModal"
-                class="absolute top-2 right-2 text-gray-600 text-2xl font-bold hover:text-gray-800">&times;</button>
-
-            <h2 class="text-lg font-bold mb-3">Lengkapi Profil Dulu 🚨</h2>
-            <p class="mb-4 text-gray-600">Sebelum booking mobil, kamu perlu melengkapi data profil.</p>
-
-            <div class="flex justify-end gap-2">
-                <button id="cancelProfileModal" class="px-4 py-2 bg-gray-300 rounded">Nanti</button>
-                <a href="{{ route('profile.index') }}" class="px-4 py-2 bg-green-600 text-white rounded">Isi Profile</a>
+    {{-- Modal: lengkapi profil sebelum booking --}}
+    <div id="profileModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4" role="dialog"
+        aria-modal="true" aria-label="Lengkapi profil">
+        <div id="profileOverlay" class="absolute inset-0 bg-forest-deep/70 backdrop-blur-sm"></div>
+        <div class="bezel relative w-full max-w-md">
+            <div class="bezel-core p-7">
+                <h2 class="text-xl font-bold tracking-tight text-forest">Lengkapi profil dulu</h2>
+                <p class="mt-2 text-[15px] leading-relaxed text-ink/65">
+                    Nomor HP, alamat, dan asal kota dibutuhkan sebelum Anda bisa booking mobil.
+                </p>
+                <div class="mt-7 flex justify-end gap-2">
+                    <button id="cancelProfileModal" type="button" class="btn btn-outline pr-6">Nanti</button>
+                    <a href="{{ route('profile.index') }}" class="btn btn-primary">
+                        Isi profil <span class="btn-icon"><x-line-icon name="arrow-right" class="h-4 w-4" /></span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Hero (full width) -->
+
+    {{-- Hero lebar penuh (beranda) --}}
     @yield('hero')
-    <!-- Main Content -->
-    <main class="flex-1 pt-18 pb-20 px-4 max-w-6xl mx-auto w-full">
-        @yield('content')
-    </main>
 
-    <!-- Footer -->
+    {{-- Pita judul halaman dalam (opsional) --}}
+    @yield('pagehead')
+
+    {{-- Halaman biasa: konten di dalam wadah --}}
+    @hasSection('content')
+        <main class="mx-auto w-full max-w-6xl flex-1 px-4 pb-24 pt-6">
+            @yield('content')
+        </main>
+    @endif
+
+    {{-- Bagian lebar penuh (beranda) --}}
+    @yield('fullwidth')
+
     <x-layouts.footer />
-    {{-- lucide icons --}}
-    <script type="module">
-        import "lucide/dist/umd/lucide.js";
-        lucide.createIcons();
-    </script>
-    <script type="module" src="{{ asset('resources/js/showcase.js') }}"></script>
 
     <script>
-        const modal = document.getElementById('customerLoginModal');
-        const overlay = document.getElementById('modalOverlay');
-        const closeBtn = document.getElementById('closeLoginModal');
-
-        // Semua tombol login yang bisa buka modal
-        const loginDesktop = document.getElementById('openCustomerLoginModalDesktop');
-        const loginMobile = document.getElementById('openCustomerLoginModalMobile');
-        const loginBtn = document.getElementById('openCustomerLoginModal'); // fallback
-
-        // Semua tombol yang bisa buka modal
-        const loginTriggers = document.querySelectorAll(
-            '#openCustomerLoginModal, #openCustomerLoginModalDesktop, #openCustomerLoginModalMobile');
-
-        loginTriggers.forEach(btn => {
-            btn?.addEventListener('click', e => {
-                e.preventDefault();
-                modal?.classList.remove('hidden');
-                modal?.classList.add('flex');
-            });
-        });
-
-        // Tutup modal
-        [overlay, closeBtn].forEach(el => {
-            el?.addEventListener('click', () => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
-            });
-        });
-    </script>
-    <script>
+        // Modal login & profil
+        const openModal = el => {
+            el?.classList.remove('hidden');
+            el?.classList.add('flex');
+        };
+        const closeModal = el => {
+            el?.classList.add('hidden');
+            el?.classList.remove('flex');
+        };
+        const loginModal = document.getElementById('customerLoginModal');
         const profileModal = document.getElementById('profileModal');
-        const profileOverlay = document.getElementById('profileOverlay');
-        const closeProfileModal = document.getElementById('closeProfileModal');
-        const cancelProfileModal = document.getElementById('cancelProfileModal');
 
-        // Function buat munculin modal
+        document.querySelectorAll('[data-open-login]').forEach(btn =>
+            btn.addEventListener('click', e => {
+                e.preventDefault();
+                openModal(loginModal);
+            }));
+        ['modalOverlay', 'closeLoginModal'].forEach(id =>
+            document.getElementById(id)?.addEventListener('click', () => closeModal(loginModal)));
+
         function openProfileModal() {
-            profileModal.classList.remove('hidden');
-            profileModal.classList.add('flex');
+            openModal(profileModal);
         }
+        ['profileOverlay', 'cancelProfileModal'].forEach(id =>
+            document.getElementById(id)?.addEventListener('click', () => closeModal(profileModal)));
 
-        // Tutup modal
-        [profileOverlay, closeProfileModal, cancelProfileModal].forEach(el => {
-            el?.addEventListener('click', () => {
-                profileModal.classList.add('hidden');
-                profileModal.classList.remove('flex');
-            });
-        });
-    </script>
-
-    <!-- JS Dropdown -->
-    <script>
-        document.getElementById('loginDropdownBtn')?.addEventListener('click', function() {
-            const dropdown = document.getElementById('loginDropdown');
-            dropdown.classList.toggle('hidden');
-        });
-
-        window.addEventListener('click', function(e) {
-            const btn = document.getElementById('loginDropdownBtn');
-            const dropdown = document.getElementById('loginDropdown');
-            if (!btn?.contains(e.target) && !dropdown?.contains(e.target)) {
-                dropdown?.classList.add('hidden');
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeModal(loginModal);
+                closeModal(profileModal);
             }
         });
+
+        // Satu momen masuk: konten naik pelan saat terlihat (IntersectionObserver, bukan scroll listener)
+        const reveals = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(en => {
+                    if (en.isIntersecting) {
+                        en.target.classList.add('is-in');
+                        io.unobserve(en.target);
+                    }
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px'
+            });
+            reveals.forEach(el => io.observe(el));
+        } else {
+            reveals.forEach(el => el.classList.add('is-in'));
+        }
     </script>
 
-    <!-- Loading Screen Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            setTimeout(() => {
-                let loader = document.getElementById('loading-screen');
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                    document.getElementById('content').classList.remove('hidden');
-                }, 700);
-            }, 1500); // Delay 1.5 detik biar animasinya kebaca
-        });
-    </script>
-
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @if (session('success'))
         <script>
             Swal.fire({
                 icon: 'success',
-                title: 'Berhasil!',
-                text: '{{ session('success') }}',
+                title: 'Berhasil',
+                text: @json(session('success')),
                 showConfirmButton: false,
-                timer: 3000
+                timer: 3000,
+                confirmButtonColor: '#16A34A'
             })
         </script>
     @endif
-    <!-- Script auto-open modal kalau ada error -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            @if ($errors->has('email') || $errors->has('password'))
-                const modal = document.getElementById("customerLoginModal");
-                modal?.classList.remove("hidden");
-                modal?.classList.add("flex");
-            @endif
-        });
-    </script>
-    @stack('scripts') {{-- ini yang penting buat munculin script dari @push --}}
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Tidak berhasil',
+                text: @json(session('error')),
+                confirmButtonColor: '#16A34A'
+            })
+        </script>
+    @endif
+
+    {{-- Buka modal login otomatis bila ada galat login --}}
+    @if ($errors->has('email') || $errors->has('password'))
+        <script>
+            openModal(loginModal);
+        </script>
+    @endif
+
+    @stack('scripts')
 </body>
 
 </html>

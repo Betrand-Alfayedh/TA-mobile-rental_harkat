@@ -130,6 +130,33 @@ class Mobil extends Model
     /**
      * Query scopes
      */
+    /**
+     * Apakah mobil bisa disewa pada rentang tanggal ini?
+     * Ketersediaan ditentukan oleh tanggal (bukan status global): mobil yang sudah dibooking
+     * untuk bulan depan tetap bisa disewa hari ini selama jadwalnya tidak bentrok.
+     */
+    public function isAvailableFor(\Carbon\Carbon $start, \Carbon\Carbon $end): bool
+    {
+        return $this->status_approval === self::APPROVAL_APPROVED
+            && ! in_array($this->status, [self::STATUS_RUSAK, self::STATUS_MAINTENANCE], true)
+            && ! $this->bookingDetails()
+                ->where('tanggal_sewa', '<=', $end)
+                ->where('tanggal_kembali', '>=', $start)
+                ->whereHas('booking', fn ($q) => $q->whereIn('status', [Booking::STATUS_BOOKED, Booking::STATUS_ONGOING]))
+                ->exists();
+    }
+
+    /** Mobil yang tidak rusak/maintenance, approved, dan tidak bentrok dengan booking aktif pada rentang tanggal. */
+    public function scopeFreeBetween($query, $start, $end)
+    {
+        return $query->approved()
+            ->whereNotIn('status', [self::STATUS_RUSAK, self::STATUS_MAINTENANCE])
+            ->whereDoesntHave('bookingDetails', fn ($q) => $q
+                ->where('tanggal_sewa', '<=', $end)
+                ->where('tanggal_kembali', '>=', $start)
+                ->whereHas('booking', fn ($b) => $b->whereIn('status', [Booking::STATUS_BOOKED, Booking::STATUS_ONGOING])));
+    }
+
     public function scopeAvailable($query)
     {
         return $query->where('status', self::STATUS_TERSEDIA);

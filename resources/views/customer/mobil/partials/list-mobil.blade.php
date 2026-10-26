@@ -1,80 +1,75 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+@php
+    $isCustomer = auth('web')->check() && auth('web')->user()->isRole('Customer');
+    $rp = fn($n) => 'Rp ' . number_format((int) $n, 0, ',', '.');
+@endphp
+
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     @forelse ($mobils as $mobil)
-        <div
-            class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-300 flex flex-col">
+        <article class="bezel">
+            <div class="bezel-core flex h-full flex-col overflow-hidden">
+                <div class="relative">
+                    <x-car-image :file="$mobil->gambar" :alt="$mobil->masterMobil->nama" class="h-44" />
 
-            <!-- Gambar Mobil + Badge -->
-            <div class="relative bg-gray-50 flex items-center justify-center h-48">
-                <img src="{{ asset('public/gambar_mobil/' . $mobil->gambar) }}" alt="{{ $mobil->nama_mobil }}"
-                    class="object-contain max-h-full p-3">
-
-                <!-- Badge tipe mobil -->
-                @if ($mobil->masterMobil->tipe)
-                    <span
-                        class="absolute top-3 left-3 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
-                        {{ $mobil->masterMobil->tipe->nama_tipe }}
-                    </span>
-                @endif
-
-                <!-- Badge status -->
-                @if ($mobil->status === \App\Models\Mobil::STATUS_MAINTENANCE)
-                    <span class="absolute top-3 right-3 bg-yellow-500 text-white text-xs px-3 py-1 rounded-full shadow">
-                        {{ $mobil->status_text }}
-                    </span>
-                @elseif($mobil->status === \App\Models\Mobil::STATUS_RUSAK)
-                    <span class="absolute top-3 right-3 bg-red-500 text-white text-xs px-3 py-1 rounded-full shadow">
-                        {{ $mobil->status_text }}
-                    </span>
-                @else
-                    <span class="absolute top-3 right-3 bg-emerald-500 text-white text-xs px-3 py-1 rounded-full shadow">
-                        {{ $mobil->status_text }}
-                    </span>
-                @endif
-            </div>
-
-            <!-- Info Mobil -->
-            <div class="p-4 flex flex-col flex-1">
-                <h2 class="text-lg font-bold text-gray-800 mb-1">{{ $mobil->masterMobil->nama }}</h2>
-                <p class="text-sm text-gray-500 mb-3">{{ $mobil->merk }}</p>
-
-                <!-- Harga -->
-                <div class="mb-4">
-                    <p class="text-green-600 font-extrabold text-xl">
-                        Rp {{ number_format($mobil->harga_sewa, 0, ',', '.') }}
-                        <span class="text-sm font-medium">/hari</span>
-                    </p>
-                    <p class="text-gray-500 text-sm mt-1">
-                        Dengan supir: <span class="font-semibold text-green-600">
-                            Rp {{ number_format($mobil->harga_all_in, 0, ',', '.') }}/hari
+                    @if ($mobil->masterMobil->tipe)
+                        <span class="absolute left-3 top-3 rounded-full bg-white px-3 py-1 text-xs font-semibold text-forest shadow-sm">
+                            {{ $mobil->masterMobil->tipe->nama_tipe }}
                         </span>
-                    </p>
+                    @endif
+
+                    @if ($mobil->status === \App\Models\Mobil::STATUS_MAINTENANCE)
+                        <span class="absolute right-3 top-3 rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">
+                            {{ $mobil->status_text }}
+                        </span>
+                    @endif
                 </div>
 
-                <!-- Tombol Booking -->
-                @if ($mobil->status === \App\Models\Mobil::STATUS_MAINTENANCE)
-                    <button disabled
-                        class="mt-auto w-full bg-gray-400 text-white px-5 py-2 rounded-lg text-sm font-medium cursor-not-allowed">
-                        Tersedia dalam 2-4 jam lagi
-                    </button>
-                @elseif(Auth::check() && Auth::user()->isRole('Customer'))
-                    <a href="{{ route('booking.create', ['mobil_id' => $mobil->id]) }}"
-                        class="mt-auto w-full bg-emerald-500 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition text-center">
-                        Booking Sekarang
-                    </a>
-                @else
-                    <a href="#" id="openCustomerLoginModalMobile"
-                        class="mt-auto w-full bg-emerald-500 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-emerald-600 transition text-center">
-                        Booking Sekarang
-                    </a>
-                @endif
+                <div class="flex flex-1 flex-col p-5">
+                    <h2 class="text-lg font-bold tracking-tight text-forest">{{ $mobil->masterMobil->nama }}</h2>
+                    <p class="mt-0.5 text-sm text-ink/55">{{ $mobil->merk }} &middot; {{ $mobil->tahun }}</p>
+
+                    <dl class="mt-4 space-y-1.5 text-sm">
+                        <div class="flex items-baseline justify-between gap-2">
+                            <dt class="text-ink/55">Lepas kunci</dt>
+                            <dd class="font-bold text-ink">{{ $rp($mobil->harga_sewa) }}<span class="font-medium text-ink/50"> /hari</span></dd>
+                        </div>
+                        <div class="flex items-baseline justify-between gap-2">
+                            <dt class="text-ink/55">Dengan supir</dt>
+                            <dd class="font-bold text-ink">{{ $rp($mobil->harga_all_in) }}<span class="font-medium text-ink/50"> /hari</span></dd>
+                        </div>
+                    </dl>
+
+                    <div class="mt-auto pt-5">
+                        @if ($mobil->status === \App\Models\Mobil::STATUS_MAINTENANCE)
+                            <button disabled class="w-full cursor-not-allowed rounded-full bg-ink/5 px-5 py-3 text-sm font-semibold text-ink/40">
+                                Tersedia dalam 2-4 jam lagi
+                            </button>
+                        @elseif ($isCustomer)
+                            <a href="{{ route('booking.create', ['mobil_id' => $mobil->id]) }}" class="btn btn-primary w-full justify-between">
+                                Booking <span class="btn-icon"><x-line-icon name="arrow-up-right" class="h-4 w-4" /></span>
+                            </a>
+                        @else
+                            <a href="#" data-open-login class="btn btn-primary w-full justify-between"
+                                onclick="event.preventDefault(); openModal(loginModal)">
+                                Booking <span class="btn-icon"><x-line-icon name="arrow-up-right" class="h-4 w-4" /></span>
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </article>
+    @empty
+        <div class="col-span-full">
+            <div class="bezel">
+                <div class="bezel-core px-8 py-16 text-center">
+                    <x-line-icon name="search" class="mx-auto h-10 w-10 text-forest/30" />
+                    <p class="mt-4 font-semibold text-forest">Mobil tidak ditemukan</p>
+                    <p class="mt-1 text-ink/60">Coba kata kunci lain atau pilih tipe &quot;Semua&quot;.</p>
+                </div>
             </div>
         </div>
-    @empty
-        <p class="col-span-4 text-center text-gray-500">Mobil tidak ditemukan.</p>
     @endforelse
 </div>
 
-<!-- Pagination -->
-<div class="mt-8">
+<div class="mt-10">
     {{ $mobils->links() }}
 </div>

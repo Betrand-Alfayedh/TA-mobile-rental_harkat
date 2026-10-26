@@ -3,12 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Mail\InvoiceMail;
 use App\Models\Pembayaran;
-use App\Notifications\PembayaranDitolakNotification;
-use Barryvdh\DomPDF\Facade\Pdf;
+use App\Services\PembayaranService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 
 class PembayaranController extends Controller
 {
@@ -18,59 +15,51 @@ class PembayaranController extends Controller
         return view('admin.payments.index', compact('payments'));
     }
 
-    public function verifikasi($id)
+    public function verifikasi($id, PembayaranService $service)
     {
         $pembayaran = Pembayaran::with(['booking.user', 'booking.details.mobil'])->findOrFail($id);
 
-        // ✅ Update status pembayaran jadi verified
-        $pembayaran->update([
-            'status_pembayaran' => 1, // 1 = verified
-        ]);
-
-        $booking = $pembayaran->booking;
-        $customer = $booking->user; // ini customer (role=4)
-
-        // ✅ Kalau pembayaran ini jenis DP (1), buat otomatis record pelunasan (2)
-        if ($pembayaran->jenis == 1) {
-            Pembayaran::create([
-                'booking_id'        => $booking->id,
-                'tanggal_pembayaran' => null, // kosong dulu, nunggu bayar
-                'jumlah'            => $booking->total_harga - $pembayaran->jumlah, // sisa yg harus dilunasi
-                'metode_pembayaran' => null, // nunggu input dari customer
-                'jenis'             => 2, // pelunasan
-                'status_pembayaran' => 0, // pending
-                'catatan_admin'     => null,
-                'foto_bukti'        => null,
-                'jatuh_tempo'       => $booking->details->max('tanggal_kembali'), // misalnya jatuh tempo pas pengembalian
-            ]);
-        }
-
-        // ✅ Generate PDF Invoice
-        $pdf = Pdf::loadView('invoices.pdf', compact('booking', 'pembayaran'))->output();
-
-        try {
-            // ✅ Kirim email ke customer
-            Mail::to($customer->email)->send(new InvoiceMail($booking, $pembayaran, $pdf));
-        } catch (\Exception $e) {
-            return back()->with('error', 'Pembayaran terverifikasi tapi gagal kirim email: ' . $e->getMessage());
-        }
-
-        return back()->with('success', 'Pembayaran diverifikasi & invoice terkirim ke customer.');
+        return $this->lunaskan(fn () => $service->verifikasi($pembayaran, auth()->user()), $service);
     }
 
-    public function tolak(Request $request, Pembayaran $pembayaran)
+    /** Admin menerima pembayaran langsung (mis. tunai saat jemput/kembali) tanpa bukti upload. */
+    public function tandaiLunas(Request $request, Pembayaran $pembayaran, PembayaranService $service)
+    {
+        $request->validate(['metode_pembayaran' => 'required|in:1,2,3']);
+
+        return $this->lunaskan(
+            fn () => $service->tandaiLunas($pembayaran, (int) $request->metode_pembayaran, auth()->user()),
+            $service
+        );
+    }
+
+    /** Jalankan aksi pelunasan lalu kirim invoice; galat aturan bisnis ditampilkan sebagai pesan. */
+    private function lunaskan(\Closure $aksi, PembayaranService $service)
+    {
+        try {
+            $pembayaran = $aksi();
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        if ($galat = $service->kirimInvoice($pembayaran)) {
+            return back()->with('error', 'Pembayaran tercatat lunas tapi gagal kirim email: ' . $galat);
+        }
+
+        return back()->with('success', 'Pembayaran dicatat lunas & invoice terkirim ke customer.');
+    }
+
+    public function tolak(Request $request, Pembayaran $pembayaran, PembayaranService $service)
     {
         $request->validate([
             'catatan_admin' => 'nullable|string|max:500',
         ]);
 
-        $pembayaran->update([
-            'status_pembayaran' => 0, // ditolak
-            'catatan_admin' => $request->catatan_admin,
-        ]);
-
-        // ✅ kirim email ke customer
-        $pembayaran->booking->user->notify(new PembayaranDitolakNotification($pembayaran));
+        try {
+            $service->tolak($pembayaran, $request->catatan_admin, auth()->user());
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
 
         return back()->with('error', 'Pembayaran ditolak ❌ dan email notifikasi terkirim.');
     }

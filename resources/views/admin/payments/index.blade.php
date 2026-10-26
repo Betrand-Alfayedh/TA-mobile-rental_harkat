@@ -107,8 +107,24 @@
                                 </dialog>
                             @elseif ($payment->status_pembayaran == 1)
                                 <span class="text-green-600 font-semibold">✅ Diverifikasi</span>
+                            @elseif ($payment->status_pembayaran == 0 && $payment->booking->status != \App\Models\Booking::STATUS_CANCELED)
+                                {{-- Belum bayar: admin bisa mencatat pembayaran langsung (mis. tunai) --}}
+                                <form action="{{ route('admin.pembayaran.lunas', $payment->id) }}" method="POST"
+                                    class="flex items-center gap-1"
+                                    onsubmit="return confirm('Tandai pembayaran ini LUNAS?')">
+                                    @csrf
+                                    @method('PUT')
+                                    <select name="metode_pembayaran" class="border rounded px-1 py-1 text-sm">
+                                        <option value="1">Cash</option>
+                                        <option value="2">Transfer</option>
+                                        <option value="3">QRIS</option>
+                                    </select>
+                                    <button type="submit" class="px-2 py-1 bg-green-600 text-white rounded text-sm hover:bg-green-700">
+                                        Tandai Lunas
+                                    </button>
+                                </form>
                             @elseif ($payment->status_pembayaran == 0)
-                                <span class="text-red-600 font-semibold">❌ Ditolak / Belum Bayar</span>
+                                <span class="text-gray-500 font-semibold">Booking dibatalkan</span>
                             @endif
                         </td>
                     </tr>

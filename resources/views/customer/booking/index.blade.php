@@ -1,98 +1,40 @@
 @extends('layouts.landing')
 
+@section('title', 'Pesanan Saya | Harkat Rent Car')
+
+@section('pagehead')
+    <x-page-head title="Pesanan saya"
+        subtitle="Pantau booking yang sedang berjalan, bayar DP, dan lihat status pembayaran." />
+@endsection
+
 @section('content')
-    <div class="max-w-4xl mx-auto px-4 pt-20">
-        <h1 class="text-2xl font-bold text-gray-800 mb-6">📋 Pesanan Aktif</h1>
+    <div class="relative z-10 -mt-16 space-y-6">
+        @forelse ($bookings as $booking)
+            <div class="reveal" style="--d: {{ min($loop->index, 4) * 70 }}ms">
+                @include('customer.booking.partials.booking-card', ['booking' => $booking, 'history' => false])
+            </div>
+        @empty
+            <div class="bezel">
+                <div class="bezel-core px-8 py-20 text-center">
+                    <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-3xl bg-mint text-forest">
+                        <x-line-icon name="car" class="h-8 w-8" />
+                    </span>
+                    <h2 class="mt-6 text-xl font-bold tracking-tight text-forest">Belum ada pesanan aktif</h2>
+                    <p class="mx-auto mt-2 max-w-sm text-ink/60">
+                        Pilih mobil dari armada kami, lalu booking dalam beberapa menit.
+                    </p>
+                    <a href="{{ route('mobil.index') }}" class="btn btn-primary mt-8">
+                        Lihat armada <span class="btn-icon"><x-line-icon name="arrow-right" class="h-4 w-4" /></span>
+                    </a>
+                </div>
+            </div>
+        @endforelse
 
-        @if ($bookings->isEmpty())
-            <p class="text-gray-600">Belum ada pesanan aktif.</p>
-        @else
-            <table class="w-full border-collapse shadow rounded overflow-hidden">
-                <thead>
-                    <tr class="bg-green-600 text-white">
-                        <th class="border px-4 py-2">No</th>
-                        <th class="border px-4 py-2">Jumlah Mobil</th>
-                        <th class="border px-4 py-2">Uang Muka</th>
-                        <th class="border px-4 py-2">Total</th>
-                        <th class="border px-4 py-2">Status</th>
-                        <th class="border px-4 py-2">Jatuh Tempo</th>
-                        <th class="border px-4 py-2">Aksi</th> {{-- ✅ kolom baru --}}
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($bookings as $booking)
-                        <tr class="bg-white hover:bg-green-50 cursor-pointer"
-                            onclick="document.getElementById('detail-{{ $booking->id }}').classList.toggle('hidden')">
-                            <td class="border px-4 py-2">{{ $loop->iteration }}</td>
-                            <td class="border px-4 py-2">{{ $booking->details->count() }}</td>
-                            <td class="border px-4 py-2">{{ $booking->uang_muka_rp }}</td>
-                            <td class="border px-4 py-2">{{ $booking->total_harga_rp }}</td>
-                            <td class="border px-4 py-2">{!! $booking->status_badge !!}</td>
-                            <td class="border px-4 py-2">{{ $booking->pembayaranDp->jatuh_tempo }}</td>
-                            <td class="border px-4 py-2 text-center">
-                                @switch($booking->pembayaranDp->status_pembayaran ?? null)
-                                    @case(0)
-                                        @if ($booking->pembayaranDp->catatan_admin)
-                                            <p class="text-red-600 mb-2">
-                                                ❌ Pembayaran ditolak: {{ $booking->pembayaranDp->catatan_admin }}
-                                            </p>
-                                        @endif
-                                        <a href="{{ route('pembayaran.show', $booking->id) }}"
-                                            class="bg-red-600 hover:bg-yellow-700 text-white text-sm px-3 py-1 rounded shadow">
-                                            Bayar DP
-                                        </a>
-                                    @break
-
-                                    @case(2)
-                                        <span class="text-yellow-600 font-semibold">Menunggu Verifikasi</span>
-                                    @break
-
-                                    @case(1)
-                                        <span class="text-green-600 font-semibold">Sudah Bayar</span>
-                                    @break
-
-                                    @default
-                                        <span class="text-gray-500">Belum ada data pembayaran</span>
-                                @endswitch
-
-                            </td>
-                        </tr>
-
-                        {{-- Detail per mobil --}}
-                        <tr id="detail-{{ $booking->id }}" class="hidden">
-                            <td colspan="7" class="border px-4 py-2 bg-green-50">
-                                <table class="w-full border">
-                                    <thead>
-                                        <tr class="bg-green-100 text-green-800">
-                                            <th class="border px-2 py-1">Mobil</th>
-                                            <th class="border px-2 py-1">Supir</th>
-                                            <th class="border px-2 py-1">Tanggal</th>
-                                            <th class="border px-2 py-1">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        @foreach ($booking->details as $detail)
-                                            <tr>
-                                                <td class="border px-2 py-1">{{ $detail->mobil->masterMobil->nama ?? '-' }}</td>
-                                                <td class="border px-2 py-1">
-                                                    {{ $detail->supir ? $detail->supir->user->name : 'Tanpa Supir' }}
-                                                </td>
-                                                <td class="border px-2 py-1">
-                                                    {{ $detail->tanggal_mulai_format }} s/d
-                                                    {{ $detail->tanggal_selesai_format }}
-                                                </td>
-                                                <td class="border px-2 py-1">
-                                                    {{ $detail->status_label }}
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+        @if ($bookings->isNotEmpty())
+            <p class="pt-2 text-center text-sm text-ink/50">
+                Booking yang sudah selesai atau dibatalkan ada di
+                <a href="{{ route('riwayat.index') }}" class="font-semibold text-forest underline-offset-4 hover:underline">Riwayat</a>.
+            </p>
         @endif
     </div>
 @endsection

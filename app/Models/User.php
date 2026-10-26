@@ -54,7 +54,11 @@ class User extends Authenticatable
         'no_hp',
         'alamat',
         'asal_kota',
+        'aktif',
     ];
+
+    /** Akun baru aktif secara bawaan (juga pada instance yang belum dimuat ulang dari database). */
+    protected $attributes = ['aktif' => true];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -94,6 +98,7 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'aktif' => 'boolean',
         ];
     }
     public function supir()

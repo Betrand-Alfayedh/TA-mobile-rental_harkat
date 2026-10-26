@@ -22,7 +22,7 @@ Route::middleware('guest:web')->group(function () {
     Route::get('auth/google/callback', [GoogleController::class, 'callback']);
 
     Route::get('login/{role}', [LoginController::class, 'showLoginForm'])->name('login.form');
-    Route::post('login', [LoginController::class, 'login'])->name('login');
+    Route::post('login', [LoginController::class, 'login'])->middleware('throttle:login')->name('login');
 
     // REGISTER untuk customer aja
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');

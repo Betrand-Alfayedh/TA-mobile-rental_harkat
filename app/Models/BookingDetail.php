@@ -27,7 +27,6 @@ class BookingDetail extends Model
         'tanggal_selesai_format',
         'tanggal_mulai_iso',
         'tanggal_selesai_iso',
-        'total_harga_rp',
         'status_label',
     ];
 
@@ -76,6 +75,29 @@ class BookingDetail extends Model
     }
 
     // Relasi ke Booking
+    /** Supir kembali tersedia bila tidak punya job aktif lain (dipanggil saat unit dikembalikan/dibatalkan). */
+    public function bebaskanSupir(): void
+    {
+        if (! $this->supir_id) {
+            return;
+        }
+
+        $masihBertugas = self::where('supir_id', $this->supir_id)
+            ->where('id', '!=', $this->id)
+            ->whereIn('status', [Booking::STATUS_BOOKED, Booking::STATUS_ONGOING])
+            ->exists();
+
+        if (! $masihBertugas) {
+            Supir::whereKey($this->supir_id)->where('status', 2)->update(['status' => 1]);
+        }
+    }
+
+    /** Ada tawaran terbuka ke sopir dan belum ada yang menerima. */
+    public function getMenungguSupirAttribute(): bool
+    {
+        return ! $this->supir_id && $this->jobOffers->where('status', 0)->isNotEmpty();
+    }
+
     public function booking()
     {
         return $this->belongsTo(Booking::class);
@@ -84,6 +106,10 @@ class BookingDetail extends Model
     public function mobil()
     {
         return $this->belongsTo(Mobil::class);
+    }
+    public function laporanKondisis()
+    {
+        return $this->hasMany(LaporanKondisi::class);
     }
     public function jobOffers()
     {

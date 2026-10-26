@@ -14,7 +14,7 @@ class PembayaranResource extends JsonResource
             'booking_id'            => $this->booking_id,
             'jenis'                 => $this->jenis,
             'jenis_text'            => $this->jenis_text,
-            'jumlah'                => $this->jumlah,
+            'jumlah'                => (int) $this->jumlah,
             'metode_pembayaran'     => $this->metode_pembayaran,
             'metode_pembayaran_text' => $this->metode_pembayaran_text,
             'status_pembayaran'     => $this->status_pembayaran,
@@ -22,8 +22,8 @@ class PembayaranResource extends JsonResource
             'foto_bukti'            => $this->foto_bukti
                 ? asset('storage/' . $this->foto_bukti)
                 : null,
-            'tanggal_pembayaran'    => $this->tanggal_pembayaran,
-            'jatuh_tempo'           => $this->jatuh_tempo,
+            'tanggal_pembayaran'    => $this->tanggal_pembayaran?->format('Y-m-d H:i:s'),
+            'jatuh_tempo'           => $this->jatuh_tempo?->format('Y-m-d H:i:s'),
             'catatan_admin'         => $this->catatan_admin,
             'keterangan'            => $this->keterangan,
         ];

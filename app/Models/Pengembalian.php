@@ -11,6 +11,9 @@ class Pengembalian extends Model
 {
     use HasFactory;
 
+    /** Tarif denda keterlambatan per jam (rupiah). */
+    public const DENDA_PER_JAM = 50000;
+
     protected $fillable = [
         'booking_detail_id',
         'tanggal_kembali_aktual',
@@ -19,6 +22,7 @@ class Pengembalian extends Model
         'nominal_denda',
         'catatan',
         'gambar',
+        'dicatat_oleh',
     ];
 
     // Relasi ke booking_detail
@@ -31,7 +35,7 @@ class Pengembalian extends Model
     protected function tanggalKembaliAktual(): Attribute
     {
         return Attribute::make(
-            get: fn($value) => Carbon::parse($value)->translatedFormat('d F Y'),
+            get: fn($value) => Carbon::parse($value)->translatedFormat('d F Y H:i'),
         );
     }
 
@@ -47,7 +51,7 @@ class Pengembalian extends Model
     protected function dendaFormat(): Attribute
     {
         return Attribute::make(
-            get: fn() => $this->denda == 1 ? 'Denda' : '-',
+            get: fn() => $this->denda_flag == 1 ? 'Denda' : '-',
         );
     }
 }

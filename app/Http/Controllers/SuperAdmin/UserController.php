@@ -62,13 +62,23 @@ class UserController extends Controller
     }
 
 
+    /** SuperAdmin tidak boleh diubah/dihapus lewat menu ini (termasuk akun sendiri). */
+    private function guardTarget(User $user): void
+    {
+        abort_if($user->role === 1, 403, 'Akun SuperAdmin tidak dapat diubah atau dihapus dari sini.');
+    }
+
     public function edit(User $user)
     {
+        $this->guardTarget($user);
+
         return view('superadmin.users.edit', compact('user'));
     }
 
     public function update(Request $request, User $user)
     {
+        $this->guardTarget($user);
+
         $request->validate([
             'name'     => 'required|string',
             'email'    => 'required|email|unique:users,email,' . $user->id,
@@ -89,6 +99,13 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $this->guardTarget($user);
+
+        // Menghapus user men-cascade ke booking, detail, dan pembayaran → riwayat keuangan hilang.
+        if ($user->bookings()->exists()) {
+            return back()->with('error', 'User ini punya riwayat booking sehingga tidak dapat dihapus.');
+        }
+
         $user->delete();
         return redirect()->route('superadmin.users.index')->with('success', 'User berhasil dihapus');
     }

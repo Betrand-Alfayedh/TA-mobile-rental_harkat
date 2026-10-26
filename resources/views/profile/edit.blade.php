@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="max-w-3xl mx-auto px-4 pt-20">
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">✏️ Edit Profil Kamu</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Edit Profil Kamu</h1>
 
         @if (session('success'))
             <div class="mb-6 p-4 bg-green-100 text-green-700 rounded-lg shadow">
-                ✅ {{ session('success') }}
+                {{ session('success') }}
             </div>
         @endif
 
@@ -73,7 +73,7 @@
                 
                 {{-- Ganti Password --}}
                 <div class="pt-4 border-t border-gray-200">
-                    <h2 class="text-lg font-semibold text-gray-700 mb-3">🔐 Ganti Password</h2>
+                    <h2 class="text-lg font-semibold text-gray-700 mb-3">Ganti Password</h2>
 
                     <div class="space-y-4">
                         {{-- Password Baru --}}
@@ -102,7 +102,7 @@
                 <div class="flex justify-end">
                     <button type="submit"
                         class="bg-green-600 text-white px-6 py-2 rounded-xl hover:bg-green-700 transition shadow-md">
-                        💾 Simpan Perubahan
+                        Simpan Perubahan
                     </button>
                 </div>
             </form>

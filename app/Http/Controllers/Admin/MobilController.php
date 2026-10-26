@@ -48,7 +48,7 @@ class MobilController extends Controller
         // Upload gambar utama ke public/gambar_mobil
         if ($request->hasFile('gambar')) {
             $file = $request->file('gambar');
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $filename = $file->hashName(); // nama acak + ekstensi dari isi file, bukan dari klien
             $file->move(public_path('gambar_mobil'), $filename);
             $data['gambar'] = $filename;
         }
@@ -58,7 +58,7 @@ class MobilController extends Controller
         // Upload additional images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
-                $filename = time() . '_' . $img->getClientOriginalName();
+                $filename = $img->hashName();
                 $img->move(public_path('mobil_images_additionals'), $filename);
                 $mobil->images()->create(['image_path' => $filename]);
             }
@@ -109,43 +109,46 @@ class MobilController extends Controller
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:8192',
         ]);
 
-        // Snapshot data lama
-        $old = $mobil->only(['master_mobil_id', 'plat_nomor', 'merk', 'tahun', 'harga_sewa', 'harga_all_in', 'status', 'gambar']);
+        // Snapshot data lama (yang sedang live)
+        $old = $mobil->only(['master_mobil_id', 'plat_nomor', 'merk', 'tahun', 'harga_sewa', 'harga_all_in', 'gambar']);
 
-        $data = $request->except('gambar', 'images');
-        $data['status_approval'] = 2;
+        // Usulan perubahan: HANYA field yang divalidasi (status tidak boleh diubah dari form ini).
+        $new = [
+            'master_mobil_id' => (int) $request->master_mobil_id,
+            'plat_nomor'      => $request->plat_nomor,
+            'merk'            => $request->merk,
+            'tahun'           => (int) $request->tahun,
+            'harga_sewa'      => (int) $request->harga_sewa,
+            'harga_all_in'    => $request->filled('harga_all_in') ? (int) $request->harga_all_in : null,
+            'gambar'          => $mobil->gambar,
+        ];
 
-        // Upload gambar utama
+        // Gambar baru disimpan, tetapi baru dipakai (dan yang lama dihapus) saat SuperAdmin menyetujui.
         if ($request->hasFile('gambar')) {
-            if ($mobil->gambar && file_exists(public_path('gambar_mobil/' . $mobil->gambar))) {
-                unlink(public_path('gambar_mobil/' . $mobil->gambar));
-            }
             $file = $request->file('gambar');
-            $filename = time() . '_' . $file->getClientOriginalName();
+            $filename = $file->hashName(); // nama acak + ekstensi dari isi file, bukan dari klien
             $file->move(public_path('gambar_mobil'), $filename);
-            $data['gambar'] = $filename;
+            $new['gambar'] = $filename;
         }
 
-        $mobil->update($data);
-
+        // Mobil tetap live dengan data lama (status & status_approval tidak disentuh) sampai disetujui.
         // Upload additional images
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $img) {
-                $filename = time() . '_' . $img->getClientOriginalName();
+                $filename = $img->hashName();
                 $img->move(public_path('mobil_images_additionals'), $filename);
                 $mobil->images()->create(['image_path' => $filename]);
             }
         }
 
-        // Approval snapshot
         $mobil->approvals()->create([
             'requested_by' => $user->id,
             'status' => 2,
             'old_data' => $old,
-            'new_data' => $mobil->only(['master_mobil_id', 'plat_nomor', 'merk', 'tahun', 'harga_sewa', 'harga_all_in', 'status', 'gambar']),
+            'new_data' => $new,
         ]);
 
-        return redirect()->route('admin.mobil.index')->with('success', "Mobil berhasil diupdate, menunggu approval super admin.");
+        return redirect()->route('admin.mobil.index')->with('success', "Perubahan mobil diajukan, menunggu approval super admin. Data lama tetap berlaku sampai disetujui.");
     }
 
     public function updateStatus($id)

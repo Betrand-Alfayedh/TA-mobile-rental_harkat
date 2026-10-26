@@ -80,7 +80,7 @@
                                                 {{ $detail->status_label }}
                                             </td>
                                             <td class="border px-2 py-1">
-                                                @if ($detail->mobil->status === \App\Models\Mobil::STATUS_DIBOOKING)
+                                                @if ($detail->status == \App\Models\Booking::STATUS_BOOKED && $booking->status == \App\Models\Booking::STATUS_BOOKED)
                                                     <form
                                                         action="{{ route('admin.booking.konfirmasiJemput', $detail->id) }}"
                                                         method="POST" class="konfirmasi-jemput-form">
@@ -104,6 +104,20 @@
                                     @endforeach
                                 </tbody>
                             </table>
+
+                            @if ($booking->status == \App\Models\Booking::STATUS_BOOKED)
+                                <form action="{{ route('admin.booking.cancel', $booking->id) }}" method="POST"
+                                    class="mt-3 flex items-center gap-2"
+                                    onsubmit="return confirm('Batalkan booking #{{ $booking->id }}? Customer akan diberi tahu lewat email.')">
+                                    @csrf
+                                    <input type="text" name="catatan" maxlength="200" placeholder="Alasan (opsional)"
+                                        class="border rounded px-2 py-1 text-sm w-64">
+                                    <button type="submit"
+                                        class="bg-red-600 hover:bg-red-700 text-white text-xs px-3 py-1 rounded shadow">
+                                        Batalkan Booking
+                                    </button>
+                                </form>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

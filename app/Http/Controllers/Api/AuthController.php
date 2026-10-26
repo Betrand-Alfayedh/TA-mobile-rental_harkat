@@ -37,7 +37,7 @@ class AuthController extends Controller
             'asal_kota' => $validated['asal_kota'] ?? null,
         ]);
 
-        $token = $user->createToken('mobile-app')->plainTextToken;
+        $token = $this->buatToken($user);
 
         return response()->json([
             'status'  => true,
@@ -78,18 +78,26 @@ class AuthController extends Controller
             ]);
         }
 
-        // Only allow Customer (role=4) to login via mobile
-        if ($user->role !== 4) {
+        // Aplikasi mobile melayani admin (2), sopir (3), dan pelanggan (4); Super Admin tidak.
+        if (! in_array((int) $user->role, [2, 3, 4], true)) {
             return response()->json([
                 'status'  => false,
                 'message' => 'Akun ini tidak memiliki akses ke aplikasi mobile.',
             ], 403);
         }
 
+        if (! $user->aktif) {
+            return response()->json(['status' => false, 'message' => 'Akun Anda dinonaktifkan. Hubungi admin.'], 403);
+        }
+
+        if ((int) $user->role === 3 && (int) $user->supir?->status_approval !== 1) {
+            return response()->json(['status' => false, 'message' => 'Akun sopir Anda belum disetujui.'], 403);
+        }
+
         // Revoke previous tokens to enforce single-session
         $user->tokens()->delete();
 
-        $token = $user->createToken('mobile-app')->plainTextToken;
+        $token = $this->buatToken($user);
 
         return response()->json([
             'status'  => true,
@@ -161,12 +169,13 @@ class AuthController extends Controller
 
         $validated = $request->validate([
             'name'      => 'sometimes|string|max:255',
-            'no_hp'     => 'sometimes|string|max:20',
-            'alamat'    => 'sometimes|string',
-            'asal_kota' => 'sometimes|string',
+            'no_hp'     => 'sometimes|nullable|string|max:20',
+            'alamat'    => 'sometimes|nullable|string|max:255',
+            'asal_kota' => 'sometimes|nullable|string|max:255',
         ]);
 
-        $user->update($validated);
+        // Field kosong diabaikan (bukan dikosongkan) agar profil tidak terhapus tak sengaja.
+        $user->update(array_filter($validated, fn ($v) => $v !== null));
 
         return response()->json([
             'status'  => true,
@@ -204,9 +213,20 @@ class AuthController extends Controller
 
         $user->update(['password' => Hash::make($request->password)]);
 
+        // Token di perangkat lain dicabut; token yang sedang dipakai tetap berlaku.
+        $user->tokens()->where('id', '!=', data_get($request->user()->currentAccessToken(), 'id', 0))->delete();
+
         return response()->json([
             'status'  => true,
             'message' => 'Password berhasil diubah.',
         ]);
+    }
+
+    /** Token berkemampuan sesuai peran dan kedaluwarsa dalam 7 hari. */
+    private function buatToken(User $user): string
+    {
+        $peran = [2 => 'admin', 3 => 'sopir', 4 => 'customer'][(int) $user->role];
+
+        return $user->createToken('mobile-app', [$peran], now()->addDays(7))->plainTextToken;
     }
 }

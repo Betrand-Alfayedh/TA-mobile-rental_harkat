@@ -20,7 +20,7 @@
 
     Invoice dalam bentuk PDF sudah terlampir di email ini.
 
-    @component('mail::button', ['url' => route('customer.bookings.show', $booking->id)])
+    @component('mail::button', ['url' => route('booking.index')])
         Lihat Detail Booking
     @endcomponent
 

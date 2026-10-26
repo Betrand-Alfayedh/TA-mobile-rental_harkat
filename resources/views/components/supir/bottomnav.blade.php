@@ -8,7 +8,7 @@
         <span class="text-xs">Home</span>
     </a>
 
-    <a href=""
+    <a href="{{ route('supir.dashboard') }}#tawaran"
         class="flex flex-col items-center {{ request()->routeIs('driver.jobs') ? 'text-green-600' : 'text-gray-600 hover:text-green-600' }}">
         <i data-lucide="briefcase" class="w-6 h-6"></i>
         <span class="text-xs">Jobs</span>

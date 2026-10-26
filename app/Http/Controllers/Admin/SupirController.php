@@ -146,8 +146,7 @@ class SupirController extends Controller
             'status' => $request->status,
             'gambar' => $gambarPath,
         ];
-        $data['status_approval'] = 2;
-        // simpan di approvals
+        // simpan di approvals (data supir tetap live sampai SuperAdmin menyetujui)
         $supir->approvals()->create([
             'requested_by' => Auth::id(),
             'status' => 2, // pending

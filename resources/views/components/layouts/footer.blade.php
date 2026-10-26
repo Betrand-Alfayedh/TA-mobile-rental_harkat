@@ -1,65 +1,67 @@
-<footer class="bg-gray-900 text-gray-300 mt-16">
-    <div class="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+@php
+    $home = url('/');
+    $wa = 'https://wa.me/6285222521995';
+@endphp
 
-        <!-- Brand -->
-        <div>
-            <h2 class="text-xl font-bold mb-3"><span class="text-green-600">Harkat</span> RentCar</h2>
-            <p class="mt-2 text-sm">
-                Penyedia layanan rental mobil terpercaya di Yogyakarta. Memberikan pengalaman berkendara nyaman dan aman
-                untuk semua pelanggan.
+<footer class="bg-forest-deep text-white/70">
+    <div class="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-12">
+
+        <div class="md:col-span-5">
+            <a href="{{ $home }}" class="flex items-center gap-3">
+                <img src="{{ asset('images/logo.png') }}" alt="" class="h-10 w-10 rounded-full object-cover">
+                <span class="text-lg font-extrabold tracking-tight text-white">Harkat Rent Car</span>
+            </a>
+            <p class="mt-5 max-w-sm text-[15px] leading-relaxed">
+                Rental mobil di Yogyakarta untuk liburan, urusan keluarga, dan perjalanan kerja. Pilih mobil dari
+                ponsel, bayar DP, lalu ambil kuncinya di Sewon, Bantul.
             </p>
+            <a href="{{ $wa }}" target="_blank" rel="noopener" class="btn btn-primary mt-8">
+                Chat WhatsApp
+                <span class="btn-icon"><x-line-icon name="arrow-up-right" class="h-4 w-4" /></span>
+            </a>
         </div>
 
-        {{-- Quick Links --}}
-        <div>
-            <h3 class="text-lg font-semibold text-white mb-3">Navigasi</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="{{ url('/') }}" class="hover:text-green-400">Beranda</a></li>
-                <li><a href="{{ route('mobil.index') }}" class="hover:text-green-400">Daftar Mobil</a></li>
-                <li><a href="{{ route('booking.index') }}" class="hover:text-green-400">Booking</a></li>
-                <li><a href="{{ url('/tentang') }}" class="hover:text-green-400">Tentang Kami</a></li>
-                <li><a href="{{ url('/kontak') }}" class="hover:text-green-400">Kontak</a></li>
+        <div class="md:col-span-3">
+            <h3 class="text-sm font-semibold text-white">Jelajahi</h3>
+            <ul class="mt-5 space-y-3 text-[15px]">
+                <li><a href="{{ $home }}" class="transition-colors duration-500 ease-spring hover:text-white">Beranda</a></li>
+                <li><a href="{{ route('mobil.index') }}" class="transition-colors duration-500 ease-spring hover:text-white">Armada</a></li>
+                <li><a href="{{ $home }}#cara-sewa" class="transition-colors duration-500 ease-spring hover:text-white">Cara sewa</a></li>
+                <li><a href="{{ $home }}#lokasi" class="transition-colors duration-500 ease-spring hover:text-white">Lokasi</a></li>
+                @auth('web')
+                    <li><a href="{{ route('booking.index') }}" class="transition-colors duration-500 ease-spring hover:text-white">Pesanan saya</a></li>
+                @endauth
+                <li><a href="{{ route('login.form', ['role' => 'supir']) }}" class="transition-colors duration-500 ease-spring hover:text-white">Portal supir</a></li>
             </ul>
         </div>
 
-        {{-- Informasi --}}
-        <div>
-            <h3 class="text-lg font-semibold text-white mb-3">Informasi</h3>
-            <ul class="space-y-2 text-sm">
-                <li><a href="{{ url('/syarat') }}" class="hover:text-green-400">Syarat & Ketentuan</a></li>
-                <li><a href="{{ url('/privasi') }}" class="hover:text-green-400">Kebijakan Privasi</a></li>
-                <li><a href="{{ url('/faq') }}" class="hover:text-green-400">FAQ</a></li>
-            </ul>
-        </div>
-
-        <!-- We're here -->
-        <div>
-            <h3 class="text-base font-semibold mb-3">Hit us On</h3>
-            <ul class="space-y-2 text-sm">
-                <li class="flex items-center gap-2">
-                    <i class="fa-solid fa-location-dot text-lg text-emerald-500"></i>
-                    <span>Jl. KH Ali maksum, No.04, RT.001/RW.000, Ds. Palemsewu, Kel. Panggungharjo, Kec. Sewon, Kab.
-                        Bantul, DIY 55188</span>
+        <div class="md:col-span-4">
+            <h3 class="text-sm font-semibold text-white">Hubungi kami</h3>
+            <ul class="mt-5 space-y-4 text-[15px]">
+                <li class="flex gap-3">
+                    <x-line-icon name="pin" class="mt-0.5 h-5 w-5 shrink-0 text-leaf" />
+                    <span>Jl. KH Ali Maksum No. 04, Palemsewu, Panggungharjo, Sewon, Bantul, DIY 55188</span>
                 </li>
-                <li class="flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-xl text-emerald-500"></i>
-                    <span>+62 852-2252-1995</span>
+                <li class="flex gap-3">
+                    <x-line-icon name="whatsapp" class="mt-0.5 h-5 w-5 shrink-0 text-leaf" />
+                    <a href="{{ $wa }}" target="_blank" rel="noopener" class="transition-colors duration-500 ease-spring hover:text-white">+62 852-2252-1995</a>
                 </li>
-                <li class="flex items-center gap-2">
-                    <i class="fa-brands fa-instagram text-xl text-emerald-500"></i>
-                    <span>coming soon</span>
-                </li>
-                <li class="flex items-center gap-2">
-                    <i class="fa-brands fa-tiktok text-xl text-emerald-500"></i>
+                <li class="flex gap-3">
+                    <x-line-icon name="tiktok" class="mt-0.5 h-5 w-5 shrink-0 text-leaf" />
                     <span>@harkat_tourtravel</span>
+                </li>
+                <li class="flex gap-3">
+                    <x-line-icon name="instagram" class="mt-0.5 h-5 w-5 shrink-0 text-leaf" />
+                    <span>Segera hadir</span>
                 </li>
             </ul>
         </div>
     </div>
 
-    <!-- Bottom Footer -->
-    <div class="border-t border-gray-300 py-4 text-center text-xs text-gray-500">
-        <a href="{{ auth('web')->check() ? url('/home') : url('/') }}" class="text-blue-600 hover:underline">about Harkat Rental</a> <br>
-        &copy; {{ date('Y') }} Harkat Rent Car. All rights reserved.
+    <div class="border-t border-white/10">
+        <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 text-sm text-white/45 sm:flex-row sm:justify-between">
+            <span>&copy; {{ date('Y') }} Harkat Rent Car. Semua hak dilindungi.</span>
+            <span>Yogyakarta</span>
+        </div>
     </div>
 </footer>

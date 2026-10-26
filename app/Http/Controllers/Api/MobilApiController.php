@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\MobilResource;
-use App\Models\BookingDetail;
 use App\Models\Mobil;
 use App\Models\TipeMobil;
 use Illuminate\Http\Request;
@@ -34,7 +33,7 @@ class MobilApiController extends Controller
             });
         }
 
-        $perPage = $request->input('per_page', 10);
+        $perPage = max(1, min((int) $request->input('per_page', 10), 50)); // batasi agar satu permintaan tidak memuat seluruh tabel
         $mobils  = $query->paginate($perPage);
 
         return response()->json([
@@ -94,19 +93,8 @@ class MobilApiController extends Controller
             'tanggal_kembali' => 'required|date|after_or_equal:tanggal_sewa',
         ]);
 
-        $start = $request->tanggal_sewa;
-        $end   = $request->tanggal_kembali;
-
-        $bookedIds = BookingDetail::where('tanggal_sewa', '<=', $end)
-            ->where('tanggal_kembali', '>=', $start)
-            ->whereHas('booking', fn($q) => $q->whereIn('status', [1, 2]))
-            ->pluck('mobil_id')
-            ->toArray();
-
         $mobils = Mobil::with('masterMobil.tipe', 'images')
-            ->where('status', 1)
-            ->where('status_approval', 1)
-            ->whereNotIn('id', $bookedIds)
+            ->freeBetween($request->tanggal_sewa, $request->tanggal_kembali)
             ->get();
 
         return response()->json([

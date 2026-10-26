@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="max-w-4xl mx-auto px-4 pt-20">
-        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">👤 Profil Kamu</h1>
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Profil Kamu</h1>
 
         @if (session('success'))
             <div class="mb-6 p-4 bg-green-100 text-green-700 rounded-lg shadow">
-                ✅ {{ session('success') }}
+                {{ session('success') }}
             </div>
         @endif
 
@@ -49,7 +49,7 @@
         <div class="flex justify-center mt-8 gap-4">
             <a href="{{ route('profile.edit') }}"
                 class="flex items-center gap-2 bg-green-600 text-white px-5 py-2.5 rounded-lg hover:bg-green-700 transition shadow">
-                ✏️ Edit Profil
+                Edit Profil
             </a>
 
             <form method="POST" action="{{ route('profile.destroy') }}" onsubmit="return confirm('Yakin hapus akun?')">
@@ -57,7 +57,7 @@
                 @method('DELETE')
                 <button type="submit"
                     class="flex items-center gap-2 bg-red-500 text-white px-5 py-2.5 rounded-lg hover:bg-red-600 transition shadow">
-                    🗑 Hapus Akun
+                    Hapus Akun
                 </button>
             </form>
         </div>

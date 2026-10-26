@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\BookingResource;
 use App\Models\Booking;
-use App\Models\BookingDetail;
 use App\Models\Mobil;
-use App\Models\Pembayaran;
-use App\Notifications\DpReminderNotification;
+use App\Services\BookingService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -21,9 +19,12 @@ class BookingApiController extends Controller
      */
     public function index(Request $request)
     {
+        // Aktif = booked/ongoing, plus booking selesai yang pelunasannya belum dibayar (supaya masih bisa dibayar).
         $bookings = Booking::where('user_id', $request->user()->id)
-            ->whereIn('status', [1, 2])
-            ->with(['details.mobil.masterMobil.tipe', 'pembayaranDp'])
+            ->where(fn ($q) => $q->whereIn('status', [Booking::STATUS_BOOKED, Booking::STATUS_ONGOING])
+                ->orWhere(fn ($d) => $d->where('status', Booking::STATUS_DONE)
+                    ->whereHas('pelunasan', fn ($p) => $p->where('status_pembayaran', '!=', 1))))
+            ->with(['details.mobil.masterMobil.tipe', 'pembayaranDp', 'pelunasan'])
             ->latest()
             ->get();
 
@@ -54,7 +55,7 @@ class BookingApiController extends Controller
      *   ]
      * }
      */
-    public function store(Request $request)
+    public function store(Request $request, BookingService $service)
     {
         $user = $request->user();
 
@@ -69,87 +70,24 @@ class BookingApiController extends Controller
 
         $validated = $request->validate([
             'mobils'                     => 'required|array|min:1',
-            'mobils.*.mobil_id'          => 'required|exists:mobils,id',
-            'mobils.*.tanggal_sewa'      => 'required|date',
-            'mobils.*.tanggal_kembali'   => 'required|date|after_or_equal:mobils.*.tanggal_sewa',
+            'mobils.*.mobil_id'          => 'required|exists:mobils,id|distinct',
+            'mobils.*.tanggal_sewa'      => 'required|date|after:+' . BookingService::MIN_LEAD_HOURS . ' hours',
+            'mobils.*.tanggal_kembali'   => 'required|date|after:mobils.*.tanggal_sewa',
             'mobils.*.pakai_supir'       => 'required|in:0,1',
             'asal_kota'                  => 'required|in:1,2',
             'nama_kota'                  => 'required_if:asal_kota,2|nullable|string',
             'jaminan'                    => 'required|in:1,2',
+        ], [
+            'mobils.*.tanggal_sewa.after'    => 'Tanggal sewa minimal ' . BookingService::MIN_LEAD_HOURS . ' jam dari sekarang.',
+            'mobils.*.tanggal_kembali.after' => 'Tanggal kembali harus setelah tanggal sewa.',
+            'mobils.*.mobil_id.distinct'     => 'Mobil yang sama tidak boleh dipilih dua kali.',
         ]);
 
-        $booking = Booking::create([
-            'user_id'         => $user->id,
-            'tanggal_booking' => now(),
-            'total_harga'     => 0,
-            'uang_muka'       => 0,
-            'status'          => Booking::STATUS_BOOKED,
-            'asal_kota'       => $request->asal_kota,
-            'nama_kota'       => $request->nama_kota,
-            'jaminan'         => $request->jaminan,
-        ]);
-
-        $totalBooking        = 0;
-        $tanggalSewaTerdekat = null;
-
-        foreach ($validated['mobils'] as $item) {
-            $mobil          = Mobil::findOrFail($item['mobil_id']);
-            $tanggalSewa    = Carbon::parse($item['tanggal_sewa']);
-            $tanggalKembali = Carbon::parse($item['tanggal_kembali']);
-
-            $jam  = $tanggalSewa->diffInHours($tanggalKembali);
-            $lama = max(1, (int) ceil($jam / 24));
-
-            $harga = $item['pakai_supir']
-                ? $mobil->harga_all_in * $lama
-                : $mobil->harga_sewa * $lama;
-
-            BookingDetail::create([
-                'booking_id'      => $booking->id,
-                'mobil_id'        => $mobil->id,
-                'pakai_supir'     => $item['pakai_supir'],
-                'supir_id'        => null,
-                'tanggal_sewa'    => $tanggalSewa,
-                'tanggal_kembali' => $tanggalKembali,
-                'lama_sewa'       => $lama,
-                'harga'           => $harga,
-                'status'          => Booking::STATUS_BOOKED,
-            ]);
-
-            $mobil->update(['status' => Mobil::STATUS_DIBOOKING]);
-
-            $totalBooking += $harga;
-            $tanggalSewaTerdekat = is_null($tanggalSewaTerdekat) || $tanggalSewa->lt($tanggalSewaTerdekat)
-                ? $tanggalSewa
-                : $tanggalSewaTerdekat;
-        }
-
-        $booking->update([
-            'total_harga' => $totalBooking,
-            'uang_muka'   => (int) ($totalBooking / 2),
-        ]);
-
-        // Calculate DP due date
-        $tanggalBooking    = Carbon::parse($booking->tanggal_booking);
-        $jatuhTempoDefault = $tanggalBooking->copy()->addDays(4);
-        $jatuhTempo        = $jatuhTempoDefault->min($tanggalSewaTerdekat->copy()->subHours(2));
-
-        $pembayaranDp = Pembayaran::create([
-            'booking_id'  => $booking->id,
-            'jenis'       => 1, // DP
-            'jumlah'      => $booking->uang_muka,
-            'status_pembayaran'      => 0,
-            'jatuh_tempo' => $jatuhTempo,
-        ]);
-
-        // Send email notification
         try {
-            $booking->user->notify(new DpReminderNotification($booking, $pembayaranDp));
-        } catch (\Exception $e) {
-            \Log::warning('Email DP notification failed: ' . $e->getMessage());
+            $booking = $service->create($user->id, $validated);
+        } catch (\DomainException $e) {
+            return response()->json(['status' => false, 'message' => $e->getMessage()], 422);
         }
-
-        $booking->load(['details.mobil.masterMobil.tipe', 'pembayaranDp']);
 
         return response()->json([
             'status'  => true,
@@ -177,6 +115,31 @@ class BookingApiController extends Controller
     }
 
     /**
+     * Batalkan booking milik sendiri (selama DP belum lunas).
+     *
+     * POST /api/bookings/{id}/cancel
+     */
+    public function cancel(Request $request, int $id, BookingService $service)
+    {
+        $booking = Booking::where('user_id', $request->user()->id)->with('pembayaranDp')->findOrFail($id);
+
+        if (! $booking->canBeCanceledByCustomer()) {
+            return response()->json([
+                'status'  => false,
+                'message' => 'Booking tidak dapat dibatalkan dari aplikasi (DP sudah dibayar atau booking sudah berjalan). Hubungi admin.',
+            ], 422);
+        }
+
+        try {
+            $service->cancel($booking, 'Dibatalkan oleh customer.');
+        } catch (\DomainException $e) {
+            return response()->json(['status' => false, 'message' => $e->getMessage()], 422);
+        }
+
+        return response()->json(['status' => true, 'message' => 'Booking berhasil dibatalkan.']);
+    }
+
+    /**
      * Booking history (done & canceled).
      *
      * GET /api/bookings/riwayat
@@ -185,7 +148,7 @@ class BookingApiController extends Controller
     {
         $riwayats = Booking::where('user_id', $request->user()->id)
             ->whereIn('status', [0, 3])
-            ->with(['details.mobil.masterMobil.tipe', 'pembayaranDp'])
+            ->with(['details.mobil.masterMobil.tipe', 'pembayaranDp', 'pelunasan'])
             ->latest()
             ->get();
 

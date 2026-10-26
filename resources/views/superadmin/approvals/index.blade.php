@@ -112,6 +112,7 @@
                                     <h3 class="font-semibold mb-2">Data Baru</h3>
                                     <ul class="list-disc pl-5 text-sm text-gray-700">
                                         @foreach ($approval->new_data ?? [] as $key => $val)
+                                            @continue($key === 'password') {{-- jangan tampilkan hash password --}}
                                             @php
                                                 // Jika key harga, format pakai number_format
                                                 if (in_array($key, ['harga_sewa', 'harga_all_in'])) {
@@ -128,6 +129,7 @@
                                     <h3 class="font-semibold mb-2">Perubahan Data</h3>
                                     <ul class="list-disc pl-5 text-sm text-gray-700">
                                         @foreach ($approval->new_data ?? [] as $key => $val)
+                                            @continue($key === 'password') {{-- jangan tampilkan hash password --}}
                                             @php
                                                 $oldVal = $approval->old_data[$key] ?? null;
 

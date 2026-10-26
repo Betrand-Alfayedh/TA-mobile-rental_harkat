@@ -41,7 +41,7 @@
                     class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center z-50"
                     style="display: none;">
                     <div class="bg-white p-6 rounded-2xl shadow-2xl w-96">
-                        <h2 class="text-xl font-bold mb-4">📢 Job Baru!</h2>
+                        <h2 class="text-xl font-bold mb-4">Tawaran job baru</h2>
                         <p><b>ID:</b> <span x-text="job.id"></span></p>
                         <p><b>Mobil:</b> <span x-text="job.mobil"></span></p>
                         <p><b>Tanggal Sewa:</b> <span x-text="job.tanggal_sewa"></span></p>
@@ -71,28 +71,26 @@
     <script src="https://js.pusher.com/8.2/pusher.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/laravel-echo@^1.15/dist/echo.iife.js"></script>
 
-    <script>
-        window.Echo = new Echo({
-            broadcaster: 'pusher',
-            key: '{{ env('PUSHER_APP_KEY') }}',
-            cluster: '{{ env('PUSHER_APP_CLUSTER') }}',
-            forceTLS: true
-        });
-
-        const supirId = {{ Auth::user()->supir->id }};
-
-        window.Echo.channel(`supir.${supirId}`)
-            .listen('JobAssigned', (data) => {
-                console.log("Job Offer diterima:", data);
-
-                // Inject ke Alpine component
-                let modal = document.getElementById('jobOfferModal');
-                let scope = Alpine.$data(modal);
-
-                scope.job = data; // masukin data job
-                scope.open = true; // buka modal
+    @if (config('broadcasting.connections.pusher.key'))
+        <script>
+            window.Echo = new Echo({
+                broadcaster: 'pusher',
+                key: @json(config('broadcasting.connections.pusher.key')),
+                cluster: @json(config('broadcasting.connections.pusher.options.cluster')),
+                forceTLS: true
             });
-    </script>
+
+            const supirId = {{ Auth::user()->supir->id }};
+
+            window.Echo.channel(`supir.${supirId}`)
+                .listen('JobAssigned', (data) => {
+                    // Isi popup lewat komponen Alpine, lalu buka
+                    const scope = Alpine.$data(document.getElementById('jobOfferModal'));
+                    scope.job = data;
+                    scope.open = true;
+                });
+        </script>
+    @endif
 
 
 </body>

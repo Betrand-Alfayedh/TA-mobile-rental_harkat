@@ -54,6 +54,7 @@ Route::middleware(['auth', 'role:Customer', 'verified'])->group(function () {
     Route::resource('booking', BookingController::class)->only(['index', 'create', 'store']);
     Route::get('/pembayaran/{booking}', [PembayaranController::class, 'show'])->name('pembayaran.show');
     Route::post('/pembayaran/{booking}', [PembayaranController::class, 'uploadBukti'])->name('pembayaran.upload');
+    Route::post('/booking/{booking}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::post('/booking/check-mobils', [BookingController::class, 'checkMobils'])->name('booking.checkMobils');
     Route::get('riwayat', [BookingController::class, 'riwayat'])->name('riwayat.index');
 });

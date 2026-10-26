@@ -30,9 +30,9 @@ class JobAssigned implements ShouldBroadcast
     {
         return [
             'id' => $this->jobOffer->id,
-            'mobil' => $this->jobOffer->booking_detail->mobil->nama_mobil ?? 'Unknown',
-            'tanggal_sewa' => $this->jobOffer->booking_detail->tanggal_sewa,
-            'tanggal_kembali' => $this->jobOffer->booking_detail->tanggal_kembali,
+            'mobil' => $this->jobOffer->booking_detail->mobil->masterMobil->nama ?? 'Mobil',
+            'tanggal_sewa' => $this->jobOffer->booking_detail->tanggal_mulai_format,
+            'tanggal_kembali' => $this->jobOffer->booking_detail->tanggal_selesai_format,
         ];
     }
 }

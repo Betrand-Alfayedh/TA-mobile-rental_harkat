@@ -19,7 +19,7 @@ class MobilResource extends JsonResource
             'status'          => $this->status,
             'status_text'     => $this->status_text,
             'gambar'          => $this->gambar
-                ? asset('storage/' . $this->gambar)
+                ? asset('gambar_mobil/' . $this->gambar)
                 : null,
             'master_mobil'    => $this->whenLoaded('masterMobil', fn() => [
                 'id'       => $this->masterMobil->id,
@@ -32,7 +32,7 @@ class MobilResource extends JsonResource
                     : null,
             ]),
             'images'          => $this->whenLoaded('images', fn() =>
-                $this->images->map(fn($img) => asset('storage/' . $img->path))
+                $this->images->map(fn($img) => asset('mobil_images_additionals/' . $img->image_path))
             ),
         ];
     }

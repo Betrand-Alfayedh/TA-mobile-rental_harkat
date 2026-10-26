@@ -7,6 +7,7 @@ use App\Http\Resources\PembayaranResource;
 use App\Models\Booking;
 use App\Models\Pembayaran;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class PembayaranApiController extends Controller
 {
@@ -49,23 +50,25 @@ class PembayaranApiController extends Controller
         $request->validate([
             'bukti_bayar'       => 'required|image|mimes:jpg,jpeg,png|max:5120',
             'metode_pembayaran' => 'nullable|in:1,2,3',
+            'pembayaran_id'     => 'nullable|integer',
         ]);
 
-        $pembayaran = $booking->pembayaranDp;
+        // Tanpa pembayaran_id = DP. Dengan pembayaran_id = tagihan lain milik booking ini (pelunasan/denda).
+        $pembayaran = $request->filled('pembayaran_id')
+            ? Pembayaran::where('booking_id', $booking->id)->find($request->pembayaran_id)
+            : $booking->pembayaranDp;
         if (! $pembayaran) {
             return response()->json([
                 'status'  => false,
-                'message' => 'Data pembayaran DP tidak ditemukan.',
+                'message' => 'Data pembayaran tidak ditemukan.',
             ], 404);
         }
 
-        if ($pembayaran->status_pembayaran === 1) {
-            return response()->json([
-                'status'  => false,
-                'message' => 'Pembayaran sudah dikonfirmasi oleh admin.',
-            ], 422);
+        if ($alasan = $pembayaran->alasanTidakBisaUpload()) {
+            return response()->json(['status' => false, 'message' => $alasan], 422);
         }
 
+        $fotoLama = $pembayaran->foto_bukti;
         $path = $request->file('bukti_bayar')->store('bukti_bayar', 'public');
 
         $pembayaran->update([
@@ -74,6 +77,11 @@ class PembayaranApiController extends Controller
             'status_pembayaran'  => 2, // pending verification
             'metode_pembayaran'  => $request->input('metode_pembayaran', 3),
         ]);
+
+        // Unggah ulang menggantikan bukti sebelumnya: hapus file lama agar tidak menjadi file yatim.
+        if ($fotoLama && $fotoLama !== $path) {
+            Storage::disk('public')->delete($fotoLama);
+        }
 
         return response()->json([
             'status'  => true,

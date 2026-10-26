@@ -14,7 +14,7 @@ class BookingCanceledNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(public $booking)
+    public function __construct(public $booking, public string $reason = 'Tidak membayar DP sebelum jatuh tempo.')
     {
         //
     }
@@ -38,7 +38,7 @@ class BookingCanceledNotification extends Notification
             ->subject('Booking Dibatalkan - Harkat RentCar')
             ->greeting('Halo, ' . $notifiable->name)
             ->line('Booking kamu dengan ID #' . $this->booking->id . ' dibatalkan.')
-            ->line('Alasan: Tidak membayar DP sebelum jatuh tempo.')
+            ->line('Alasan: ' . $this->reason)
             ->line('Jika masih ingin sewa mobil, silakan buat booking baru.')
             ->action('Booking Lagi', url('/booking'))
             ->line('Terima kasih sudah menggunakan layanan kami.');

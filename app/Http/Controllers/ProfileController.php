@@ -51,7 +51,7 @@ class ProfileController extends Controller
     {
         $user = $request->user();
 
-        $user->update($request->validated());
+        $user->update($request->safe()->except('password'));
 
         if ($request->filled('password')) {
             $user->password = Hash::make($request->password);

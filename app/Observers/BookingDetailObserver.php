@@ -26,15 +26,15 @@ class BookingDetailObserver
         $details = $booking->details;
 
         // Semua canceled → booking canceled
-        if ($details->every(fn($d) => $d->status_detail === 0)) {
+        if ($details->every(fn($d) => $d->status === 0)) {
             $booking->status = 0;
         }
         // Semua done → booking done
-        elseif ($details->every(fn($d) => $d->status_detail === 3)) {
+        elseif ($details->every(fn($d) => $d->status === 3)) {
             $booking->status = 3;
         }
         // Ada yang ongoing → booking ongoing
-        elseif ($details->contains(fn($d) => $d->status_detail === 2)) {
+        elseif ($details->contains(fn($d) => $d->status === 2)) {
             $booking->status = 2;
         }
         // Default: booked

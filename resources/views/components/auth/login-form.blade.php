@@ -7,90 +7,77 @@
 @php
     $isCustomer = strtolower($roleName) === 'customer' || strtolower($loginFrom) === 'customer';
     $roleSlug = strtolower($roleName);
+
+    // Kelas ditulis utuh (bukan "text-{$color}-600") agar Tailwind ikut membuatnya.
+    $c = [
+        'green' => ['title' => 'text-forest', 'btn' => 'bg-leaf hover:bg-leaf-dark', 'focus' => 'focus:border-leaf focus:ring-leaf/20', 'link' => 'hover:text-leaf'],
+        'red' => ['title' => 'text-red-700', 'btn' => 'bg-red-600 hover:bg-red-700', 'focus' => 'focus:border-red-500 focus:ring-red-500/20', 'link' => 'hover:text-red-600'],
+        'blue' => ['title' => 'text-blue-700', 'btn' => 'bg-blue-600 hover:bg-blue-700', 'focus' => 'focus:border-blue-500 focus:ring-blue-500/20', 'link' => 'hover:text-blue-600'],
+    ][$color] ?? null;
+    $c ??= [
+        'title' => 'text-forest', 'btn' => 'bg-leaf hover:bg-leaf-dark', 'focus' => 'focus:border-leaf focus:ring-leaf/20', 'link' => 'hover:text-leaf',
+    ];
+    $input = 'w-full rounded-xl border border-line bg-white py-3 pl-11 text-sm text-ink transition focus:outline-none focus:ring-4 ' . $c['focus'];
 @endphp
 
-{{-- LOGIN CARD --}}
-<div
-    class="relative w-full max-w-md mx-auto transform transition-all duration-500 ease-out scale-95 opacity-0 animate-slide-down">
-    <div class="relative bg-white/95 shadow-2xl rounded-2xl p-8 ring-1 ring-black/5 backdrop-blur">
+<div class="rounded-[2rem] bg-white/60 p-1.5 ring-1 ring-black/5">
+    <div class="rounded-[calc(2rem-0.375rem)] bg-white p-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9)] sm:p-9">
 
-        {{-- Gradient Background --}}
-        <div
-            class="absolute inset-0 bg-gradient-to-tr from-{{ $color }}-100 to-transparent opacity-20 rounded-2xl">
+        <div class="flex items-center gap-3">
+            <img src="{{ asset('images/favicon.png') }}" alt="Harkat Rent Car"
+                class="h-12 w-12 rounded-full border border-line bg-white p-1.5">
+            <div>
+                <h2 class="text-xl font-extrabold tracking-tight {{ $c['title'] }}">Masuk sebagai {{ $roleName }}</h2>
+                <p class="text-sm text-ink/55">Harkat Rent Car</p>
+            </div>
         </div>
 
-        {{-- Logo --}}
-        <div class="flex justify-center mb-6 relative z-10">
-            <img src="{{ asset('images/favicon.png') }}" alt="Logo Harkat Rental"
-                class="w-20 h-20 rounded-full shadow-lg border border-gray-200 bg-white p-2">
-        </div>
-
-        {{-- Title --}}
-        <h2 class="text-2xl font-bold text-center text-{{ $color }}-600 mb-6 relative z-10">
-            {{ $roleName }} Login
-        </h2>
-
-        {{-- FORM LOGIN --}}
-        <form method="POST" action="{{ route('login') }}" class="relative z-10 space-y-4">
+        <form method="POST" action="{{ route('login') }}" class="mt-8 space-y-5">
             @csrf
             <input type="hidden" name="role" value="{{ $roleSlug }}">
 
-            {{-- EMAIL --}}
             <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <label for="email" class="mb-1.5 block text-sm font-semibold text-ink/80">Email</label>
                 <div class="relative">
-                    <span class="absolute left-3 top-3 text-gray-400">📧</span>
+                    <x-line-icon name="mail" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/35" />
                     <input id="email" type="email" name="email" required autocomplete="username"
-                        value="{{ old('email') }}"
-                        class="pl-10 pr-3 py-2 w-full rounded-lg border border-gray-300 focus:border-{{ $color }}-500 focus:ring focus:ring-{{ $color }}-200 transition bg-white/90">
+                        value="{{ old('email') }}" placeholder="nama@email.com" class="{{ $input }} pr-4">
                 </div>
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
-            {{-- PASSWORD --}}
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <div class="mb-1.5 flex items-center justify-between">
+                    <label for="password" class="block text-sm font-semibold text-ink/80">Kata sandi</label>
+                    <a href="{{ route('password.request') }}"
+                        class="text-sm text-ink/55 transition-colors duration-500 ease-spring {{ $c['link'] }}">Lupa kata sandi?</a>
+                </div>
                 <div class="relative">
-                    <span class="absolute left-3 top-3 text-gray-400">🔑</span>
+                    <x-line-icon name="key" class="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-ink/35" />
                     <input id="password" type="password" name="password" required autocomplete="current-password"
-                        class="pl-10 pr-10 py-2 w-full rounded-lg border border-gray-300 focus:border-{{ $color }}-500 focus:ring focus:ring-{{ $color }}-200 transition bg-white/90">
-
-                    {{-- Toggle Eye --}}
-                    <button type="button" onclick="togglePassword()"
-                        class="absolute right-3 top-2.5 text-gray-400 hover:text-{{ $color }}-600 focus:outline-none hover:scale-110 transition-transform duration-200 ease-out animate-pulse-on-hover">
-                        {{-- Eye Open --}}
-                        <svg id="eye-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" class="w-5 h-5">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                        {{-- Eye Closed --}}
-                        <svg id="eye-closed" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor" class="w-5 h-5 hidden">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.269-2.943-9.543-7a9.973 9.973 0 012.24-3.685m3.317-2.547A9.956 9.956 0 0112 5c4.478 0 8.269 2.943 9.543 7a9.97 9.97 0 01-4.132 5.411M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3l18 18" />
-                        </svg>
+                        class="{{ $input }} pr-12">
+                    <button type="button" onclick="togglePassword()" aria-label="Tampilkan atau sembunyikan kata sandi"
+                        class="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full text-ink/45 transition-colors duration-500 ease-spring hover:bg-mint hover:text-forest">
+                        <x-line-icon id="eye-open" name="eye" class="h-5 w-5" />
+                        <x-line-icon id="eye-closed" name="eye-off" class="hidden h-5 w-5" />
                     </button>
                 </div>
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
 
-            {{-- LUPA PASSWORD --}}
-            <div class="flex justify-end">
-                <a href="{{ route('password.request') }}"
-                    class="text-sm text-gray-500 hover:text-{{ $color }}-600 transition">
-                    Lupa password?
-                </a>
-            </div>
+            <button type="submit"
+                class="group flex w-full items-center justify-center rounded-full py-3.5 text-sm font-semibold text-white transition-all duration-500 ease-spring active:scale-[0.98] {{ $c['btn'] }}">
+                Masuk
+            </button>
 
-            {{-- GOOGLE LOGIN (only customer) --}}
             @if ($isCustomer)
+                <div class="flex items-center gap-3 text-xs text-ink/40">
+                    <span class="h-px flex-1 bg-line"></span>atau<span class="h-px flex-1 bg-line"></span>
+                </div>
+
                 <a href="{{ route('google.login') }}"
-                    class="flex items-center justify-center gap-2 border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg transition transform hover:scale-105 shadow-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-5 h-5">
+                    class="flex items-center justify-center gap-3 rounded-full border border-line bg-white py-3 text-sm font-semibold text-ink/80 transition-colors duration-500 ease-spring hover:bg-paper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-5 w-5">
                         <path fill="#4285F4"
                             d="M24 9.5c3.5 0 6.6 1.2 9 3.2l6.7-6.7C35.7 2.4 30.2 0 24 0 14.6 0 6.6 5.4 2.5 13.3l7.9 6.1C12 13.1 17.5 9.5 24 9.5z" />
                         <path fill="#34A853"
@@ -100,68 +87,26 @@
                         <path fill="#EA4335"
                             d="M24 48c6.5 0 12-2.1 16-5.8l-6.7-5.2c-2 1.3-4.6 2.1-9.3 2.1-6.5 0-12-4.2-14-10.1l-7.9 6.1C6.6 42.6 14.6 48 24 48z" />
                     </svg>
-                    <span>Login via Google</span>
+                    Masuk dengan Google
                 </a>
-            @endif
 
-            {{-- SUBMIT --}}
-            <button type="submit"
-                class="w-full bg-{{ $color }}-600 text-white py-2 px-4 rounded-lg hover:bg-{{ $color }}-700 transition transform hover:scale-105 shadow-md">
-                Login
-            </button>
+                <p class="text-center text-sm text-ink/55">
+                    Belum punya akun?
+                    <a href="{{ route('register') }}" class="font-semibold text-forest underline-offset-4 hover:underline">Daftar</a>
+                </p>
+            @endif
         </form>
     </div>
 </div>
 
-{{-- SCRIPTS --}}
 <script>
     function togglePassword() {
         const input = document.getElementById("password");
         const eyeOpen = document.getElementById("eye-open");
         const eyeClosed = document.getElementById("eye-closed");
-        if (input.type === "password") {
-            input.type = "text";
-            eyeOpen.classList.add("hidden");
-            eyeClosed.classList.remove("hidden");
-        } else {
-            input.type = "password";
-            eyeOpen.classList.remove("hidden");
-            eyeClosed.classList.add("hidden");
-        }
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        eyeOpen.classList.toggle("hidden", show);
+        eyeClosed.classList.toggle("hidden", !show);
     }
 </script>
-
-{{-- STYLES --}}
-<style>
-    .animate-pulse-on-hover:hover svg {
-        animation: pulse .6s ease-in-out
-    }
-
-    @keyframes pulse {
-
-        0%,
-        100% {
-            transform: scale(1)
-        }
-
-        50% {
-            transform: scale(1.2)
-        }
-    }
-
-    @keyframes slide-down {
-        0% {
-            transform: translateY(-50px);
-            opacity: 0
-        }
-
-        100% {
-            transform: translateY(0);
-            opacity: 1
-        }
-    }
-
-    .animate-slide-down {
-        animation: slide-down .8s ease-out forwards
-    }
-</style>

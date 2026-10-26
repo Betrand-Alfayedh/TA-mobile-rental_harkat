@@ -24,12 +24,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::resource('mobil', MobilController::class);
     Route::resource('supir', SupirController::class);
     Route::resource('pelanggan', PelangganController::class);
-    Route::resource('booking', BookingController::class);
+    Route::resource('booking', BookingController::class)->only(['index', 'create', 'store']);
+    Route::post('/booking/{booking}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::patch('/booking/{detail}/konfirmasi-jemput', [BookingController::class, 'konfirmasiJemput'])
         ->name('booking.konfirmasiJemput');
     Route::get('laporan/generate', [LaporanController::class, 'generateLaporanAdmin'])->name('laporan');
     Route::get('pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index');
     Route::put('pembayaran/{pembayaran}/verifikasi', [PembayaranController::class, 'verifikasi'])->name('pembayaran.verifikasi');
+    Route::put('pembayaran/{pembayaran}/lunas', [PembayaranController::class, 'tandaiLunas'])->name('pembayaran.lunas');
     Route::put('pembayaran/{pembayaran}/tolak', [PembayaranController::class, 'tolak'])->name('pembayaran.tolak');
     Route::resource('pengembalian', PengembalianController::class)
         ->only(['index', 'show', 'store', 'update']);
