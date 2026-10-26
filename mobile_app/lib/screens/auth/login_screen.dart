@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import '../../core/constants/app_colors.dart';
+import '../../core/widgets/app_widgets.dart';
 import '../../providers/auth_provider.dart';
-import '../home/home_screen.dart';
-
-// ─── Brand colors matching the web (green-600 / green-700) ───
-const _kGreen600 = Color(0xFF16A34A);
-const _kGreen700 = Color(0xFF15803D);
-const _kGreen50  = Color(0xFFF0FDF4);
+import '../role_shell.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -16,20 +12,22 @@ class LoginScreen extends StatefulWidget {
   State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen>
-    with SingleTickerProviderStateMixin {
+class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStateMixin {
   final _formKey   = GlobalKey<FormState>();
   final _emailCtrl = TextEditingController();
   final _passCtrl  = TextEditingController();
   bool _obscure    = true;
   late AnimationController _fadeCtrl;
   late Animation<double>   _fadeAnim;
+  late Animation<Offset>   _slideAnim;
 
   @override
   void initState() {
     super.initState();
-    _fadeCtrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 700));
-    _fadeAnim = CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeIn);
+    _fadeCtrl  = AnimationController(vsync: this, duration: const Duration(milliseconds: 600));
+    _fadeAnim  = CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOut);
+    _slideAnim = Tween<Offset>(begin: const Offset(0, 0.03), end: Offset.zero)
+        .animate(CurvedAnimation(parent: _fadeCtrl, curve: Curves.easeOutCubic));
     _fadeCtrl.forward();
   }
 
@@ -70,189 +68,160 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   void _goHome() => Navigator.of(context).pushAndRemoveUntil(
-    MaterialPageRoute(builder: (_) => const HomeScreen()), (_) => false);
+    MaterialPageRoute(builder: (_) => shellFor(context.read<AuthProvider>().user)), (_) => false);
 
   void _showError(String msg) => ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
-      content: Text(msg, style: GoogleFonts.outfit(fontSize: 13)),
+      content: Text(msg),
       backgroundColor: AppColors.error,
-      behavior: SnackBarBehavior.floating,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       margin: const EdgeInsets.all(16),
     ),
   );
 
   @override
   Widget build(BuildContext context) {
+    final gutter = screenGutter(context);
+    final text   = GoogleFonts.plusJakartaSans;
+
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: FadeTransition(
-        opacity: _fadeAnim,
-        child: SafeArea(
-          child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 52),
-
-                // ── Logo (matches web: circular with border) ───
-                Center(
-                  child: Container(
-                    width: 84, height: 84,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                      border: Border.all(color: _kGreen600, width: 2.5),
-                      boxShadow: [BoxShadow(color: _kGreen600.withOpacity(0.25), blurRadius: 20, spreadRadius: 2)],
-                    ),
-                    child: ClipOval(
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Image.asset('assets/images/favicon.png', fit: BoxFit.contain),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-
-                // ── Title (matches web: green-600) ─────────────
-                Center(child: Text('Customer Login',
-                  style: GoogleFonts.outfit(fontSize: 26, fontWeight: FontWeight.w800, color: _kGreen600))),
-                const SizedBox(height: 4),
-                Center(child: Text('Masuk ke akun Harkat Rental Anda',
-                  style: GoogleFonts.outfit(fontSize: 13, color: AppColors.textSecondary))),
-                const SizedBox(height: 40),
-
-                // ── Card (matches web: white/95 bg, ring) ──────
-                Container(
-                  decoration: BoxDecoration(
-                    color: AppColors.surface,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: _kGreen600.withOpacity(0.15)),
-                    boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.15), blurRadius: 24, offset: const Offset(0, 8))],
-                  ),
-                  padding: const EdgeInsets.all(24),
+      backgroundColor: AppColors.surface,
+      body: SafeArea(
+        child: FadeTransition(
+          opacity: _fadeAnim,
+          child: SlideTransition(
+            position: _slideAnim,
+            child: Center(
+              child: SingleChildScrollView(
+                padding: EdgeInsets.fromLTRB(gutter + 4, 24, gutter + 4, 32),
+                child: ContentWidth(
+                  max: 440,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // ── Email/Password Form ─────────────────
+                      // ── Foto hero (disembunyikan di layar pendek agar form tetap terlihat) ──
+                      if (MediaQuery.sizeOf(context).height >= 700) ...[
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(24),
+                        child: AspectRatio(
+                          aspectRatio: 16 / 10,
+                          child: Stack(fit: StackFit.expand, children: [
+                            Image.asset('assets/images/hero_mobil.jpg', fit: BoxFit.cover, cacheWidth: 900),
+                            Positioned(
+                              left: 14, top: 14,
+                              child: Container(
+                                width: 44, height: 44,
+                                decoration: const BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+                                child: ClipOval(child: Image.asset('assets/images/favicon.png', fit: BoxFit.cover)),
+                              ),
+                            ),
+                          ]),
+                        ),
+                      ),
+                      const SizedBox(height: 28),
+                      ],
+
+                      // ── Judul dua warna ─────────────────────
+                      Text('Masuk ke',
+                          style: text(fontSize: 32, height: 1.1, fontWeight: FontWeight.w800, color: AppColors.ink)),
+                      Text('Harkat Rental',
+                          style: text(fontSize: 32, height: 1.1, fontWeight: FontWeight.w800, color: AppColors.ink)),
+                      const SizedBox(height: 10),
+                      Text('Sewa mobil di Yogyakarta, langsung dari aplikasi.',
+                          style: text(fontSize: 14, height: 1.45, fontWeight: FontWeight.w500, color: AppColors.muted)),
+                      const SizedBox(height: 32),
+
+                      // ── Form ────────────────────────────────
                       Form(
                         key: _formKey,
                         child: Column(
                           children: [
-                            _InputField(
+                            AppTextField(
                               controller: _emailCtrl,
                               label: 'Email',
-                              emoji: '📧',
+                              hintText: 'nama@email.com',
+                              icon: Icons.mail_outline_rounded,
                               keyboardType: TextInputType.emailAddress,
+                              textInputAction: TextInputAction.next,
                               validator: (v) => (v == null || !v.contains('@')) ? 'Email tidak valid' : null,
                             ),
-                            const SizedBox(height: 14),
-                            _InputField(
+                            const SizedBox(height: 16),
+                            AppTextField(
                               controller: _passCtrl,
                               label: 'Password',
-                              emoji: '🔑',
+                              hintText: 'Minimal 6 karakter',
+                              icon: Icons.lock_outline_rounded,
                               obscure: _obscure,
+                              textInputAction: TextInputAction.done,
+                              onSubmitted: _submit,
                               suffix: IconButton(
+                                tooltip: _obscure ? 'Tampilkan password' : 'Sembunyikan password',
                                 icon: Icon(_obscure ? Icons.visibility_outlined : Icons.visibility_off_outlined,
-                                    color: AppColors.textSecondary, size: 20),
+                                    color: AppColors.hint, size: 20),
                                 onPressed: () => setState(() => _obscure = !_obscure),
                               ),
                               validator: (v) => (v == null || v.length < 6) ? 'Password minimal 6 karakter' : null,
                             ),
-                            const SizedBox(height: 8),
-
-                            // Lupa password
-                            Align(
-                              alignment: Alignment.centerRight,
-                              child: TextButton(
-                                onPressed: () {},
-                                style: TextButton.styleFrom(padding: EdgeInsets.zero, tapTargetSize: MaterialTapTargetSize.shrinkWrap),
-                                child: Text('Lupa password?',
-                                    style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textSecondary)),
-                              ),
-                            ),
-                            const SizedBox(height: 16),
-
-                            // ── Login Button (green-600) ────────
-                            Consumer<AuthProvider>(builder: (_, auth, __) =>
-                              SizedBox(
-                                width: double.infinity, height: 50,
-                                child: ElevatedButton(
-                                  onPressed: auth.status == AuthStatus.loading ? null : _submit,
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: _kGreen600,
-                                    foregroundColor: Colors.white,
-                                    disabledBackgroundColor: _kGreen600.withOpacity(0.5),
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                                    elevation: 3,
-                                    shadowColor: _kGreen600.withOpacity(0.4),
-                                  ),
-                                  child: auth.status == AuthStatus.loading
-                                      ? const SizedBox(width: 22, height: 22,
-                                          child: CircularProgressIndicator(color: Colors.white, strokeWidth: 2.5))
-                                      : Text('Login', style: GoogleFonts.outfit(fontSize: 15, fontWeight: FontWeight.w700)),
-                                ),
+                            const SizedBox(height: 24),
+                            Selector<AuthProvider, bool>(
+                              selector: (_, a) => a.status == AuthStatus.loading,
+                              builder: (_, loading, __) => PrimaryButton(
+                                label: 'Masuk',
+                                trailingIcon: Icons.arrow_forward_rounded,
+                                loading: loading,
+                                onPressed: _submit,
                               ),
                             ),
                           ],
                         ),
                       ),
 
-                      const SizedBox(height: 20),
-
-                      // ── Divider ────────────────────────────────
+                      // ── Pemisah ─────────────────────────────
+                      const SizedBox(height: 24),
                       Row(children: [
-                        const Expanded(child: Divider(color: Color(0xFF334155))),
+                        const Expanded(child: Divider()),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 12),
-                          child: Text('atau', style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textSecondary)),
+                          padding: const EdgeInsets.symmetric(horizontal: 14),
+                          child: Text('atau', style: text(fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.muted)),
                         ),
-                        const Expanded(child: Divider(color: Color(0xFF334155))),
+                        const Expanded(child: Divider()),
                       ]),
+                      const SizedBox(height: 24),
 
-                      const SizedBox(height: 16),
+                      // ── Google ──────────────────────────────
+                      Selector<AuthProvider, bool>(
+                        selector: (_, a) => a.status == AuthStatus.loading,
+                        builder: (_, loading, __) => SecondaryButton(
+                          onPressed: loading ? null : _googleLogin,
+                          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                            SizedBox(width: 20, height: 20, child: CustomPaint(painter: _GoogleLogoPainter())),
+                            const SizedBox(width: 10),
+                            Text('Lanjutkan dengan Google',
+                                style: text(fontSize: 14, fontWeight: FontWeight.w600, color: AppColors.ink)),
+                          ]),
+                        ),
+                      ),
+                      const SizedBox(height: 28),
 
-                      // ── Google Login Button (matches web style) ─
-                      Consumer<AuthProvider>(builder: (_, auth, __) =>
-                        SizedBox(
-                          width: double.infinity, height: 50,
-                          child: OutlinedButton(
-                            onPressed: auth.status == AuthStatus.loading ? null : _googleLogin,
-                            style: OutlinedButton.styleFrom(
-                              foregroundColor: const Color(0xFF1E293B),
-                              backgroundColor: Colors.white,
-                              side: const BorderSide(color: Color(0xFFCBD5E1)),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            ),
-                            child: auth.status == AuthStatus.loading
-                                ? const SizedBox(width: 22, height: 22,
-                                    child: CircularProgressIndicator(strokeWidth: 2.5, color: Colors.grey))
-                                : Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                                    // Google logo SVG paths
-                                    SizedBox(width: 20, height: 20, child: CustomPaint(painter: _GoogleLogoPainter())),
-                                    const SizedBox(width: 10),
-                                    Text('Login via Google',
-                                      style: GoogleFonts.outfit(fontSize: 14, fontWeight: FontWeight.w600, color: const Color(0xFF374151))),
-                                  ]),
-                          ),
+                      Center(
+                        child: TextButton(
+                          onPressed: () => Navigator.of(context).pushAndRemoveUntil(
+                              MaterialPageRoute(builder: (_) => shellFor(null)), (_) => false),
+                          child: Text('Lihat katalog tanpa masuk',
+                              style: text(fontSize: 13, fontWeight: FontWeight.w600)),
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Center(
+                        child: Text(
+                          'Akun pelanggan dibuat otomatis saat login pertama dengan Google.',
+                          style: text(fontSize: 12, height: 1.45, color: AppColors.muted),
+                          textAlign: TextAlign.center,
                         ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 32),
-
-                // ── Info note ─────────────────────────────────
-                Center(
-                  child: Text(
-                    'Akun dibuat otomatis saat login pertama via Google',
-                    style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textHint),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                const SizedBox(height: 40),
-              ],
+              ),
             ),
           ),
         ),
@@ -262,79 +231,22 @@ class _LoginScreenState extends State<LoginScreen>
 }
 
 // ─────────────────────────────────────────────────────────────
-//  Reusable styled input field
-// ─────────────────────────────────────────────────────────────
-class _InputField extends StatelessWidget {
-  final TextEditingController controller;
-  final String label;
-  final String emoji;
-  final bool obscure;
-  final Widget? suffix;
-  final String? Function(String?)? validator;
-  final TextInputType keyboardType;
-
-  const _InputField({
-    required this.controller,
-    required this.label,
-    required this.emoji,
-    this.obscure       = false,
-    this.suffix,
-    this.validator,
-    this.keyboardType  = TextInputType.text,
-  });
-
-  @override
-  Widget build(BuildContext context) => Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: [
-      Text(label, style: GoogleFonts.outfit(fontSize: 12, color: AppColors.textSecondary, fontWeight: FontWeight.w600)),
-      const SizedBox(height: 6),
-      TextFormField(
-        controller:   controller,
-        obscureText:  obscure,
-        keyboardType: keyboardType,
-        style:        GoogleFonts.outfit(color: AppColors.textPrimary, fontSize: 14),
-        validator:    validator,
-        decoration: InputDecoration(
-          prefixIcon:  Padding(padding: const EdgeInsets.only(left: 12, right: 8), child: Text(emoji, style: const TextStyle(fontSize: 16))),
-          prefixIconConstraints: const BoxConstraints(minWidth: 40, minHeight: 40),
-          suffixIcon:  suffix,
-          filled:      true,
-          fillColor:   AppColors.background,
-          contentPadding: const EdgeInsets.symmetric(vertical: 14, horizontal: 16),
-          border:      OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none),
-          enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: Color(0xFF334155))),
-          focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: _kGreen600, width: 2)),
-          errorBorder:   OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: AppColors.error)),
-          focusedErrorBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: const BorderSide(color: AppColors.error, width: 2)),
-        ),
-      ),
-    ],
-  );
-}
-
-// ─────────────────────────────────────────────────────────────
-//  Google G logo painted with 4 colors (matching web SVG)
+//  Logo "G" Google dilukis dengan empat warna
 // ─────────────────────────────────────────────────────────────
 class _GoogleLogoPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final r = size.width / 2;
-    // Blue arc
     final paint = Paint()..style = PaintingStyle.stroke..strokeWidth = size.width * 0.18;
+    final rect = Rect.fromCircle(center: Offset(r, r), radius: r * 0.82);
     paint.color = const Color(0xFF4285F4);
-    canvas.drawArc(Rect.fromCircle(center: Offset(r, r), radius: r * 0.82),
-        -0.3, 2.0, false, paint);
+    canvas.drawArc(rect, -0.3, 2.0, false, paint);
     paint.color = const Color(0xFF34A853);
-    canvas.drawArc(Rect.fromCircle(center: Offset(r, r), radius: r * 0.82),
-        1.7, 1.0, false, paint);
+    canvas.drawArc(rect, 1.7, 1.0, false, paint);
     paint.color = const Color(0xFFFBBC05);
-    canvas.drawArc(Rect.fromCircle(center: Offset(r, r), radius: r * 0.82),
-        2.7, 0.8, false, paint);
+    canvas.drawArc(rect, 2.7, 0.8, false, paint);
     paint.color = const Color(0xFFEA4335);
-    canvas.drawArc(Rect.fromCircle(center: Offset(r, r), radius: r * 0.82),
-        3.5, 1.0, false, paint);
-    // Horizontal bar of G
+    canvas.drawArc(rect, 3.5, 1.0, false, paint);
     final barPaint = Paint()..color = const Color(0xFF4285F4)..style = PaintingStyle.fill;
     canvas.drawRect(Rect.fromLTWH(r, r - size.height * 0.12, r * 0.82, size.height * 0.24), barPaint);
   }

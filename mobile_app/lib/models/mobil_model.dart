@@ -1,3 +1,5 @@
+import 'sopir_model.dart' show asInt;
+
 class TipeMobilModel {
   final int id;
   final String namaTipe;
@@ -5,7 +7,7 @@ class TipeMobilModel {
   const TipeMobilModel({required this.id, required this.namaTipe});
 
   factory TipeMobilModel.fromJson(Map<String, dynamic> json) => TipeMobilModel(
-        id:       json['id'] as int,
+        id:       asInt(json['id']),
         namaTipe: json['nama_tipe'] as String? ?? '',
       );
 }
@@ -19,7 +21,7 @@ class MasterMobilModel {
 
   factory MasterMobilModel.fromJson(Map<String, dynamic> json) =>
       MasterMobilModel(
-        id:   json['id'] as int,
+        id:   asInt(json['id']),
         nama: json['nama'] as String? ?? '',
         tipe: json['tipe'] != null
             ? TipeMobilModel.fromJson(json['tipe'] as Map<String, dynamic>)
@@ -55,13 +57,13 @@ class MobilModel {
   });
 
   factory MobilModel.fromJson(Map<String, dynamic> json) => MobilModel(
-        id:          json['id'] as int,
+        id:          asInt(json['id']),
         platNomor:   json['plat_nomor'] as String? ?? '',
         merk:        json['merk'] as String? ?? '',
-        tahun:       json['tahun'] as int? ?? 0,
-        hargaSewa:   json['harga_sewa'] as int? ?? 0,
-        hargaAllIn:  json['harga_all_in'] as int? ?? 0,
-        status:      json['status'] as int? ?? 1,
+        tahun:       asInt(json['tahun']),
+        hargaSewa:   asInt(json['harga_sewa']),
+        hargaAllIn:  asInt(json['harga_all_in']),
+        status:      asInt(json['status'], 1),
         statusText:  json['status_text'] as String?,
         gambar:      json['gambar'] as String?,
         masterMobil: json['master_mobil'] != null

@@ -1,7 +1,9 @@
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ─────────────────────────────────────────────────────────────
-//  StorageService — persists auth token & user data locally
+//  StorageService — token di penyimpanan aman (Android Keystore),
+//  data pengguna non-sensitif di SharedPreferences.
 // ─────────────────────────────────────────────────────────────
 
 class StorageService {
@@ -10,19 +12,42 @@ class StorageService {
   static const _keyUserName = 'user_name';
   static const _keyUserEmail= 'user_email';
   static const _keyUserRole = 'user_role';
+  static const _keyUserJson = 'user_json';
+
+  static const _secure = FlutterSecureStorage();
 
   // ── Token ───────────────────────────────────────────────────
   static Future<void> saveToken(String token) async {
+    await _secure.write(key: _keyToken, value: token);
+    // Pastikan tidak ada salinan lama (versi sebelum penyimpanan aman) yang tertinggal.
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setString(_keyToken, token);
+    await prefs.remove(_keyToken);
   }
 
   static Future<String?> getToken() async {
-    final prefs = await SharedPreferences.getInstance();
-    return prefs.getString(_keyToken);
+    try {
+      final secure = await _secure.read(key: _keyToken);
+      if (secure != null && secure.isNotEmpty) return secure;
+
+      // Migrasi satu kali: pindahkan token lama dari SharedPreferences ke penyimpanan aman.
+      final prefs  = await SharedPreferences.getInstance();
+      final legacy = prefs.getString(_keyToken);
+      if (legacy != null && legacy.isNotEmpty) {
+        await _secure.write(key: _keyToken, value: legacy);
+        await prefs.remove(_keyToken);
+        return legacy;
+      }
+      return null;
+    } catch (_) {
+      // Keystore rusak (mis. setelah restore perangkat): anggap belum login, jangan crash.
+      return null;
+    }
   }
 
   static Future<void> deleteToken() async {
+    try {
+      await _secure.delete(key: _keyToken);
+    } catch (_) {/* tidak ada yang perlu dihapus */}
     final prefs = await SharedPreferences.getInstance();
     await prefs.remove(_keyToken);
   }
@@ -53,8 +78,20 @@ class StorageService {
     };
   }
 
+  /// Profil lengkap (JSON) untuk memulihkan sesi saat server tidak terjangkau.
+  static Future<void> saveUserJson(String json) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString(_keyUserJson, json);
+  }
+
+  static Future<String?> getUserJson() async {
+    final prefs = await SharedPreferences.getInstance();
+    return prefs.getString(_keyUserJson);
+  }
+
   // ── Clear All ───────────────────────────────────────────────
   static Future<void> clearAll() async {
+    await deleteToken();
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
   }

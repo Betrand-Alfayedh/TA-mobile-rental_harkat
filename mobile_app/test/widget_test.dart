@@ -24,11 +24,18 @@ void main() {
     );
 
     // Pump a frame so widgets settle
-    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
     // Verify key UI elements are present
-    expect(find.text('Customer Login'), findsOneWidget);
-    expect(find.text('Login'),          findsOneWidget);
-    expect(find.text('Login via Google'), findsOneWidget);
+    expect(find.text('Masuk ke'),               findsOneWidget);
+    expect(find.text('Harkat Rental'),          findsOneWidget);
+    expect(find.text('Masuk'),                  findsOneWidget);
+    expect(find.text('Lanjutkan dengan Google'), findsOneWidget);
+
+    // Validasi klien: isian kosong ditolak tanpa permintaan ke server
+    await tester.tap(find.text('Masuk'));
+    await tester.pump();
+    expect(find.text('Email tidak valid'), findsOneWidget);
+    expect(find.text('Password minimal 6 karakter'), findsOneWidget);
   });
 }

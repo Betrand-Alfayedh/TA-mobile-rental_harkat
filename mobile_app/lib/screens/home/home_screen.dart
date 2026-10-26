@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:shimmer/shimmer.dart';
 import '../../core/constants/app_colors.dart';
-import '../../core/utils/formatters.dart';
+import '../../core/widgets/app_widgets.dart';
+import '../../core/widgets/mobil_widgets.dart';
+import '../../core/widgets/state_views.dart';
 import '../../providers/auth_provider.dart';
 import '../../providers/mobil_provider.dart';
-import '../../providers/booking_provider.dart';
 import '../../models/mobil_model.dart';
-import '../auth/login_screen.dart';
 import '../mobil/mobil_list_screen.dart';
 import '../mobil/mobil_detail_screen.dart';
 import '../booking/booking_list_screen.dart';
 import '../riwayat/riwayat_screen.dart';
 import '../profile/profile_screen.dart';
+import '../auth/login_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -24,321 +26,442 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _navIndex = 0;
 
-  final List<Widget> _pages = const [
-    _HomeTab(),
-    BookingListScreen(),
-    RiwayatScreen(),
-    ProfileScreen(),
+  static const _items = [
+    NavItem(Icons.home_outlined, Icons.home_rounded, 'Beranda'),
+    NavItem(Icons.bookmark_outline_rounded, Icons.bookmark_rounded, 'Booking'),
+    NavItem(Icons.history_rounded, Icons.history_rounded, 'Riwayat'),
+    NavItem(Icons.person_outline_rounded, Icons.person_rounded, 'Profil'),
   ];
 
   @override
   Widget build(BuildContext context) {
+    // Tamu hanya melihat katalog; tab lain minta login (juga agar tidak memanggil API yang butuh token).
+    final masuk = context.select<AuthProvider, bool>((a) => a.isAuthenticated);
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: IndexedStack(index: _navIndex, children: _pages),
-      bottomNavigationBar: _buildNavBar(),
-    );
-  }
-
-  Widget _buildNavBar() {
-    return Container(
-      decoration: BoxDecoration(
-        color: AppColors.surface,
-        border: const Border(top: BorderSide(color: AppColors.border, width: 0.5)),
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 20, offset: const Offset(0, -4))],
-      ),
-      child: NavigationBar(
-        selectedIndex: _navIndex,
-        onDestinationSelected: (i) => setState(() => _navIndex = i),
-        backgroundColor: Colors.transparent,
-        indicatorColor: AppColors.primary.withOpacity(0.3),
-        labelBehavior: NavigationDestinationLabelBehavior.alwaysShow,
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home_rounded, color: AppColors.accent), label: 'Beranda'),
-          NavigationDestination(icon: Icon(Icons.bookmark_outline), selectedIcon: Icon(Icons.bookmark_rounded, color: AppColors.accent), label: 'Booking'),
-          NavigationDestination(icon: Icon(Icons.history_outlined), selectedIcon: Icon(Icons.history_rounded, color: AppColors.accent), label: 'Riwayat'),
-          NavigationDestination(icon: Icon(Icons.person_outline), selectedIcon: Icon(Icons.person_rounded, color: AppColors.accent), label: 'Profil'),
-        ],
+      backgroundColor: AppColors.surface,
+      body: IndexedStack(index: _navIndex, children: [
+        _HomeTab(onProfil: () => setState(() => _navIndex = 3)),
+        masuk ? const BookingListScreen() : const _GerbangTamu(judul: 'Booking Anda'),
+        masuk ? const RiwayatScreen() : const _GerbangTamu(judul: 'Riwayat sewa'),
+        masuk ? const ProfileScreen() : const _GerbangTamu(judul: 'Profil'),
+      ]),
+      bottomNavigationBar: FloatingNavBar(
+        items: _items,
+        index: _navIndex,
+        onTap: (i) => setState(() => _navIndex = i),
       ),
     );
   }
 }
 
 // ─────────────────────────────────────────────────────────────
-//  Home Tab Content
+//  Tab Beranda
 // ─────────────────────────────────────────────────────────────
+class _GerbangTamu extends StatelessWidget {
+  final String judul;
+  const _GerbangTamu({required this.judul});
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+        child: Column(children: [
+          Expanded(
+            child: EmptyState(
+              icon: Icons.lock_outline_rounded,
+              title: '$judul perlu login',
+              subtitle: 'Katalog bisa dilihat tanpa akun. Masuk untuk memesan dan memantau sewa.',
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(screenGutter(context), 0, screenGutter(context), 120),
+            child: ContentWidth(
+              max: 360,
+              child: PrimaryButton(
+                label: 'Masuk',
+                trailingIcon: Icons.arrow_forward_rounded,
+                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const LoginScreen())),
+              ),
+            ),
+          ),
+        ]),
+      );
+}
+
 class _HomeTab extends StatefulWidget {
-  const _HomeTab();
+  final VoidCallback onProfil;
+  const _HomeTab({required this.onProfil});
   @override
   State<_HomeTab> createState() => _HomeTabState();
 }
 
 class _HomeTabState extends State<_HomeTab> {
+  String _tipe = '';
+
   @override
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      context.read<MobilProvider>().loadMobils(reset: true);
-      context.read<MobilProvider>().loadTipes();
+      final p = context.read<MobilProvider>();
+      p.loadTipes();
+      p.applyFilter(search: '', type: _tipe);
     });
+  }
+
+  Future<void> _muat() => context.read<MobilProvider>().applyFilter(search: '', type: _tipe);
+
+  void _pilihTipe(String tipe) {
+    setState(() => _tipe = tipe);
+    _muat();
+  }
+
+  /// Buka katalog; setelah kembali, daftar beranda disegarkan sesuai chip yang aktif.
+  Future<void> _bukaKatalog() async {
+    await Navigator.push(context, MaterialPageRoute(builder: (_) => MobilListScreen(initialType: _tipe)));
+    if (mounted) _muat();
   }
 
   @override
   Widget build(BuildContext context) {
-    final auth = context.watch<AuthProvider>();
-    final user = auth.user;
+    final user   = context.select<AuthProvider, dynamic>((a) => a.user);
+    final gutter = screenGutter(context);
+    final nama   = ((user?.name as String?) ?? '').trim();
+    final depan  = nama.isEmpty ? '' : nama.split(' ').first;
+    final inisial = nama.isEmpty ? '?' : nama[0].toUpperCase();
 
     return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          // ── App Bar / Hero ──────────────────────────────────
-          SliverToBoxAdapter(child: _HeroHeader(userName: user?.name ?? 'Pengguna')),
+      bottom: false,
+      child: RefreshIndicator(
+        color: AppColors.primary,
+        onRefresh: _muat,
+        child: CustomScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(
+              child: ContentWidth(
+                max: 920,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(gutter, 12, gutter, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _TopBar(inisial: inisial, depan: depan, onProfil: widget.onProfil),
+                      const SizedBox(height: 18),
+                      _SearchPill(onTap: _bukaKatalog),
+                      const SizedBox(height: 16),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: TipeChips(aktif: _tipe, onPilih: _pilihTipe),
+            ),
+            SliverToBoxAdapter(
+              child: ContentWidth(
+                max: 920,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(gutter, 20, gutter, 0),
+                  child: const _BannerArmada(),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: ContentWidth(
+                max: 920,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(gutter, 24, gutter, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Mobil Tersedia',
+                          style: GoogleFonts.plusJakartaSans(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.ink)),
+                      TextButton(
+                        onPressed: _bukaKatalog,
+                        style: TextButton.styleFrom(minimumSize: const Size(48, 48), padding: const EdgeInsets.symmetric(horizontal: 8)),
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          Text('Lihat semua', style: GoogleFonts.plusJakartaSans(fontSize: 13, fontWeight: FontWeight.w600)),
+                          const Icon(Icons.chevron_right_rounded, size: 18),
+                        ]),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: ContentWidth(
+                max: 920,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(gutter, 4, gutter, 24),
+                  child: _GridMobil(onCoba: _muat),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-          // ── Promo Banner ────────────────────────────────────
-          SliverToBoxAdapter(child: _PromoBanner()),
+// ── Bilah atas: avatar + sapaan + lokasi ─────────────────────
+class _TopBar extends StatelessWidget {
+  final String inisial;
+  final String depan;
+  final VoidCallback onProfil;
+  const _TopBar({required this.inisial, required this.depan, required this.onProfil});
 
-          // ── Quick Stats ─────────────────────────────────────
-          SliverToBoxAdapter(child: _QuickStats()),
+  @override
+  Widget build(BuildContext context) {
+    final t = GoogleFonts.plusJakartaSans;
+    return Row(
+      children: [
+        Semantics(
+          button: true,
+          label: 'Buka profil',
+          child: InkResponse(
+            onTap: onProfil,
+            radius: 28,
+            child: Container(
+              width: 46, height: 46,
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(shape: BoxShape.circle, color: AppColors.surfaceAlt),
+              child: inisial == '?'
+                  ? const Icon(Icons.person_outline_rounded, size: 22, color: AppColors.ink)
+                  : Text(inisial, style: t(fontSize: 17, fontWeight: FontWeight.w800, color: AppColors.ink)),
+            ),
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('Selamat datang', style: t(fontSize: 12, fontWeight: FontWeight.w500, color: AppColors.muted)),
+            Text(depan.isEmpty ? 'Harkat Rental' : depan,
+                maxLines: 1, overflow: TextOverflow.ellipsis,
+                style: t(fontSize: 17, fontWeight: FontWeight.w800, color: AppColors.ink)),
+          ]),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          decoration: BoxDecoration(color: AppColors.surfaceAlt, borderRadius: BorderRadius.circular(20)),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            const Icon(Icons.location_on_outlined, size: 16, color: AppColors.ink),
+            const SizedBox(width: 4),
+            Text('Yogyakarta', style: t(fontSize: 12.5, fontWeight: FontWeight.w600, color: AppColors.ink)),
+          ]),
+        ),
+      ],
+    );
+  }
+}
 
-          // ── Section Title ───────────────────────────────────
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(20, 24, 20, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+// ── Pencarian (membuka katalog) ──────────────────────────────
+class _SearchPill extends StatelessWidget {
+  final VoidCallback onTap;
+  const _SearchPill({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) => Semantics(
+        button: true,
+        label: 'Cari mobil',
+        child: GestureDetector(
+          onTap: onTap,
+          child: Container(
+            height: 52,
+            padding: const EdgeInsets.only(left: 16, right: 8),
+            decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: AppColors.line)),
+            child: Row(children: [
+              const Icon(Icons.search_rounded, color: AppColors.muted, size: 21),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Text('Cari mobil, merek, atau tipe…',
+                    overflow: TextOverflow.ellipsis,
+                    style: GoogleFonts.plusJakartaSans(fontSize: 13.5, fontWeight: FontWeight.w500, color: AppColors.muted)),
+              ),
+              Container(
+                width: 38, height: 38,
+                decoration: BoxDecoration(color: AppColors.surfaceAlt, borderRadius: BorderRadius.circular(12)),
+                child: const Icon(Icons.tune_rounded, color: AppColors.ink, size: 19),
+              ),
+            ]),
+          ),
+        ),
+      );
+}
+
+// ── Banner: armada pilihan dari data nyata ───────────────────
+class _BannerArmada extends StatefulWidget {
+  const _BannerArmada();
+  @override
+  State<_BannerArmada> createState() => _BannerArmadaState();
+}
+
+class _BannerArmadaState extends State<_BannerArmada> {
+  int _halaman = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    final semua = context.select<MobilProvider, List<MobilModel>>((p) => p.mobils);
+    final pilihan = semua.where((m) => m.primaryImage.isNotEmpty).take(3).toList();
+    if (pilihan.isEmpty) return const SizedBox.shrink();
+    final tinggi = MediaQuery.sizeOf(context).height < 560 ? 140.0 : 168.0;
+
+    return SizedBox(
+      height: tinggi,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(24),
+        child: Stack(
+          children: [
+            PageView.builder(
+              itemCount: pilihan.length,
+              onPageChanged: (i) => setState(() => _halaman = i),
+              itemBuilder: (_, i) => _SlideBanner(mobil: pilihan[i]),
+            ),
+            if (pilihan.length > 1)
+              Positioned(
+                right: 18, bottom: 14,
+                child: Row(children: [
+                  for (var i = 0; i < pilihan.length; i++)
+                    AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
+                      margin: const EdgeInsets.only(left: 4),
+                      width: i == _halaman ? 16 : 6,
+                      height: 6,
+                      decoration: BoxDecoration(
+                        color: i == _halaman ? Colors.white : Colors.white54,
+                        borderRadius: BorderRadius.circular(3),
+                      ),
+                    ),
+                ]),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SlideBanner extends StatelessWidget {
+  final MobilModel mobil;
+  const _SlideBanner({required this.mobil});
+
+  @override
+  Widget build(BuildContext context) {
+    final t = GoogleFonts.plusJakartaSans;
+    final lebar = MediaQuery.sizeOf(context).width;
+    return GestureDetector(
+      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MobilDetailScreen(mobilId: mobil.id))),
+      child: ColoredBox(
+        color: AppColors.primary,
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            Positioned(
+              right: 0, top: 0, bottom: 0,
+              width: lebar * 0.5,
+              child: CachedNetworkImage(
+                imageUrl: mobil.primaryImage,
+                fit: BoxFit.cover,
+                memCacheWidth: 600,
+                placeholder: (_, __) => const SizedBox.shrink(),
+                errorWidget: (_, __, ___) => const SizedBox.shrink(),
+              ),
+            ),
+            // Scrim: menyatukan sisi kiri foto dengan latar gelap agar teks tetap terbaca.
+            const DecoratedBox(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.centerRight,
+                  stops: [0.45, 0.72],
+                  colors: [AppColors.primary, Color(0x00111111)],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Mobil Tersedia', style: GoogleFonts.outfit(fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
-                  GestureDetector(
-                    onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MobilListScreen())),
-                    child: Text('Lihat Semua', style: GoogleFonts.outfit(fontSize: 13, color: AppColors.accent, fontWeight: FontWeight.w600)),
+                  Text('ARMADA PILIHAN', style: t(fontSize: 10, letterSpacing: 1.4, fontWeight: FontWeight.w700, color: Colors.white70)),
+                  const SizedBox(height: 6),
+                  SizedBox(
+                    width: lebar * 0.42,
+                    child: Text(mobil.masterMobil?.nama ?? mobil.merk,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: t(fontSize: 19, height: 1.15, fontWeight: FontWeight.w800, color: Colors.white)),
+                  ),
+                  const SizedBox(height: 4),
+                  Text('Mulai ${rp(mobil.hargaSewa)} / hari',
+                      style: t(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.white70)),
+                  const SizedBox(height: 10),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
+                    child: Row(mainAxisSize: MainAxisSize.min, children: [
+                      Text('Lihat Detail', style: t(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.ink)),
+                      const SizedBox(width: 4),
+                      const Icon(Icons.arrow_forward_rounded, size: 14, color: AppColors.ink),
+                    ]),
                   ),
                 ],
               ),
             ),
-          ),
-
-          // ── Car Grid ────────────────────────────────────────
-          const SliverToBoxAdapter(child: _CarGrid()),
-          const SliverToBoxAdapter(child: SizedBox(height: 24)),
-        ],
-      ),
-    );
-  }
-}
-
-class _HeroHeader extends StatelessWidget {
-  final String userName;
-  const _HeroHeader({required this.userName});
-
-  @override
-  Widget build(BuildContext context) => Container(
-    padding: const EdgeInsets.fromLTRB(20, 20, 20, 28),
-    decoration: const BoxDecoration(gradient: AppColors.heroGradient),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Halo, ${userName.split(' ').first}! 👋',
-                      style: GoogleFonts.outfit(fontSize: 22, fontWeight: FontWeight.w800, color: Colors.white)),
-                  const SizedBox(height: 4),
-                  Text('Mau sewa mobil hari ini?',
-                      style: GoogleFonts.outfit(fontSize: 13, color: Colors.white70)),
-                ],
-              ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(color: Colors.white12, borderRadius: BorderRadius.circular(14)),
-              child: const Icon(Icons.directions_car_rounded, color: AppColors.accent, size: 28),
-            ),
           ],
         ),
-        const SizedBox(height: 20),
-        // Search bar
-        GestureDetector(
-          onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const MobilListScreen())),
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-            decoration: BoxDecoration(color: Colors.white12, borderRadius: BorderRadius.circular(14),
-              border: Border.all(color: Colors.white24)),
-            child: Row(
-              children: [
-                const Icon(Icons.search_rounded, color: Colors.white54, size: 20),
-                const SizedBox(width: 10),
-                Text('Cari mobil impianmu...', style: GoogleFonts.outfit(color: Colors.white54, fontSize: 14)),
-              ],
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-class _PromoBanner extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) => Container(
-    margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-    height: 140,
-    decoration: BoxDecoration(
-      gradient: const LinearGradient(colors: [Color(0xFFD97706), Color(0xFFF59E0B), Color(0xFFFCD34D)]),
-      borderRadius: BorderRadius.circular(20),
-      boxShadow: [BoxShadow(color: AppColors.accent.withOpacity(0.3), blurRadius: 20, offset: const Offset(0, 8))],
-    ),
-    child: Stack(
-      children: [
-        Positioned(right: -10, bottom: -10,
-          child: Icon(Icons.directions_car, size: 140, color: Colors.white.withOpacity(0.15))),
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                decoration: BoxDecoration(color: Colors.white24, borderRadius: BorderRadius.circular(20)),
-                child: Text('PROMO SPESIAL', style: GoogleFonts.outfit(fontSize: 10, fontWeight: FontWeight.w800, color: Colors.white, letterSpacing: 1.5))),
-              const SizedBox(height: 8),
-              Text('Sewa Lebih Hemat,\nBepergian Lebih Nyaman!',
-                style: GoogleFonts.outfit(fontSize: 16, fontWeight: FontWeight.w800, color: Colors.white, height: 1.3)),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-class _QuickStats extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-      child: Row(
-        children: [
-          _StatCard(icon: Icons.verified_outlined,     label: 'Armada',  value: '50+',   color: AppColors.primaryLight),
-          SizedBox(width: 12),
-          _StatCard(icon: Icons.star_outline_rounded,  label: 'Rating',  value: '4.9★',  color: AppColors.accent),
-          SizedBox(width: 12),
-          _StatCard(icon: Icons.support_agent_outlined, label: '24/7',   value: 'Support', color: AppColors.success),
-        ],
       ),
     );
   }
 }
 
-class _StatCard extends StatelessWidget {
-  final IconData icon;
-  final String label, value;
-  final Color color;
-  const _StatCard({required this.icon, required this.label, required this.value, required this.color});
-
-  @override
-  Widget build(BuildContext context) => Expanded(
-    child: Container(
-      padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 10),
-      decoration: BoxDecoration(color: AppColors.surface, borderRadius: BorderRadius.circular(16), border: Border.all(color: AppColors.border)),
-      child: Column(
-        children: [
-          Icon(icon, color: color, size: 22),
-          const SizedBox(height: 6),
-          Text(value, style: GoogleFonts.outfit(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.textPrimary)),
-          Text(label, style: GoogleFonts.outfit(fontSize: 10, color: AppColors.textSecondary)),
-        ],
-      ),
-    ),
-  );
-}
-
-class _CarGrid extends StatelessWidget {
-  const _CarGrid();
+// ── Grid kartu mobil (kolom mengikuti lebar) ─────────────────
+class _GridMobil extends StatelessWidget {
+  final VoidCallback onCoba;
+  const _GridMobil({required this.onCoba});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<MobilProvider>(
-      builder: (_, provider, __) {
-        if (provider.isLoading && provider.mobils.isEmpty) {
-          return const Padding(
-            padding: EdgeInsets.all(40),
-            child: Center(child: CircularProgressIndicator(color: AppColors.accent)),
-          );
-        }
-        if (provider.mobils.isEmpty) {
-          return Padding(
-            padding: const EdgeInsets.all(40),
-            child: Center(child: Text('Tidak ada mobil tersedia', style: GoogleFonts.outfit(color: AppColors.textSecondary))),
-          );
-        }
-        final items = provider.mobils.take(6).toList();
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
-          child: GridView.builder(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemCount: items.length,
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2, crossAxisSpacing: 12, mainAxisSpacing: 12, childAspectRatio: 0.78),
-            itemBuilder: (_, i) => _CarCard(mobil: items[i]),
-          ),
+    return Consumer<MobilProvider>(builder: (_, p, __) {
+      if (p.isLoading && p.mobils.isEmpty) return const _GridSkeleton();
+      if (p.state == MobilLoadState.error && p.mobils.isEmpty) {
+        return ErrorState(message: p.error, onRetry: onCoba);
+      }
+      if (p.mobils.isEmpty) {
+        return const Padding(
+          padding: EdgeInsets.symmetric(vertical: 24),
+          child: EmptyState(icon: Icons.directions_car_outlined, title: 'Belum ada mobil', subtitle: 'Coba pilih tipe lain.'),
         );
-      },
-    );
+      }
+      final items = p.mobils.take(8).toList();
+      return LayoutBuilder(builder: (_, c) {
+        const gap = 12.0;
+        final k = c.maxWidth < 600 ? 1 : 2;
+        final w = (c.maxWidth - gap * (k - 1)) / k;
+        return Wrap(
+          spacing: gap,
+          runSpacing: gap,
+          children: [for (final m in items) SizedBox(width: w, child: MobilCardH(mobil: m))],
+        );
+      });
+    });
   }
 }
 
-class _CarCard extends StatelessWidget {
-  final MobilModel mobil;
-  const _CarCard({required this.mobil});
+class _GridSkeleton extends StatelessWidget {
+  const _GridSkeleton();
 
   @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => Navigator.push(context, MaterialPageRoute(builder: (_) => MobilDetailScreen(mobilId: mobil.id))),
-      child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.surface,
-          borderRadius: BorderRadius.circular(18),
-          border: Border.all(color: AppColors.border),
-          boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.2), blurRadius: 10, offset: const Offset(0, 4))],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Image
-            ClipRRect(
-              borderRadius: const BorderRadius.vertical(top: Radius.circular(18)),
-              child: SizedBox(
-                height: 110, width: double.infinity,
-                child: mobil.primaryImage.isNotEmpty
-                    ? CachedNetworkImage(imageUrl: mobil.primaryImage, fit: BoxFit.cover,
-                        placeholder: (_, __) => Container(color: AppColors.surfaceLight, child: const Icon(Icons.directions_car, color: AppColors.border, size: 40)),
-                        errorWidget: (_, __, ___) => Container(color: AppColors.surfaceLight, child: const Icon(Icons.directions_car, color: AppColors.border, size: 40)))
-                    : Container(color: AppColors.surfaceLight, child: const Icon(Icons.directions_car, color: AppColors.border, size: 40)),
-              ),
+  Widget build(BuildContext context) => Shimmer.fromColors(
+        baseColor: AppColors.surfaceAlt,
+        highlightColor: AppColors.bg,
+        child: Column(children: [
+          for (var i = 0; i < 3; i++)
+            Container(
+              height: 102,
+              margin: const EdgeInsets.only(bottom: 12),
+              decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)),
             ),
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(mobil.merk, style: GoogleFonts.outfit(fontSize: 13, fontWeight: FontWeight.w700, color: AppColors.textPrimary), maxLines: 1, overflow: TextOverflow.ellipsis),
-                  const SizedBox(height: 2),
-                  if (mobil.tipeNama != null)
-                    Text(mobil.tipeNama!, style: GoogleFonts.outfit(fontSize: 10, color: AppColors.textSecondary)),
-                  const SizedBox(height: 6),
-                  Text(Formatters.toRupiah(mobil.hargaSewa), style: GoogleFonts.outfit(fontSize: 12, fontWeight: FontWeight.w700, color: AppColors.accent)),
-                  Text('/hari', style: GoogleFonts.outfit(fontSize: 10, color: AppColors.textSecondary)),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+        ]),
+      );
 }

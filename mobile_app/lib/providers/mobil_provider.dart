@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import '../core/services/api_service.dart';
 import '../models/mobil_model.dart';
+import '../models/sopir_model.dart' show asInt;
 
 enum MobilLoadState { initial, loading, loaded, error }
 
@@ -17,6 +18,8 @@ class MobilProvider extends ChangeNotifier {
   int  _currentPage = 1;
   int  _lastPage    = 1;
   bool _hasMore     = true;
+
+  int _gen = 0;
 
   // Filters
   String _search = '';
@@ -37,11 +40,15 @@ class MobilProvider extends ChangeNotifier {
   // ── Load car types ─────────────────────────────────────────
   Future<void> loadTipes() async {
     if (_tipes.isNotEmpty) return;
-    final res = await ApiService.getTipeMobils();
-    if (res.success && res.data != null) {
-      final list = res.data!['data'] as List<dynamic>;
-      _tipes = list.map((e) => TipeMobilModel.fromJson(e as Map<String, dynamic>)).toList();
-      notifyListeners();
+    try {
+      final res = await ApiService.getTipeMobils();
+      if (res.success && res.data != null) {
+        final list = res.data!['data'] as List<dynamic>;
+        _tipes = list.map((e) => TipeMobilModel.fromJson(e as Map<String, dynamic>)).toList();
+        notifyListeners();
+      }
+    } catch (_) {
+      // filter tipe bersifat opsional: abaikan
     }
   }
 
@@ -54,36 +61,68 @@ class MobilProvider extends ChangeNotifier {
     }
     if (!_hasMore && !reset) return;
 
+    // Nomor permintaan: jawaban lama (filter sudah berganti) tidak boleh menimpa hasil terbaru
+    // atau menambah halaman yang salah ke daftar.
+    final gen = ++_gen;
     _state = MobilLoadState.loading;
     notifyListeners();
 
-    final res = await ApiService.getMobils(
-      search:  _search,
-      type:    _type,
-      page:    _currentPage,
-      perPage: 10,
-    );
+    try {
+      final res = await ApiService.getMobils(
+        search:  _search,
+        type:    _type,
+        page:    _currentPage,
+        perPage: 10,
+      );
 
-    if (res.success && res.data != null) {
-      final list = res.data!['data'] as List<dynamic>;
-      final meta = res.data!['meta'] as Map<String, dynamic>?;
-      final fetched = list.map((e) => MobilModel.fromJson(e as Map<String, dynamic>)).toList();
+      if (gen != _gen) return;   // sudah ada permintaan yang lebih baru
+      if (res.success && res.data != null) {
+        final list = res.data!['data'] as List<dynamic>;
+        final meta = res.data!['meta'] as Map<String, dynamic>?;
+        final fetched = list.map((e) => MobilModel.fromJson(e as Map<String, dynamic>)).toList();
 
-      if (reset) {
-        _mobils = fetched;
+        if (reset) {
+          _mobils = fetched;
+        } else {
+          _mobils.addAll(fetched);
+        }
+
+        _lastPage    = asInt(meta?['last_page'], 1);
+        _hasMore     = _currentPage < _lastPage;
+        _currentPage++;
+        _state       = MobilLoadState.loaded;
       } else {
-        _mobils.addAll(fetched);
+        _gagal(res.message);
       }
-
-      _lastPage    = meta?['last_page'] as int? ?? 1;
-      _hasMore     = _currentPage < _lastPage;
-      _currentPage++;
-      _state       = MobilLoadState.loaded;
-    } else {
-      _error = res.message;
-      _state = MobilLoadState.error;
+    } catch (e) {
+      if (gen != _gen) return;
+      // Respons tak terduga: jangan biarkan spinner katalog berputar selamanya.
+      _gagal('Data mobil tidak dapat dibaca: $e');
     }
     notifyListeners();
+  }
+
+  /// Galat memuat. Bila daftar sudah berisi (gagal "muat lagi"), daftar dipertahankan dan hanya
+  /// halaman berikutnya yang dicoba ulang saat digulir; layar galat penuh hanya untuk daftar kosong.
+  void _gagal(String pesan) {
+    _error = pesan;
+    _state = _mobils.isEmpty ? MobilLoadState.error : MobilLoadState.loaded;
+  }
+
+  /// Dibuang saat logout / sesi berakhir agar data pengguna sebelumnya tidak terbawa.
+  void reset() {
+    _gen++;
+    _mobils = [];
+    _tipes = [];
+    _available = [];
+    _state = MobilLoadState.initial;
+    _availState = MobilLoadState.initial;
+    _error = '';
+    _search = '';
+    _type = '';
+    _currentPage = 1;
+    _lastPage = 1;
+    _hasMore = true;
   }
 
   // ── Load more (infinite scroll) ────────────────────────────
@@ -107,9 +146,13 @@ class MobilProvider extends ChangeNotifier {
 
   // ── Single car detail ──────────────────────────────────────
   Future<MobilModel?> getMobilDetail(int id) async {
-    final res = await ApiService.getMobilDetail(id);
-    if (res.success && res.data != null) {
-      return MobilModel.fromJson(res.data!['data'] as Map<String, dynamic>);
+    try {
+      final res = await ApiService.getMobilDetail(id);
+      if (res.success && res.data != null) {
+        return MobilModel.fromJson(res.data!['data'] as Map<String, dynamic>);
+      }
+    } catch (_) {
+      // dianggap gagal memuat
     }
     return null;
   }
@@ -123,17 +166,22 @@ class MobilProvider extends ChangeNotifier {
     _available  = [];
     notifyListeners();
 
-    final res = await ApiService.getAvailableMobils(
-      tanggalSewa:    tanggalSewa,
-      tanggalKembali: tanggalKembali,
-    );
+    try {
+      final res = await ApiService.getAvailableMobils(
+        tanggalSewa:    tanggalSewa,
+        tanggalKembali: tanggalKembali,
+      );
 
-    if (res.success && res.data != null) {
-      final list = res.data!['data'] as List<dynamic>;
-      _available  = list.map((e) => MobilModel.fromJson(e as Map<String, dynamic>)).toList();
-      _availState = MobilLoadState.loaded;
-    } else {
-      _error      = res.message;
+      if (res.success && res.data != null) {
+        final list = res.data!['data'] as List<dynamic>;
+        _available  = list.map((e) => MobilModel.fromJson(e as Map<String, dynamic>)).toList();
+        _availState = MobilLoadState.loaded;
+      } else {
+        _error      = res.message;
+        _availState = MobilLoadState.error;
+      }
+    } catch (e) {
+      _error      = 'Data mobil tidak dapat dibaca: $e';
       _availState = MobilLoadState.error;
     }
     notifyListeners();

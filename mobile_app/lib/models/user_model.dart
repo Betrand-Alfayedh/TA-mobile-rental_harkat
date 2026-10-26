@@ -58,6 +58,10 @@ class UserModel {
         roleName: roleName,
       );
 
+  bool get isAdmin    => role == 2;
+  bool get isSopir    => role == 3;
+  bool get isCustomer => role == 4;
+
   bool get isProfileComplete =>
       (alamat?.isNotEmpty ?? false) &&
       (noHp?.isNotEmpty ?? false) &&
