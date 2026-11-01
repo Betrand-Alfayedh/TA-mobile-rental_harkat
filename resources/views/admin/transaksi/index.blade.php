@@ -10,6 +10,12 @@
             </div>
         @endif
 
+        @if (session('error'))
+            <div class="mb-4 px-4 py-2 bg-red-100 text-red-800 rounded-md shadow">
+                {{ session('error') }}
+            </div>
+        @endif
+
         <div class="mb-4 flex gap-2">
             <a href="{{ route('admin.booking.create') }}"
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow">
@@ -19,7 +25,7 @@
             <a href="{{ route('admin.laporan') }}"
                 class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md shadow transition transform hover:scale-105">
                 <i data-lucide="scroll-text" class="w-5 h-5"></i>
-                Generate Laporan
+                Unduh Laporan PDF
             </a>
         </div>
 
@@ -52,7 +58,7 @@
 
                     {{-- Row buat detail --}}
                     <tr id="detail-{{ $booking->id }}" class="hidden">
-                        <td colspan="6" class="border px-4 py-2 bg-gray-50">
+                        <td colspan="8" class="border px-4 py-2 bg-gray-50">
                             <table class="w-full border">
                                 <thead>
                                     <tr class="bg-gray-100">
@@ -61,6 +67,7 @@
                                         <th class="border px-2 py-1">Tanggal</th>
                                         <th class="border px-2 py-1">Status Mobil</th>
                                         <th class="border px-2 py-1">Mulai Sewa</th>
+                                        <th class="border px-2 py-1">Kondisi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,6 +106,10 @@
                                                         {{ $detail->mobil->status_text }}
                                                     </span>
                                                 @endif
+                                            </td>
+                                            <td class="border px-2 py-1">
+                                                <a href="{{ route('admin.laporan-kondisi.show', $detail->id) }}"
+                                                    class="text-blue-600 hover:underline text-xs">Laporan kondisi</a>
                                             </td>
                                         </tr>
                                     @endforeach

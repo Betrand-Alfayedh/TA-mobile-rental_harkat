@@ -68,19 +68,6 @@ class LaporanController extends Controller
             'mobilTerpopuler'
         ));
 
-        // bikin folder kalau belum ada
-        $folderPath = storage_path('app/public/laporan');
-        if (!File::exists($folderPath)) {
-            File::makeDirectory($folderPath, 0755, true);
-        }
-
-        // nama file unik per generate
-        $filename = 'laporan_penyewaan_mobil_HarkatRentCar' . now()->format('Ymd_His') . '.pdf';
-        $path = $folderPath . '/' . $filename;
-
-        // simpan ke storage
-        $pdf->save($path);
-
-        return back()->with('success', 'Laporan berhasil digenerate dan disimpan!');
+        return $pdf->download('laporan_penyewaan_mobil_HarkatRentCar' . now()->format('Ymd_His') . '.pdf');
     }
 }

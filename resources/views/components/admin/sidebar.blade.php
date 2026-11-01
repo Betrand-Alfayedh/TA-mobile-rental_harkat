@@ -64,6 +64,12 @@
                     'label' => 'Manajemen Pengembalian Mobil',
                     'match' => 'admin/pengembalian',
                 ],
+                [
+                    'route' => 'admin.rekap',
+                    'icon' => 'scroll-text',
+                    'label' => 'Rekap Bulanan',
+                    'match' => 'admin/rekap',
+                ],
             ];
 
         @endphp

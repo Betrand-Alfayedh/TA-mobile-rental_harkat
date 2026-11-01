@@ -72,7 +72,7 @@ class MasterMobilController extends Controller
 
         $masterMobil->update($request->all());
 
-        return redirect()->route('master-mobils.index')->with('success', 'Master Mobil berhasil diupdate.');
+        return redirect()->route('admin.master-mobils.index')->with('success', 'Master Mobil berhasil diupdate.');
     }
 
     public function updateTipe(Request $request, $id)

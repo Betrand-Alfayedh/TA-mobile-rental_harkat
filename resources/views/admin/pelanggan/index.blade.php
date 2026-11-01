@@ -32,6 +32,8 @@
                             <td class="px-4 py-2">{{ $pelanggan->no_hp }}</td>
                             <td class="px-4 py-2">{{ $pelanggan->alamat }}</td>
                             <td class="px-4 py-2 space-x-2">
+                                <a href="{{ route('admin.pelanggan.show', $pelanggan->id) }}"
+                                    class="text-gray-600 hover:underline">Detail</a>
                                 <a href="{{ route('admin.pelanggan.edit', $pelanggan->id) }}"
                                     class="text-blue-500 hover:underline">Edit</a>
                             </td>

@@ -22,6 +22,7 @@
                     <th class="px-4 py-3 text-left">No</th>
                     <th class="px-4 py-3 text-left">Nama</th>
                     <th class="px-4 py-3 text-left">Tipe</th>
+                    <th class="px-4 py-3 text-left">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -42,6 +43,9 @@
                                     </option>
                                 @endforeach
                             </select>
+                        </td>
+                        <td class="px-4 py-3">
+                            <a href="{{ route('admin.master-mobils.edit', $m->id) }}" class="text-blue-500 hover:underline">Edit</a>
                         </td>
                     </tr>
                 @endforeach

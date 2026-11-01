@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\LaporanController;
+use App\Http\Controllers\Admin\LaporanKondisiController;
+use App\Http\Controllers\Admin\RekapController;
 use App\Http\Controllers\Admin\MasterMobilController;
 use App\Http\Controllers\Admin\PembayaranController;
 use App\Http\Controllers\Admin\PengembalianController;
@@ -28,6 +30,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::post('/booking/{booking}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::patch('/booking/{detail}/konfirmasi-jemput', [BookingController::class, 'konfirmasiJemput'])
         ->name('booking.konfirmasiJemput');
+    Route::get('detail/{detail}/laporan-kondisi', [LaporanKondisiController::class, 'show'])->name('laporan-kondisi.show');
+    Route::post('detail/{detail}/laporan-kondisi', [LaporanKondisiController::class, 'store'])->name('laporan-kondisi.store');
+    Route::get('rekap', [RekapController::class, 'index'])->name('rekap');
     Route::get('laporan/generate', [LaporanController::class, 'generateLaporanAdmin'])->name('laporan');
     Route::get('pembayaran', [PembayaranController::class, 'index'])->name('pembayaran.index');
     Route::put('pembayaran/{pembayaran}/verifikasi', [PembayaranController::class, 'verifikasi'])->name('pembayaran.verifikasi');
