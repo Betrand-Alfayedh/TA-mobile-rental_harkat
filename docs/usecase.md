@@ -21,7 +21,7 @@ Dokumen ini memodelkan kebutuhan fungsional sistem dari sudut pandang pengguna. 
 | **Admin** | Pengelola operasional Rental Mobil Harkat | Dibuat oleh pengelola sistem | Memverifikasi pembayaran, memantau pesanan, menugaskan sopir, mengonfirmasi pengambilan kendaraan, mencatat pengembalian dan denda, mengelola armada, sopir, dan penyewa, melihat rekap |
 | **Sopir** | Pengemudi pada layanan sewa dengan sopir | Dibuat oleh admin (langsung aktif dan disetujui) | Mengatur status ketersediaan, menerima atau menolak tugas, melihat tugas, dan melaporkan kondisi kendaraan |
 
-> UC2 Login, UC3 Mengelola Profil, dan UC4 Logout dipakai oleh ketiga aktor sehingga masing-masing aktor dihubungkan langsung ke use case tersebut.
+> UC3 Mengelola Profil dan UC4 Logout dipakai oleh ketiga aktor. UC2 Login tidak dihubungkan langsung ke aktor: setiap use case yang memerlukan login (UC3, UC4, dan UC7 sampai UC28) memiliki relasi «include» ke UC2.
 > UC5 Melihat Katalog dan Detail Mobil (serta UC6) dapat dilakukan **sebelum login**; login baru diwajibkan saat memesan (UC7) dan mengakses pesanan, riwayat, serta profil. Pengguna yang belum login tetap dimodelkan sebagai aktor Pelanggan (tidak ada aktor Tamu terpisah).
 > **Peran Super Admin tidak termasuk dalam sistem.** Pengelolaan data armada dan sopir dilakukan langsung oleh admin tanpa alur persetujuan.
 
@@ -87,7 +87,7 @@ Mermaid tidak menyediakan diagram use case bawaan, sehingga notasi UML dipetakan
 
 ### 3.1 Use Case Diagram Keseluruhan
 
-Gambar jadi bergaya Enterprise Architect tersedia pada folder [usecase-diagram](usecase-diagram/) (`UC-Pelanggan`, `UC-Admin`, `UC-Sopir`). Mermaid menata letak secara otomatis, sehingga bila gambar keseluruhan terlalu padat untuk halaman laporan, gunakan diagram per aktor pada 3.2 sampai 3.4 sebagai gambar utama.
+Gambar jadi bergaya Enterprise Architect (`UC-Gabungan`) tersedia pada folder [usecase-diagram](usecase-diagram/) dan dibuat oleh `_gen_uc.py`. Mermaid menata letak secara otomatis, sehingga bila gambar keseluruhan terlalu padat untuk halaman laporan, gunakan diagram per aktor pada 3.2 sampai 3.4 sebagai gambar utama.
 
 ```mermaid
 flowchart LR
@@ -142,9 +142,9 @@ flowchart LR
         end
     end
 
-    PEL --- UC2 & UC3 & UC4
-    ADM --- UC2 & UC3 & UC4
-    SOP --- UC2 & UC3 & UC4
+    PEL --- UC3 & UC4
+    ADM --- UC3 & UC4
+    SOP --- UC3 & UC4
 
     PEL --- UC1
     PEL --- UC5 & UC6 & UC7 & UC8 & UC9 & UC10
@@ -159,6 +159,7 @@ flowchart LR
     UC15 -.->|«extend»| UC13
     UC26 -.->|«include»| UC25
     UC27 -.->|«include»| UC25
+    UC3 & UC4 & UC7 & UC8 & UC9 & UC10 & UC11 & UC12 & UC13 & UC14 & UC15 & UC16 & UC17 & UC18 & UC19 & UC20 & UC21 & UC22 & UC23 & UC24 & UC25 & UC26 & UC27 & UC28 -.->|«include»| UC2
 ```
 
 ### 3.2 Use Case Diagram — Aktor Pelanggan
@@ -181,10 +182,11 @@ flowchart LR
         UC10(["UC10 Membatalkan Pesanan"])
     end
 
-    PEL --- UC1 & UC2 & UC3 & UC4
+    PEL --- UC1 & UC3 & UC4
     PEL --- UC5 & UC6 & UC7 & UC8 & UC9 & UC10
 
     UC7 -.->|«include»| UC6
+    UC3 & UC4 & UC7 & UC8 & UC9 & UC10 -.->|«include»| UC2
 ```
 
 ### 3.3 Use Case Diagram — Aktor Admin
@@ -214,12 +216,13 @@ flowchart LR
         UC23(["UC23 Melihat Rekap Bulanan"])
     end
 
-    ADM --- UC2 & UC3 & UC4
+    ADM --- UC3 & UC4
     ADM --- UC10 & UC11 & UC12 & UC13 & UC16 & UC17 & UC18 & UC19
     ADM --- UC20 & UC21 & UC22 & UC23
 
     UC14 -.->|«extend»| UC13
     UC15 -.->|«extend»| UC13
+    UC3 & UC4 & UC10 & UC11 & UC12 & UC13 & UC14 & UC15 & UC16 & UC17 & UC18 & UC19 & UC20 & UC21 & UC22 & UC23 -.->|«include»| UC2
 ```
 
 ### 3.4 Use Case Diagram — Aktor Sopir
@@ -241,11 +244,12 @@ flowchart LR
         UC28(["UC28 Melihat Tugas dan Riwayat"])
     end
 
-    SOP --- UC2 & UC3 & UC4
+    SOP --- UC3 & UC4
     SOP --- UC19 & UC24 & UC25 & UC26 & UC27 & UC28
 
     UC26 -.->|«include»| UC25
     UC27 -.->|«include»| UC25
+    UC3 & UC4 & UC19 & UC24 & UC25 & UC26 & UC27 & UC28 -.->|«include»| UC2
 ```
 
 ---
@@ -254,6 +258,7 @@ flowchart LR
 
 | Use case asal | Relasi | Use case tujuan | Penjelasan |
 |---------------|--------|-----------------|------------|
+| UC3, UC4, UC7 sampai UC28 (24 use case) | «include» | UC2 Login | Pengguna harus sudah login sebelum menjalankan use case tersebut. UC1, UC5, dan UC6 tidak memerlukan login sehingga tidak memiliki relasi ini. UC14, UC15, UC26, dan UC27 tetap digambar dengan relasi ini agar setiap use case yang butuh login terlihat jelas. |
 | UC7 Memesan Mobil | «include» | UC6 Mengecek Ketersediaan dan Estimasi Biaya | Setiap pemesanan selalu didahului pengecekan jadwal dan penghitungan biaya. Pelanggan juga dapat menjalankan UC6 sendiri tanpa memesan. |
 | UC14 Menolak Bukti Pembayaran | «extend» | UC13 Memverifikasi Pembayaran | Saat memeriksa bukti, admin **dapat** menolaknya bila tidak sesuai. |
 | UC15 Mencatat Pembayaran Langsung | «extend» | UC13 Memverifikasi Pembayaran | Bila pembayaran diterima langsung, admin **dapat** mencatatnya lunas tanpa bukti unggahan. |
