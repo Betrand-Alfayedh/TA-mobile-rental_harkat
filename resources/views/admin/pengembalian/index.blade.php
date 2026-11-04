@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-2xl font-bold mb-6">Daftar Booking</h1>
+        <h1 class="text-2xl font-bold mb-6">Pengembalian Mobil</h1>
 
         @if (session('success'))
             <div class="mb-4 px-4 py-2 bg-green-100 text-green-800 rounded-md shadow">
@@ -16,7 +16,7 @@
                     <th class="border px-4 py-2">Booking ID</th>
                     <th class="border px-4 py-2">Customer</th>
                     <th class="border px-4 py-2">Mobil</th>
-                    <th class="border px-4 py-2">Tanggal Kembali (seharusnya)</th>
+                    <th class="border px-4 py-2">Jadwal kembali</th>
                     <th class="border px-4 py-2">Aksi</th>
                 </tr>
             </thead>

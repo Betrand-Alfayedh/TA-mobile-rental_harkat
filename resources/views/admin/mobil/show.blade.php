@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="max-w-3xl mx-auto px-4 pt-20">
-        <h2 class="text-3xl font-bold mb-6 text-center">Detail Mobil</h2>
+        <h2 class="text-3xl font-bold mb-6 text-center">Detail Unit Mobil</h2>
 
         <div class="bg-white shadow rounded-lg overflow-hidden">
             {{-- Gambar --}}

@@ -3,7 +3,7 @@
 @section('content')
     <div class="max-w-xl mx-auto py-10">
         <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-            <h2 class="text-2xl font-bold mb-6 text-gray-800">Edit Master Mobil</h2>
+            <h2 class="text-2xl font-bold mb-6 text-gray-800">Edit Model Mobil</h2>
 
             <form method="POST" action="{{ route('admin.master-mobils.update', $masterMobil->id) }}" class="space-y-5">
                 @csrf

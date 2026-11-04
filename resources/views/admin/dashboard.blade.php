@@ -1,36 +1,54 @@
 @extends('layouts.admin')
 
-@section('title', 'Dashboard Admin')
+@section('title', 'Dashboard')
 @section('content')
-    <div class="bg-white p-6 rounded-lg shadow">
-        <h2 class="text-2xl font-bold mb-4">Dashboard Admin</h2>
-        <p class="text-gray-600 mb-4">Selamat Datang di Sistem Manajemen Rental Mobil Harkat Yogyakarta</p>
+    @php
+        $kartu = [
+            ['Total mobil', $totalMobil, 'car', 'bg-emerald-50 text-emerald-600', route('admin.mobil.index')],
+            ['Mobil tersedia', $mobilTersedia, 'circle-check', 'bg-green-50 text-green-600', route('admin.mobil.index')],
+            ['Mobil sedang disewa', $mobilDisewa, 'key-round', 'bg-amber-50 text-amber-600', route('admin.booking.index')],
+            ['Total sopir', $totalSupir, 'users-round', 'bg-sky-50 text-sky-600', route('admin.supir.index')],
+            ['Sopir siap', $supirSiap, 'user-check', 'bg-green-50 text-green-600', route('admin.supir.index')],
+            ['Sopir bertugas', $supirBertugas, 'route', 'bg-amber-50 text-amber-600', route('admin.supir.index')],
+        ];
+        $pintas = [
+            ['Buat pesanan sewa', 'Catat pesanan pelanggan yang datang langsung', 'plus-circle', route('admin.booking.create')],
+            ['Cek pembayaran', 'Verifikasi bukti bayar yang masuk', 'wallet', route('admin.pembayaran.index')],
+            ['Proses pengembalian', 'Catat mobil yang sudah kembali', 'undo-2', route('admin.pengembalian.index')],
+            ['Rekap bulanan', 'Pesanan, pendapatan, dan armada', 'bar-chart-3', route('admin.rekap')],
+        ];
+    @endphp
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
-            <div class="bg-blue-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-blue-800">Total Mobil</h3>
-                <p class="text-2xl font-bold text-blue-600">{{ $totalMobil }}</p>
-            </div>
-            <div class="bg-green-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-green-800">Mobil Tersedia</h3>
-                <p class="text-2xl font-bold text-green-600">{{ $mobilTersedia }}</p>
-            </div>
-            <div class="bg-yellow-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-yellow-800">Mobil Disewa</h3>
-                <p class="text-2xl font-bold text-yellow-600">{{ $mobilDisewa }}</p>
-            </div>
-            <div class="bg-blue-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-blue-800">Total Supir</h3>
-                <p class="text-2xl font-bold text-blue-600">{{ $totalSupir }}</p>
-            </div>
-            <div class="bg-green-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-green-800">Supir Siap</h3>
-                <p class="text-2xl font-bold text-green-600">{{ $supirSiap }}</p>
-            </div>
-            <div class="bg-yellow-100 p-4 rounded-lg">
-                <h3 class="font-semibold text-yellow-800">Supir bertugas</h3>
-                <p class="text-2xl font-bold text-yellow-600">{{ $supirBertugas }}</p>
-            </div>
-        </div>
+    <div class="mb-6 rounded-2xl bg-gradient-to-br from-forest to-forest-soft p-6 text-white shadow-sm sm:p-8">
+        <h1 class="!text-white text-2xl font-bold">Halo, {{ Auth::user()->name }}</h1>
+        <p class="mt-1 text-sm text-white/75">Selamat datang di sistem manajemen Rental Mobil Harkat Yogyakarta.</p>
+    </div>
+
+    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Ringkasan armada</h2>
+    <div class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        @foreach ($kartu as [$judul, $nilai, $ikon, $warna, $url])
+            <a href="{{ $url }}"
+                class="group flex items-center gap-4 rounded-2xl border border-[#E1E9E4] bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md">
+                <span class="flex h-12 w-12 items-center justify-center rounded-xl {{ $warna }}">
+                    <i data-lucide="{{ $ikon }}" class="h-6 w-6"></i>
+                </span>
+                <span>
+                    <span class="block text-3xl font-bold leading-none text-gray-900">{{ $nilai }}</span>
+                    <span class="mt-1 block text-sm text-gray-500">{{ $judul }}</span>
+                </span>
+            </a>
+        @endforeach
+    </div>
+
+    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Pintasan</h2>
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        @foreach ($pintas as [$judul, $ket, $ikon, $url])
+            <a href="{{ $url }}"
+                class="rounded-2xl border border-[#E1E9E4] bg-white p-5 transition hover:border-leaf hover:shadow-md">
+                <i data-lucide="{{ $ikon }}" class="mb-3 h-6 w-6 text-leaf"></i>
+                <div class="font-semibold text-gray-900">{{ $judul }}</div>
+                <div class="mt-1 text-sm text-gray-500">{{ $ket }}</div>
+            </a>
+        @endforeach
     </div>
 @endsection

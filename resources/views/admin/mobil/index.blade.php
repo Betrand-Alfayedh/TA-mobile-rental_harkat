@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-6">Daftar Mobil</h2>
+        <h2 class="text-2xl font-bold mb-6">Unit Mobil</h2>
 
         @if (session('success'))
             <div class="mb-4 px-4 py-2 bg-green-100 text-green-800 rounded-md shadow">
@@ -13,7 +13,7 @@
         <div class="mb-4">
             <a href="{{ route('admin.mobil.create') }}"
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow">
-                + Tambah Mobil
+                + Tambah Unit Mobil
             </a>
         </div>
 

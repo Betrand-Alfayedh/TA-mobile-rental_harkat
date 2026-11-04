@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold mb-6">Daftar Master Mobil</h2>
+        <h2 class="text-2xl font-bold mb-6">Model Mobil</h2>
 
         @if (session('success'))
             <div class="mb-4 bg-green-100 text-green-800 px-4 py-2 rounded-lg">
@@ -12,7 +12,7 @@
 
         <a href="{{ route('admin.master-mobils.create') }}"
             class="mb-6 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-xl shadow transition">
-            ➕ Tambah Master Mobil
+            Tambah Model Mobil
         </a>
 
 
@@ -21,7 +21,7 @@
                 <tr>
                     <th class="px-4 py-3 text-left">No</th>
                     <th class="px-4 py-3 text-left">Nama</th>
-                    <th class="px-4 py-3 text-left">Tipe</th>
+                    <th class="px-4 py-3 text-left">Jenis</th>
                     <th class="px-4 py-3 text-left">Aksi</th>
                 </tr>
             </thead>

@@ -5,7 +5,7 @@
         $details = $pelunasan->booking->details;
     @endphp
     <div class="p-6">
-        <h1 class="text-2xl font-bold mb-6">Form Pengembalian Mobil</h1>
+        <h1 class="text-2xl font-bold mb-6">Proses Pengembalian Mobil</h1>
 
         <div class="bg-white p-4 rounded-lg shadow mb-6">
             <p><b>Customer:</b> {{ $pelunasan->booking->user->name }}</p>

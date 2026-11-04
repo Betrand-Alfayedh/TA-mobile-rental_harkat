@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="text-2xl font-bold mb-6">Daftar Booking</h1>
+        <h1 class="text-2xl font-bold mb-6">Pesanan Sewa</h1>
 
         @if (session('success'))
             <div class="mb-4 px-4 py-2 bg-green-100 text-green-800 rounded-md shadow">
@@ -19,7 +19,7 @@
         <div class="mb-4 flex gap-2">
             <a href="{{ route('admin.booking.create') }}"
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow">
-                + Tambah Booking
+                + Buat Pesanan
             </a>
 
             <a href="{{ route('admin.laporan') }}"

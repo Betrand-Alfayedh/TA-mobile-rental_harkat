@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="bg-white p-6 rounded-lg shadow max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold mb-6 text-center">Detail Supir</h2>
+        <h2 class="text-2xl font-bold mb-6 text-center">Detail Sopir</h2>
 
         <div class="flex flex-col md:flex-row gap-6">
             <!-- Gambar Supir -->

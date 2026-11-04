@@ -7,12 +7,29 @@ export default {
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        './resources/js/**/*.js', // kelas yang dibuat lewat JS (mis. booking.js)
     ],
 
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                sans: ['"Plus Jakarta Sans"', 'Figtree', ...defaultTheme.fontFamily.sans],
+            },
+            colors: {
+                // Satu keluarga hijau: gelap untuk permukaan besar, terang untuk aksi.
+                ink: '#0E1A14',
+                forest: { DEFAULT: '#0B3B2A', deep: '#06261B', soft: '#145A41' },
+                leaf: { DEFAULT: '#16A34A', dark: '#12873E' },
+                mint: '#EAF6EE',
+                paper: '#F5F7F5',
+                line: '#DCE5DF',
+            },
+            boxShadow: {
+                // bayangan lebar dan tipis, bukan bayangan gelap
+                soft: '0 24px 60px -28px rgba(11, 59, 42, 0.35)',
+            },
+            transitionTimingFunction: {
+                spring: 'cubic-bezier(0.32, 0.72, 0, 1)',
             },
             keyframes: {
                 slideIn: {
