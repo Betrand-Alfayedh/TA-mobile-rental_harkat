@@ -18,7 +18,7 @@
 @csrf
 
 {{-- Data unit --}}
-<section class="rounded-2xl border border-[#E1E9E4] bg-white p-6 shadow-sm">
+<section class="rounded-2xl border border-hk-line bg-white p-6 ">
     <h3 class="text-base font-bold text-gray-900">Data unit</h3>
     <p class="mb-5 text-sm text-gray-500">Model mobil, plat nomor, dan identitas unit.</p>
 
@@ -58,7 +58,7 @@
 </section>
 
 {{-- Harga --}}
-<section class="rounded-2xl border border-[#E1E9E4] bg-white p-6 shadow-sm">
+<section class="rounded-2xl border border-hk-line bg-white p-6 ">
     <h3 class="text-base font-bold text-gray-900">Harga sewa</h3>
     <p class="mb-5 text-sm text-gray-500">Tarif per hari dalam rupiah.</p>
 
@@ -83,7 +83,7 @@
 </section>
 
 {{-- Foto --}}
-<section class="rounded-2xl border border-[#E1E9E4] bg-white p-6 shadow-sm">
+<section class="rounded-2xl border border-hk-line bg-white p-6 ">
     <h3 class="text-base font-bold text-gray-900">Foto</h3>
     <p class="mb-5 text-sm text-gray-500">Format JPG, PNG, atau WebP, maksimal 8 MB per foto.</p>
 
@@ -92,11 +92,11 @@
         <div>
             <div class="text-sm font-medium text-gray-700">Foto utama (cover)</div>
             <label for="gambar"
-                class="mt-1 flex h-48 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-[#C9D8CF] bg-[#F7FAF8] text-center transition hover:border-leaf hover:bg-mint">
+                class="mt-1 flex h-48 cursor-pointer flex-col items-center justify-center overflow-hidden rounded-xl border-2 border-dashed border-hk-line bg-hk-panel text-center transition hover:border-hk-ink hover:bg-hk-panel">
                 <img id="cover-preview" src="{{ $cover }}" alt="Foto utama"
                     class="{{ $cover ? '' : 'hidden' }} h-full w-full object-cover">
                 <span id="cover-hint" class="{{ $cover ? 'hidden' : '' }} px-4 text-sm text-gray-500">
-                    <span class="block font-semibold text-leaf-dark">Klik untuk memilih foto</span>
+                    <span class="block font-semibold text-hk-ink">Klik untuk memilih foto</span>
                     Tampil sebagai gambar utama di katalog
                 </span>
             </label>
@@ -111,8 +111,8 @@
         <div>
             <div class="text-sm font-medium text-gray-700">Foto tambahan (boleh lebih dari satu)</div>
             <label for="images"
-                class="mt-1 flex h-20 cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-[#C9D8CF] bg-[#F7FAF8] px-4 text-center text-sm transition hover:border-leaf hover:bg-mint">
-                <span class="font-semibold text-leaf-dark">Klik untuk menambah foto</span>
+                class="mt-1 flex h-20 cursor-pointer items-center justify-center rounded-xl border-2 border-dashed border-hk-line bg-hk-panel px-4 text-center text-sm transition hover:border-hk-ink hover:bg-hk-panel">
+                <span class="font-semibold text-hk-ink">Klik untuk menambah foto</span>
             </label>
             <input type="file" name="images[]" id="images" multiple accept="image/*" class="sr-only">
 
@@ -120,7 +120,7 @@
                 @if ($isEdit)
                     @foreach ($mobilData->images as $img)
                         <img src="{{ asset('mobil_images_additionals/' . $img->image_path) }}" alt="Foto tambahan"
-                            class="h-20 w-full rounded-lg object-cover ring-1 ring-[#E1E9E4]">
+                            class="h-20 w-full rounded-lg object-cover ring-1 ring-hk-line">
                     @endforeach
                 @endif
             </div>
@@ -131,9 +131,9 @@
 {{-- Tombol --}}
 <div class="flex items-center justify-end gap-3">
     <a href="{{ route('admin.mobil.index') }}"
-        class="rounded-xl border border-[#D3DFD8] bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">Batal</a>
+        class="rounded-xl border border-hk-line bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">Batal</a>
     <button type="submit"
-        class="rounded-xl bg-leaf px-6 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-leaf-dark">
+        class="rounded-xl bg-hk-ink px-6 py-2.5 text-sm font-semibold text-white  hover:bg-black">
         {{ $submitButtonText }}
     </button>
 </div>
@@ -159,7 +159,7 @@
             const img = document.createElement('img');
             img.src = URL.createObjectURL(file);
             img.dataset.baru = '1';
-            img.className = 'h-20 w-full rounded-lg object-cover ring-2 ring-leaf';
+            img.className = 'h-20 w-full rounded-lg object-cover ring-2 ring-hk-ink';
             box.appendChild(img);
         });
     });

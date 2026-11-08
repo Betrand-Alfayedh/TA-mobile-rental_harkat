@@ -23,11 +23,26 @@
             </a>
 
             <a href="{{ route('admin.laporan') }}"
-                class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-medium px-4 py-2 rounded-md shadow transition transform hover:scale-105">
-                <i data-lucide="scroll-text" class="w-5 h-5"></i>
+                class="inline-flex items-center gap-2 border border-hk-line bg-white text-hk-ink hover:bg-hk-panel text-sm font-medium px-4 py-2 rounded-md">
+                <i data-lucide="file-down" class="w-4 h-4"></i>
                 Unduh Laporan PDF
             </a>
         </div>
+
+        <form method="GET" action="{{ route('admin.booking.index') }}" class="mb-4 flex flex-wrap items-center gap-2">
+            <input type="search" name="q" value="{{ request('q') }}" placeholder="Cari nama pelanggan atau nomor pesanan"
+                class="w-72 px-3 py-2 text-sm">
+            <select name="status" class="px-3 py-2 text-sm">
+                <option value="">Semua status</option>
+                @foreach ([1 => 'Booked', 2 => 'On going', 3 => 'Done', 0 => 'Canceled'] as $kode => $nama)
+                    <option value="{{ $kode }}" @selected(request('status') !== null && request('status') !== '' && (int) request('status') === $kode)>{{ $nama }}</option>
+                @endforeach
+            </select>
+            <button type="submit" class="rounded-md bg-hk-ink px-4 py-2 text-sm font-medium text-white hover:bg-black">Cari</button>
+            @if (request()->filled('q') || request()->filled('status'))
+                <a href="{{ route('admin.booking.index') }}" class="text-sm text-hk-mute hover:text-hk-ink">Hapus pencarian</a>
+            @endif
+        </form>
 
         <table class="w-full border-collapse">
             <thead>
@@ -43,7 +58,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($bookings as $booking)
+                @forelse ($bookings as $booking)
                     <tr class="bg-white hover:bg-gray-50 cursor-pointer"
                         onclick="document.getElementById('detail-{{ $booking->id }}').classList.toggle('hidden')">
                         <td class="border px-4 py-2">{{ $loop->iteration }}</td>
@@ -131,7 +146,17 @@
                             @endif
                         </td>
                     </tr>
-                @endforeach
+                @empty
+                    <tr>
+                        <td colspan="8" class="!py-10 text-center text-hk-mute">
+                            @if (request()->filled('q') || request()->filled('status'))
+                                Tidak ada pesanan yang cocok. Ubah kata kunci atau pilih status lain.
+                            @else
+                                Belum ada pesanan. Buat pesanan pertama dengan tombol Buat Pesanan.
+                            @endif
+                        </td>
+                    </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

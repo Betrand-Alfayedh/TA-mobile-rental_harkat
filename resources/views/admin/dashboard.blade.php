@@ -3,52 +3,125 @@
 @section('title', 'Dashboard')
 @section('content')
     @php
+        // [judul, nilai, keterangan, tautan, teks tautan]
         $kartu = [
-            ['Total mobil', $totalMobil, 'car', 'bg-emerald-50 text-emerald-600', route('admin.mobil.index')],
-            ['Mobil tersedia', $mobilTersedia, 'circle-check', 'bg-green-50 text-green-600', route('admin.mobil.index')],
-            ['Mobil sedang disewa', $mobilDisewa, 'key-round', 'bg-amber-50 text-amber-600', route('admin.booking.index')],
-            ['Total sopir', $totalSupir, 'users-round', 'bg-sky-50 text-sky-600', route('admin.supir.index')],
-            ['Sopir siap', $supirSiap, 'user-check', 'bg-green-50 text-green-600', route('admin.supir.index')],
-            ['Sopir bertugas', $supirBertugas, 'route', 'bg-amber-50 text-amber-600', route('admin.supir.index')],
+            ['Total mobil', $totalMobil, 'unit terdaftar', route('admin.mobil.index'), 'Lihat unit'],
+            ['Mobil tersedia', $mobilTersedia, 'siap disewa', route('admin.mobil.index'), 'Lihat unit'],
+            ['Mobil disewa', $mobilDisewa, 'sedang di jalan', route('admin.booking.index'), 'Lihat pesanan'],
+            ['Total sopir', $totalSupir, 'sopir terdaftar', route('admin.supir.index'), 'Lihat sopir'],
+            ['Sopir siap', $supirSiap, 'menunggu tugas', route('admin.supir.index'), 'Lihat sopir'],
+            ['Sopir bertugas', $supirBertugas, 'sedang mengantar', route('admin.supir.index'), 'Lihat sopir'],
         ];
         $pintas = [
-            ['Buat pesanan sewa', 'Catat pesanan pelanggan yang datang langsung', 'plus-circle', route('admin.booking.create')],
-            ['Cek pembayaran', 'Verifikasi bukti bayar yang masuk', 'wallet', route('admin.pembayaran.index')],
-            ['Proses pengembalian', 'Catat mobil yang sudah kembali', 'undo-2', route('admin.pengembalian.index')],
-            ['Rekap bulanan', 'Pesanan, pendapatan, dan armada', 'bar-chart-3', route('admin.rekap')],
+            ['Buat pesanan sewa', 'plus', route('admin.booking.create')],
+            ['Cek pembayaran', 'wallet', route('admin.pembayaran.index')],
+            ['Proses pengembalian', 'undo-2', route('admin.pengembalian.index')],
+            ['Rekap bulanan', 'bar-chart-3', route('admin.rekap')],
         ];
     @endphp
 
-    <div class="mb-6 rounded-2xl bg-gradient-to-br from-forest to-forest-soft p-6 text-white shadow-sm sm:p-8">
-        <h1 class="!text-white text-2xl font-bold">Halo, {{ Auth::user()->name }}</h1>
-        <p class="mt-1 text-sm text-white/75">Selamat datang di sistem manajemen Rental Mobil Harkat Yogyakarta.</p>
+    <div class="mb-6 flex flex-wrap items-end justify-between gap-4">
+        <div>
+            <h1 class="text-2xl">Selamat datang, {{ Auth::user()->name }}</h1>
+            <p class="mt-1 text-sm text-hk-mute">Ringkasan armada dan pesanan hari ini.</p>
+        </div>
+        <a href="{{ route('admin.booking.create') }}"
+            class="inline-flex items-center gap-2 rounded-xl bg-hk-ink px-4 py-2.5 text-sm font-medium text-white hover:bg-black">
+            <i data-lucide="plus" class="h-4 w-4"></i> Buat pesanan sewa
+        </a>
     </div>
 
-    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Ringkasan armada</h2>
-    <div class="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        @foreach ($kartu as [$judul, $nilai, $ikon, $warna, $url])
-            <a href="{{ $url }}"
-                class="group flex items-center gap-4 rounded-2xl border border-[#E1E9E4] bg-white p-5 transition hover:-translate-y-0.5 hover:shadow-md">
-                <span class="flex h-12 w-12 items-center justify-center rounded-xl {{ $warna }}">
-                    <i data-lucide="{{ $ikon }}" class="h-6 w-6"></i>
-                </span>
-                <span>
-                    <span class="block text-3xl font-bold leading-none text-gray-900">{{ $nilai }}</span>
-                    <span class="mt-1 block text-sm text-gray-500">{{ $judul }}</span>
-                </span>
-            </a>
+    {{-- Angka utama --}}
+    <div class="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        @foreach ($kartu as [$judul, $nilai, $ket, $url, $teksTautan])
+            <div class="panel">
+                <div class="panel-card p-4">
+                    <div class="label">{{ $judul }}</div>
+                    <div class="mt-3 flex items-baseline gap-2">
+                        <span class="mono text-3xl font-semibold tracking-tight">{{ $nilai }}</span>
+                        <span class="text-sm text-hk-mute">{{ $ket }}</span>
+                    </div>
+                </div>
+                <a href="{{ $url }}" class="flex items-center justify-between px-3 pb-1.5 pt-2.5 text-xs text-hk-mute hover:text-hk-ink">
+                    <span>{{ $teksTautan }}</span>
+                    <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+                </a>
+            </div>
         @endforeach
     </div>
 
-    <h2 class="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">Pintasan</h2>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        @foreach ($pintas as [$judul, $ket, $ikon, $url])
-            <a href="{{ $url }}"
-                class="rounded-2xl border border-[#E1E9E4] bg-white p-5 transition hover:border-leaf hover:shadow-md">
-                <i data-lucide="{{ $ikon }}" class="mb-3 h-6 w-6 text-leaf"></i>
-                <div class="font-semibold text-gray-900">{{ $judul }}</div>
-                <div class="mt-1 text-sm text-gray-500">{{ $ket }}</div>
-            </a>
-        @endforeach
+    <div class="grid gap-6 lg:grid-cols-3 lg:items-start">
+        {{-- Pesanan terbaru --}}
+        <div class="panel min-w-0 lg:col-span-2">
+            <div class="flex items-center justify-between pr-2">
+                <span class="label !pb-2.5">Pesanan terbaru</span>
+                <a href="{{ route('admin.booking.index') }}" class="text-xs text-hk-mute hover:text-hk-ink">Lihat semua</a>
+            </div>
+            <div class="panel-card overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table style="box-shadow:none;border-radius:0">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Pelanggan</th>
+                                <th>Tanggal</th>
+                                <th>Total</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ($terbaru as $b)
+                                <tr>
+                                    <td class="mono text-hk-mute">#{{ $b->id }}</td>
+                                    <td class="font-medium">{{ $b->user->name ?? '-' }}</td>
+                                    <td class="whitespace-nowrap text-hk-mute">{{ $b->tanggal_booking_format }}</td>
+                                    <td class="mono whitespace-nowrap">{{ $b->total_harga_rp }}</td>
+                                    <td>{!! $b->status_badge !!}</td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td colspan="5" class="!py-10 text-center text-hk-mute">Belum ada pesanan. Buat pesanan pertama dari tombol di atas.</td>
+                                </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        {{-- Perlu tindakan + pintasan --}}
+        <div class="space-y-6">
+            <div class="panel">
+                <span class="label">Perlu tindakan</span>
+                <a href="{{ route('admin.pembayaran.index') }}" class="panel-card flex items-center justify-between p-4 hover:border-hk-ink/30">
+                    <div>
+                        <div class="mono text-2xl font-semibold">{{ $menungguVerifikasi }}</div>
+                        <div class="text-sm text-hk-mute">bukti bayar menunggu verifikasi</div>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="h-4 w-4 text-hk-mute"></i>
+                </a>
+                <a href="{{ route('admin.booking.index', ['status' => 1]) }}" class="mt-1.5 flex items-center justify-between px-3 py-2 text-xs text-hk-mute hover:text-hk-ink">
+                    <span>Unit bersopir belum ditugaskan</span>
+                    <span class="mono text-hk-ink">{{ $perluPenugasan }}</span>
+                </a>
+                <div class="flex items-center justify-between px-3 py-2 text-xs text-hk-mute">
+                    <span>Pesanan sedang berjalan</span>
+                    <span class="mono text-hk-ink">{{ $pesananBerjalan }}</span>
+                </div>
+            </div>
+
+            <div class="panel">
+                <span class="label">Pintasan</span>
+                <div class="panel-card divide-y divide-hk-line">
+                    @foreach ($pintas as [$judul, $ikon, $url])
+                        <a href="{{ $url }}" class="flex items-center gap-3 px-4 py-3 text-sm hover:bg-hk-panel first:rounded-t-xl last:rounded-b-xl">
+                            <i data-lucide="{{ $ikon }}" class="h-4 w-4 text-hk-mute"></i>
+                            <span class="flex-1">{{ $judul }}</span>
+                            <i data-lucide="chevron-right" class="h-4 w-4 text-hk-mute"></i>
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
     </div>
 @endsection

@@ -1,6 +1,12 @@
+@php
+    $isEdit = isset($pelanggan);
+    $inp = 'mt-1 block w-full px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400';
+@endphp
+
 @if ($errors->any())
-    <div class="mb-4 text-red-600 bg-red-100 border border-red-300 rounded p-4">
-        <ul class="list-disc pl-4 mb-0">
+    <div class="mb-6 rounded-xl bg-red-50 p-4 text-sm text-red-700 ring-1 ring-red-200">
+        <div class="mb-1 font-semibold">Data belum bisa disimpan:</div>
+        <ul class="list-disc pl-5">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
@@ -9,47 +15,42 @@
 @endif
 
 @csrf
-{{-- Nama Pelanggan --}}
-<div>
-    <label for="nama" class="block text-sm font-medium text-gray-700">Nama Pelanggan</label>
-    <input type="text" name="nama" id="nama"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-        value="{{ old('nama', $pelanggan->nama ?? '') }}">
-    @error('nama')
-        <span class="text-red-500">{{ $message }}</span>
-    @enderror
-</div>
 
-<div>
-    <label for="email" class="block text-sm font-medium text-gray-700">Email Pelanggan</label>
-    <input type="email" name="email" id="email"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-        value="{{ old('email', $pelanggan->email ?? '') }}">
-    @error('email')
-        <span class="text-red-500">{{ $message }}</span>
-    @enderror
-</div>
+<section class="rounded-2xl border border-hk-line bg-white p-6 ">
+    <h3 class="text-base font-bold text-gray-900">Data pelanggan</h3>
+    <p class="mb-5 text-sm text-gray-500">Identitas dan kontak yang dipakai saat membuat pesanan.</p>
 
-<div>
-    <label class="block">No Telp</label>
-    <input type="text" name="no_hp" id="no_hp"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-        value="{{ old('no_hp', $pelanggan->no_hp ?? '') }}">
-    @error('no_hp')
-        <span class="text-red-500">{{ $message }}</span>
-    @enderror
-</div>
+    <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div class="md:col-span-2">
+            <label for="nama" class="text-sm font-medium text-gray-700">Nama lengkap</label>
+            <input type="text" name="nama" id="nama" class="{{ $inp }}" placeholder="Contoh: Budi Santoso"
+                value="{{ old('nama', $pelanggan->name ?? '') }}" required>
+        </div>
 
-<div>
-    <label for="alamat" class="block text-sm font-medium text-gray-700">Alamat</label>
-    <textarea type="text" name="alamat" id="alamat"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('alamat', $pelanggan->alamat ?? '') }}</textarea>
-</div>
+        <div>
+            <label for="email" class="text-sm font-medium text-gray-700">Email</label>
+            <input type="email" name="email" id="email" class="{{ $inp }}" placeholder="nama@email.com"
+                value="{{ old('email', $pelanggan->email ?? '') }}" required>
+        </div>
 
-{{-- Tombol Submit --}}
-<div class="flex justify-end space-x-2">
-    <a href="{{ route('admin.supir.index') }}"
-        class="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Batal</a>
+        <div>
+            <label for="no_hp" class="text-sm font-medium text-gray-700">No. telepon</label>
+            <input type="text" name="no_hp" id="no_hp" class="{{ $inp }}" placeholder="08xxxxxxxxxx" required
+                value="{{ old('no_hp', $pelanggan->no_hp ?? '') }}">
+        </div>
+
+        <div class="md:col-span-2">
+            <label for="alamat" class="text-sm font-medium text-gray-700">Alamat</label>
+            <textarea name="alamat" id="alamat" rows="3" class="{{ $inp }}" placeholder="Alamat lengkap">{{ old('alamat', $pelanggan->alamat ?? '') }}</textarea>
+        </div>
+    </div>
+</section>
+
+<div class="flex items-center justify-end gap-3">
+    <a href="{{ route('admin.pelanggan.index') }}"
+        class="rounded-xl border border-hk-line bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">Batal</a>
     <button type="submit"
-        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">{{ isset($mobil) ? 'Update' : 'Simpan' }}</button>
+        class="rounded-xl bg-hk-ink px-6 py-2.5 text-sm font-semibold text-white  hover:bg-black">
+        {{ $isEdit ? 'Simpan perubahan' : 'Simpan pelanggan' }}
+    </button>
 </div>

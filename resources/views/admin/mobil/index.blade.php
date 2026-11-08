@@ -40,53 +40,36 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($mobils as $index => $mobil)
-                        @php
-                            $isDisabled = $mobil->status_approval != 1;
-                            $rowClass =
-                                $mobil->status_approval == 0
-                                    ? 'bg-red-100 opacity-80 line-through'
-                                    : ($mobil->status_approval == 2
-                                        ? 'bg-gray-200 opacity-70'
-                                        : '');
-                        @endphp
-
-                        <tr class="{{ $rowClass }}">
+                        <tr>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $loop->iteration }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $mobil->masterMobil->nama }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $mobil->plat_nomor }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $mobil->merk }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $mobil->tahun }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 Rp. {{ number_format($mobil->harga_sewa, 0, ',', '.') }}
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-nowrap text-sm {{ $isDisabled ? 'text-gray-500' : 'text-gray-700' }}">
+                                class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 Rp. {{ number_format($mobil->harga_all_in, 0, ',', '.') }}
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm">
-                                @if ($mobil->status_approval == 0)
-                                    <span class="px-2 py-1 text-xs rounded-full bg-red-100 text-red-700 font-bold">Data
-                                        ditolak admin</span>
-                                @elseif($mobil->status_approval == 2)
-                                    <span class="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-700">Waiting for
-                                        approval</span>
-                                @else
                                     @if (in_array($mobil->status, [\App\Models\Mobil::STATUS_MAINTENANCE, \App\Models\Mobil::STATUS_TERSEDIA]))
                                         <span
                                             class="badge-toggle px-2 py-1 text-xs rounded-full {{ $mobil->status_badge_class }} cursor-pointer hover:opacity-80 transition"
@@ -98,17 +81,16 @@
                                             {{ $mobil->status_text }}
                                         </span>
                                     @endif
-                                @endif
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-sm">
                                 <div class="flex items-center gap-2">
                                     <a href="{{ route('admin.mobil.show', $mobil->id) }}"
-                                        class="text-indigo-600 hover:text-indigo-900 font-medium {{ $isDisabled ? 'pointer-events-none opacity-50' : '' }}"
+                                        class="text-indigo-600 hover:text-indigo-900 font-medium"
                                         title="Lihat Detail">
                                         <i data-lucide="eye" class="w-5 h-5"></i>
                                     </a>
                                     <a href="{{ route('admin.mobil.edit', $mobil->id) }}"
-                                        class="text-yellow-600 hover:text-indigo-900 font-medium {{ $isDisabled ? 'pointer-events-none opacity-50' : '' }}"
+                                        class="text-yellow-600 hover:text-indigo-900 font-medium"
                                         title="Edit">
                                         <i data-lucide="pencil" class="w-5 h-5"></i>
                                     </a>

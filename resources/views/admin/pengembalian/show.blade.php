@@ -33,6 +33,7 @@
         </div>
 
         <form action="{{ route('admin.pengembalian.store') }}" method="POST" enctype="multipart/form-data"
+            onsubmit="return confirm('Catat pengembalian kendaraan ini? Tindakan ini tidak dapat dibatalkan.')"
             class="bg-white p-4 rounded-lg shadow">
             @csrf
             <input type="hidden" name="booking_detail_id" id="bookingDetailId" value="">

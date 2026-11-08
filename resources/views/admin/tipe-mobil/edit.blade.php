@@ -1,13 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="max-w-3xl mx-auto py-6 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Edit Jenis Mobil</h2>
+    <div class="mx-auto max-w-2xl">
+        <a href="{{ route('admin.tipe-mobil.index') }}" class="text-sm text-gray-500 hover:text-gray-800">&larr; Kembali ke Jenis Mobil</a>
+        <h2 class="mb-6 mt-2 text-2xl">Edit Jenis Mobil</h2>
 
-        <form action="{{ route('admin.tipe-mobil.update', $tipeMobil->id) }}" method="POST" enctype="multipart/form-data"
-            class="space-y-6 bg-white p-6 shadow-md rounded">
+        <form action="{{ route('admin.tipe-mobil.update', $tipeMobil->id) }}" method="POST" class="space-y-6">
             @method('PUT')
-
             @include('admin.tipe-mobil.form')
         </form>
     </div>

@@ -47,7 +47,7 @@
                             <div class="whitespace-nowrap text-xs text-gray-500">{{ $payment->booking->tanggal_booking_format }}</div>
                         </td>
                         <td class="min-w-[8rem]">{{ $payment->booking->user->name }}</td>
-                        <td class="whitespace-nowrap">{{ $payment->jatuh_tempo_format }}</td>
+                        <td class="min-w-[9rem]">{{ $payment->jatuh_tempo_format }}</td>
                         <td>
                             <span class="font-medium">{{ $payment->jenis_text }}</span>
                         </td>
@@ -62,13 +62,14 @@
                             @endif
                             @if ($payment->foto_bukti)
                                 <a href="{{ asset('storage/' . $payment->foto_bukti) }}" target="_blank"
-                                    class="mt-1 block whitespace-nowrap text-xs font-medium text-leaf-dark hover:underline">Lihat bukti bayar</a>
+                                    class="mt-1 block whitespace-nowrap text-xs font-medium text-hk-ink hover:underline">Lihat bukti bayar</a>
                             @endif
                         </td>
                         <td>
                             @if ($st == 2)
                                 <div class="flex items-center gap-2">
-                                    <form action="{{ route('admin.pembayaran.verifikasi', $payment->id) }}" method="POST">
+                                    <form action="{{ route('admin.pembayaran.verifikasi', $payment->id) }}" method="POST"
+                                        onsubmit="return confirm('Verifikasi pembayaran ini? Pelanggan akan menerima invoice lewat surel.')">
                                         @csrf
                                         @method('PUT')
                                         <button type="submit"

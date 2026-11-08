@@ -34,7 +34,7 @@
                             <select
                                 class="tipe-select w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 
                                     focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 
-                                    transition cursor-pointer shadow-sm hover:bg-white"
+                                    transition cursor-pointer  hover:bg-white"
                                 data-id="{{ $m->id }}"
                                 data-nama="{{ $m->nama }}">
                                 @foreach ($tipeMobils as $tipe)

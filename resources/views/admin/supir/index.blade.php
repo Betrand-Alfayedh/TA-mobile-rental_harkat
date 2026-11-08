@@ -32,19 +32,6 @@
                 </thead>
                 <tbody>
                     @foreach ($supirs as $supir)
-                        @if ($supir->status_approval == 2)
-                            <tr class="bg-gray-200 opacity-70">
-                                <td colspan="7" class="text-center text-gray-600 italic">
-                                    Waiting for approval SuperAdmin
-                                </td>
-                            </tr>
-                        @elseif ($supir->status_approval == 0)
-                            <tr class="bg-red-100 opacity-90">
-                                <td colspan="7" class="text-center text-red-600 font-bold">
-                                    Data Rejected by SuperAdmin
-                                </td>
-                            </tr>
-                        @else
                             <tr class="border-t">
                                 <td class="px-4 py-2">{{ $loop->iteration }}</td>
                                 <td class="px-4 py-2">{{ $supir->user->name }}</td>
@@ -70,7 +57,6 @@
                                     </div>
                                 </td>
                             </tr>
-                        @endif
                     @endforeach
 
                     @if ($supirs->isEmpty())

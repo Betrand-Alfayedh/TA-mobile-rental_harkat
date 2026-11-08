@@ -24,16 +24,33 @@ use Illuminate\Support\Facades\Log;
 
 class BookingController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $bookings = Booking::with(['details'])->latest()->get();
+        $request->validate([
+            'q' => 'nullable|string|max:100',
+            'status' => 'nullable|in:0,1,2,3',
+        ]);
+
+        // Cari menurut nomor pesanan atau nama pelanggan; saring menurut status pesanan.
+        $q = trim((string) $request->q, " #");
+        $bookings = Booking::with(['user', 'details'])
+            ->when($q !== '', fn ($query) => $query->where(function ($w) use ($q) {
+                $w->whereHas('user', fn ($u) => $u->where('name', 'like', "%{$q}%"));
+                if (ctype_digit($q)) {
+                    $w->orWhere('id', (int) $q);
+                }
+            }))
+            ->when($request->filled('status'), fn ($query) => $query->where('status', (int) $request->status))
+            ->latest()
+            ->get();
+
         return view('admin.transaksi.index', compact('bookings'));
     }
 
     public function create()
     {
         $pelanggans = User::where('role', 4)->get();
-        $mobils = Mobil::where('status', 1)->where('status_approval', 1)->get();
+        $mobils = Mobil::with('masterMobil')->where('status', 1)->where('status_approval', 1)->get();
         if ($mobils->isEmpty()) {
             return redirect()->back()->with('error', 'Belum ada mobil tersedia.');
         }

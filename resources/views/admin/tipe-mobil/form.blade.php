@@ -1,9 +1,12 @@
 @php
-    $isEdit = isset($type);
+    $isEdit = isset($tipeMobil);
+    $inp = 'mt-1 block w-full px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400';
 @endphp
+
 @if ($errors->any())
-    <div class="mb-4 text-red-600 bg-red-100 border border-red-300 rounded p-4">
-        <ul class="list-disc pl-4 mb-0">
+    <div class="mb-6 rounded-xl bg-red-50 p-4 text-sm text-red-700 ring-1 ring-red-200">
+        <div class="mb-1 font-semibold">Data belum bisa disimpan:</div>
+        <ul class="list-disc pl-5">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
@@ -12,19 +15,21 @@
 @endif
 
 @csrf
-{{-- Nama Mobil --}}
-<div>
-    <label for="nama_tipe" class="block text-sm font-medium text-gray-700">Tipe Mobil</label>
-    <input type="text" name="nama_tipe" id="nama_tipe"
-        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-        value="{{ old('nama_tipe', $tipeMobil->nama_tipe ?? '') }}" required>
-</div>
 
-{{-- Tombol Submit --}}
-<div class="flex justify-end space-x-2">
+<section class="rounded-2xl border border-hk-line bg-white p-6 ">
+    <h3 class="text-base font-bold text-gray-900">Jenis mobil</h3>
+    <p class="mb-5 text-sm text-gray-500">Kelompok untuk model mobil, misalnya MPV, SUV, atau Sedan.</p>
+
+    <label for="nama_tipe" class="text-sm font-medium text-gray-700">Nama jenis</label>
+    <input type="text" name="nama_tipe" id="nama_tipe" class="{{ $inp }}" placeholder="Contoh: MPV"
+        value="{{ old('nama_tipe', $tipeMobil->nama_tipe ?? '') }}" required>
+</section>
+
+<div class="flex items-center justify-end gap-3">
     <a href="{{ route('admin.tipe-mobil.index') }}"
-        class="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300">Batal</a>
-    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-        {{ isset($type) ? 'Update' : 'Simpan' }}
+        class="rounded-xl border border-hk-line bg-white px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">Batal</a>
+    <button type="submit"
+        class="rounded-xl bg-hk-ink px-6 py-2.5 text-sm font-semibold text-white  hover:bg-black">
+        {{ $isEdit ? 'Simpan perubahan' : 'Simpan jenis' }}
     </button>
 </div>

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MasterMobilController;
 use App\Http\Controllers\Admin\PembayaranController;
 use App\Http\Controllers\Admin\PengembalianController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Customer\BookingController as CekMobilController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MobilController;
@@ -26,6 +27,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::resource('mobil', MobilController::class);
     Route::resource('supir', SupirController::class);
     Route::resource('pelanggan', PelangganController::class);
+    // Cek ketersediaan memakai logika yang sama dengan form pelanggan.
+    Route::post('booking/cek-mobil', [CekMobilController::class, 'checkMobils'])->name('booking.cekMobil');
     Route::resource('booking', BookingController::class)->only(['index', 'create', 'store']);
     Route::post('/booking/{booking}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::patch('/booking/{detail}/konfirmasi-jemput', [BookingController::class, 'konfirmasiJemput'])

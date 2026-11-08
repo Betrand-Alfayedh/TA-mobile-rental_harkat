@@ -37,9 +37,10 @@ class PelangganController extends Controller
         ]);
 
         User::create([
-            'nama' => $request->nama,
+            'name' => $request->nama,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
             'password' => bcrypt('password123'), // default password biar gak null
             'role' => 4, // set pelanggan
         ]);
@@ -80,9 +81,10 @@ class PelangganController extends Controller
         ]);
 
         $pelanggan->update([
-            'nama' => $request->nama,
+            'name' => $request->nama,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
+            'alamat' => $request->alamat,
         ]);
 
         return redirect()->route('admin.pelanggan.index')
