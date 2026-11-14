@@ -133,4 +133,20 @@ class MobilController extends Controller
             'badge_class' => $mobil->status_badge_class,
         ]);
     }
+
+    /** Unit tidak dihapus supaya riwayat pesanan dan invoice tetap utuh; cukup dinonaktifkan. */
+    public function toggleAktif(Mobil $mobil)
+    {
+        if ($mobil->aktif) {
+            $sibuk = $mobil->bookingDetails()
+                ->whereIn('status', [\App\Models\Booking::STATUS_BOOKED, \App\Models\Booking::STATUS_ONGOING])->exists();
+            if ($sibuk) {
+                return back()->with('error', 'Unit masih punya pesanan yang berjalan. Batalkan atau selesaikan dulu sebelum dinonaktifkan.');
+            }
+        }
+
+        $mobil->update(['aktif' => ! $mobil->aktif]);
+
+        return back()->with('success', $mobil->aktif ? 'Unit diaktifkan kembali.' : 'Unit dinonaktifkan dan tidak tampil untuk pesanan baru.');
+    }
 }

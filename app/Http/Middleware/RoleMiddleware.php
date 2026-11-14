@@ -23,6 +23,14 @@ class RoleMiddleware
             return redirect("login/$prefix");
         }
 
+        // Akun yang dinonaktifkan admin langsung dikeluarkan, termasuk yang masih punya sesi login.
+        if (! Auth::user()->aktif) {
+            Auth::logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect()->route('landing-page');
+        }
+
         $userRole = Auth::user()->roleName;
         $rolesArray = array_map('trim', explode(',', $roles));
 

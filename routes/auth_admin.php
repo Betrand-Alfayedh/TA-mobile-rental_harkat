@@ -25,6 +25,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
         ->name('master-mobils.updateTipe');
 
     Route::resource('mobil', MobilController::class)->except(['destroy']);
+    Route::patch('mobil/{mobil}/aktif', [MobilController::class, 'toggleAktif'])->name('mobil.aktif');
+    Route::patch('supir/{supir}/aktif', [SupirController::class, 'toggleAktif'])->name('supir.aktif');
+    Route::patch('pelanggan/{pelanggan}/aktif', [PelangganController::class, 'toggleAktif'])->name('pelanggan.aktif');
     Route::resource('supir', SupirController::class)->except(['destroy']);
     Route::resource('pelanggan', PelangganController::class)->except(['destroy']);
     // Cek ketersediaan memakai logika yang sama dengan form pelanggan.

@@ -17,6 +17,10 @@
             </a>
         </div>
 
+        @if (session('error'))
+            <div class="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{{ session('error') }}</div>
+        @endif
+
         <div class="overflow-x-auto bg-white shadow-md rounded-lg">
             <table class="min-w-full divide-y divide-gray-200 text-sm text-left text-gray-700">
                 <thead class="bg-gray-100 text-gray-700 uppercase text-xs">
@@ -32,9 +36,13 @@
                 </thead>
                 <tbody>
                     @foreach ($supirs as $supir)
-                            <tr class="border-t">
+                            <tr class="border-t {{ $supir->user->aktif ? '' : 'opacity-60' }}">
                                 <td class="px-4 py-2">{{ $loop->iteration }}</td>
-                                <td class="px-4 py-2">{{ $supir->user->name }}</td>
+                                <td class="px-4 py-2">{{ $supir->user->name }}
+                                    @unless ($supir->user->aktif)
+                                        <span class="ml-1 rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">Nonaktif</span>
+                                    @endunless
+                                </td>
                                 <td class="px-4 py-2">{{ $supir->user->email }}</td>
                                 <td class="px-4 py-2">{{ $supir->user->no_hp }}</td>
                                 <td class="px-4 py-2">{{ $supir->user->alamat }}</td>
@@ -54,6 +62,7 @@
                                             class="text-yellow-600 hover:text-indigo-900 font-medium" title="Edit">
                                             <i data-lucide="pencil" class="w-5 h-5"></i>
                                         </a>
+                                        <x-admin.aktif-button :url="route('admin.supir.aktif', $supir->id)" :aktif="$supir->user->aktif" :nama="$supir->user->name" />
                                     </div>
                                 </td>
                             </tr>

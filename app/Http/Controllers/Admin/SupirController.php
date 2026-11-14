@@ -142,4 +142,31 @@ class SupirController extends Controller
 
         return redirect()->route('admin.supir.index')->with('success', 'Data sopir berhasil diperbarui.');
     }
+
+    /** Sopir tidak dihapus supaya riwayat tugas tetap utuh; akunnya dinonaktifkan. */
+    public function toggleAktif(Supir $supir)
+    {
+        $user = $supir->user;
+
+        if ($user->aktif) {
+            $sibuk = (int) $supir->status === 2
+                || \App\Models\BookingDetail::where('supir_id', $supir->id)
+                    ->whereIn('status', [\App\Models\Booking::STATUS_BOOKED, \App\Models\Booking::STATUS_ONGOING])->exists();
+            if ($sibuk) {
+                return back()->with('error', 'Sopir sedang bertugas atau punya tugas yang belum selesai. Nonaktifkan setelah tugasnya selesai.');
+            }
+        }
+
+        DB::transaction(function () use ($supir, $user) {
+            $user->aktif = ! $user->aktif;
+            $user->save();
+
+            if (! $user->aktif) {
+                $user->tokens()->delete();
+                \App\Models\JobOffer::where('supir_id', $supir->id)->where('status', 0)->update(['status' => 2]); // tutup tawaran terbuka
+            }
+        });
+
+        return back()->with('success', $user->aktif ? 'Akun sopir diaktifkan kembali.' : 'Akun sopir dinonaktifkan dan tidak bisa masuk.');
+    }
 }

@@ -16,7 +16,7 @@ class MobilController extends Controller
     public function index(Request $request)
     {
         $query = Mobil::with('masterMobil.tipe')
-            ->where('status', '<>', 0)->where('status_approval', 1);
+            ->where('status', '<>', 0)->approved();
 
         // Search by nama master mobil
         if ($request->filled('search')) {

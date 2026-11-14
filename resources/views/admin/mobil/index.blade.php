@@ -10,6 +10,10 @@
             </div>
         @endif
 
+        @if (session('error'))
+            <div class="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{{ session('error') }}</div>
+        @endif
+
         <div class="mb-4">
             <a href="{{ route('admin.mobil.create') }}"
                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-md shadow">
@@ -40,7 +44,7 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($mobils as $index => $mobil)
-                        <tr>
+                        <tr class="{{ $mobil->aktif ? '' : 'opacity-60' }}">
                             <td
                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $loop->iteration }}
@@ -48,6 +52,9 @@
                             <td
                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
                                 {{ $mobil->masterMobil->nama }}
+                                @unless ($mobil->aktif)
+                                    <span class="ml-1 rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">Nonaktif</span>
+                                @endunless
                             </td>
                             <td
                                 class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
@@ -94,6 +101,7 @@
                                         title="Edit">
                                         <i data-lucide="pencil" class="w-5 h-5"></i>
                                     </a>
+                                    <x-admin.aktif-button :url="route('admin.mobil.aktif', $mobil->id)" :aktif="$mobil->aktif" :nama="$mobil->plat_nomor" />
                                 </div>
                             </td>
                         </tr>

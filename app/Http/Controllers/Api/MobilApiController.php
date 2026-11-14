@@ -19,7 +19,7 @@ class MobilApiController extends Controller
     {
         $query = Mobil::with('masterMobil.tipe', 'images')
             ->where('status', '<>', 0)
-            ->where('status_approval', 1);
+            ->approved();
 
         if ($request->filled('search')) {
             $query->whereHas('masterMobil', function ($q) use ($request) {

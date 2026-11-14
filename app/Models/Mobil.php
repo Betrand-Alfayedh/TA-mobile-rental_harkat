@@ -20,6 +20,7 @@ class Mobil extends Model
         'harga_all_in',
         'status',
         'status_approval',
+        'aktif',
         'gambar',
     ];
 
@@ -45,6 +46,7 @@ class Mobil extends Model
     protected $casts = [
         'status'          => 'integer',
         'status_approval' => 'integer',
+        'aktif' => 'boolean',
         'harga_sewa'      => 'integer',
         'harga_all_in'    => 'integer',
         'tahun'           => 'integer',
@@ -144,6 +146,7 @@ class Mobil extends Model
     public function isAvailableFor(\Carbon\Carbon $start, \Carbon\Carbon $end): bool
     {
         return $this->status_approval === self::APPROVAL_APPROVED
+            && $this->aktif
             && ! in_array($this->status, [self::STATUS_RUSAK, self::STATUS_MAINTENANCE], true)
             && ! $this->bookingDetails()
                 ->where('tanggal_sewa', '<=', $end)
@@ -170,6 +173,7 @@ class Mobil extends Model
 
     public function scopeApproved($query)
     {
-        return $query->where('status_approval', self::APPROVAL_APPROVED);
+        // Unit nonaktif tidak boleh tampil di katalog maupun dipesan.
+        return $query->where('status_approval', self::APPROVAL_APPROVED)->where('aktif', true);
     }
 }

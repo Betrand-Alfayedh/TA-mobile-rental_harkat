@@ -12,7 +12,7 @@ class LandingController extends Controller
     {
         // Unit yang boleh ditampilkan: disetujui dan tidak rusak.
         $tampil = fn ($q) => $q->where('status', '<>', Mobil::STATUS_RUSAK)
-            ->where('status_approval', Mobil::APPROVAL_APPROVED);
+            ->approved();
 
         $mobils = MasterMobil::with(['tipe', 'mobils' => $tampil])
             ->whereHas('mobils', $tampil)

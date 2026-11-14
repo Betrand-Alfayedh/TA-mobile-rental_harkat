@@ -49,13 +49,13 @@ class BookingController extends Controller
 
     public function create()
     {
-        $pelanggans = User::where('role', 4)->get();
+        $pelanggans = User::where('role', 4)->where('aktif', true)->get();
         $mobils = Mobil::with('masterMobil')->approved()
             ->whereNotIn('status', [Mobil::STATUS_RUSAK, Mobil::STATUS_MAINTENANCE])->get(); // bentrok tanggal dicek lewat Cek mobil tersedia
         if ($mobils->isEmpty()) {
             return redirect()->back()->with('error', 'Belum ada mobil tersedia.');
         }
-        $supirs = Supir::all();
+        $supirs = Supir::whereHas('user', fn ($u) => $u->where('aktif', true))->get();
 
         return view('admin.transaksi.create', compact('pelanggans', 'mobils', 'supirs'));
     }

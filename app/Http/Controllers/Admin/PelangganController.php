@@ -90,4 +90,26 @@ class PelangganController extends Controller
         return redirect()->route('admin.pelanggan.index')
             ->with('success', 'Pelanggan berhasil diupdate!');
     }
+
+    /** Pelanggan tidak dihapus supaya riwayat pesanan tetap utuh; akunnya dinonaktifkan. */
+    public function toggleAktif($id)
+    {
+        $pelanggan = User::where('role', 4)->findOrFail($id);
+
+        if ($pelanggan->aktif) {
+            $sibuk = $pelanggan->bookings()
+                ->whereIn('status', [\App\Models\Booking::STATUS_BOOKED, \App\Models\Booking::STATUS_ONGOING])->exists();
+            if ($sibuk) {
+                return back()->with('error', 'Pelanggan masih punya pesanan yang berjalan. Selesaikan atau batalkan dulu sebelum dinonaktifkan.');
+            }
+        }
+
+        $pelanggan->aktif = ! $pelanggan->aktif;
+        $pelanggan->save();
+        if (! $pelanggan->aktif) {
+            $pelanggan->tokens()->delete(); // keluarkan dari aplikasi mobile
+        }
+
+        return back()->with('success', $pelanggan->aktif ? 'Akun pelanggan diaktifkan kembali.' : 'Akun pelanggan dinonaktifkan dan tidak bisa masuk.');
+    }
 }

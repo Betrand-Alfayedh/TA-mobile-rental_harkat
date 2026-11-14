@@ -10,6 +10,10 @@
             </div>
         @endif
 
+        @if (session('error'))
+            <div class="mb-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{{ session('error') }}</div>
+        @endif
+
         <a href="{{ route('admin.pelanggan.create') }}"
             class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded mb-4">+ Tambah Pelanggan</a>
 
@@ -26,9 +30,13 @@
                 </thead>
                 <tbody>
                     @foreach ($pelanggans as $pelanggan)
-                        <tr class="border-t">
+                        <tr class="border-t {{ $pelanggan->aktif ? '' : 'opacity-60' }}">
                             <td class="px-4 py-2">{{ $loop->iteration }}</td>
-                            <td class="px-4 py-2">{{ $pelanggan->name }}</td>
+                            <td class="px-4 py-2">{{ $pelanggan->name }}
+                                @unless ($pelanggan->aktif)
+                                    <span class="ml-1 rounded-full bg-gray-100 px-2 py-0.5 text-xs text-gray-600">Nonaktif</span>
+                                @endunless
+                            </td>
                             <td class="px-4 py-2">{{ $pelanggan->no_hp }}</td>
                             <td class="px-4 py-2">{{ $pelanggan->alamat }}</td>
                             <td class="px-4 py-2 space-x-2">
@@ -36,6 +44,7 @@
                                     class="text-gray-600 hover:underline">Detail</a>
                                 <a href="{{ route('admin.pelanggan.edit', $pelanggan->id) }}"
                                     class="text-blue-500 hover:underline">Edit</a>
+                                <x-admin.aktif-button :url="route('admin.pelanggan.aktif', $pelanggan->id)" :aktif="$pelanggan->aktif" :nama="$pelanggan->name" />
                             </td>
                         </tr>
                     @endforeach
