@@ -119,7 +119,7 @@ class StaffFlowTest extends TestCase
         $this->assertSame(2, (int) $a->fresh()->status);
     }
 
-    public function test_mobil_edit_is_only_a_proposal_until_superadmin_approves(): void
+    public function test_admin_mobil_edit_is_applied_directly_and_status_cannot_be_smuggled(): void
     {
         $mobil = Mobil::factory()->create(['status' => Mobil::STATUS_DISEWA, 'status_approval' => 1, 'harga_sewa' => 100000]);
         $payload = [
@@ -130,50 +130,27 @@ class StaffFlowTest extends TestCase
 
         $this->actingAs($this->admin())->put(route('admin.mobil.update', $mobil), $payload);
 
-        // data live tidak berubah, mobil tetap tampil & statusnya tidak bisa diubah lewat form
         $fresh = $mobil->fresh();
-        $this->assertSame(100000, $fresh->harga_sewa);
+        $this->assertSame(250000, $fresh->harga_sewa);
         $this->assertSame(1, $fresh->status_approval);
         $this->assertSame(Mobil::STATUS_DISEWA, $fresh->status);
-        $approval = Approval::first();
-        $this->assertSame(2, (int) $approval->status);
-        $this->assertArrayNotHasKey('status', $approval->new_data);
-
-        // approve → data baru berlaku; approve lagi → ditolak
-        $sa = $this->superadmin();
-        $this->actingAs($sa)->post(route('superadmin.approvals.approve', $approval->id))->assertSessionHas('success');
-        $this->assertSame(250000, $mobil->fresh()->harga_sewa);
-        $this->actingAs($sa)->post(route('superadmin.approvals.approve', $approval->id))->assertSessionHas('error');
-        $this->actingAs($sa)->post(route('superadmin.approvals.reject', $approval->id))->assertSessionHas('error');
-        $this->assertSame(250000, $mobil->fresh()->harga_sewa);
-
-        // usulan kedua ditolak → data tetap
-        $this->actingAs($this->admin())->put(route('admin.mobil.update', $mobil), $payload + ['harga_sewa' => 999000]);
-        $second = Approval::latest('id')->first();
-        $this->actingAs($sa)->post(route('superadmin.approvals.reject', $second->id))->assertSessionHas('success');
-        $this->assertSame(250000, $mobil->fresh()->harga_sewa);
-        $this->assertSame(1, $mobil->fresh()->status_approval);
+        $this->assertSame(0, Approval::count());
     }
 
-    public function test_supir_edit_is_applied_on_approve_and_password_hash_is_never_shown(): void
+    public function test_admin_supir_edit_is_applied_directly_and_password_is_hashed(): void
     {
         $supir = $this->supir();
         $payload = ['name' => 'Nama Baru', 'email' => $supir->user->email, 'password' => 'rahasia123',
             'no_hp' => '0899', 'alamat' => 'Jl. Baru', 'status' => 1];
 
         $this->actingAs($this->admin())->put(route('admin.supir.update', $supir), $payload);
-        $this->assertNotSame('Nama Baru', $supir->user->fresh()->name); // belum berlaku
 
-        $approval = Approval::first();
-        $sa = $this->superadmin();
-        $hash = $approval->new_data['password'];
-        $this->actingAs($sa)->get(route('superadmin.approvals.index'))->assertOk()->assertDontSee($hash);
-
-        $this->actingAs($sa)->post(route('superadmin.approvals.approve', $approval->id));
         $u = $supir->user->fresh();
         $this->assertSame('Nama Baru', $u->name);
         $this->assertSame('0899', $u->no_hp);
         $this->assertTrue(Hash::check('rahasia123', $u->password));
+        $this->assertNotSame('rahasia123', $u->password);
+        $this->assertSame(0, Approval::count());
     }
 
     public function test_supir_dashboard_lists_open_offers_and_lets_the_supir_accept_without_realtime(): void

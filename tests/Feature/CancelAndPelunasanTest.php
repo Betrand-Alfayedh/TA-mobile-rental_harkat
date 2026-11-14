@@ -187,7 +187,7 @@ class CancelAndPelunasanTest extends TestCase
             ->assertSee('Batalkan Booking')->assertSee('Konfirmasi Jemput');
 
         // admin: daftar pembayaran → "Tandai Lunas" untuk yang belum dibayar
-        $this->actingAs($admin)->get(route('admin.pembayaran.index'))->assertOk()->assertSee('Tandai Lunas');
+        $this->actingAs($admin)->get(route('admin.pembayaran.index'))->assertOk()->assertSee('Tandai lunas');
 
         // customer web: tombol batal selama DP belum lunas, hilang setelah DP lunas
         $this->actingAs($user)->get(route('booking.index'))->assertOk()->assertSee('Batalkan booking');

@@ -45,15 +45,19 @@ class LoginController extends Controller
         $roleSlug = strtolower($request->input('role'));
         $role = $roleMap[$roleSlug] ?? null;
 
+        // Peran salah dan akun nonaktif memakai pesan yang sama dengan password salah,
+        // supaya halaman login tidak membocorkan bahwa email dan password itu benar.
+        $gagal = fn () => back()->withErrors(['email' => 'Email atau password salah'])->onlyInput('email');
+
         if (!Auth::attempt($credentials, $request->filled('remember'))) {
-            return back()->withErrors(['email' => 'Email atau password salah'])->onlyInput('email');
+            return $gagal();
         }
 
         $user = Auth::user();
 
-        if (!$user->isRole($role)) {
+        if (!$user->isRole($role) || !$user->aktif) {
             Auth::logout();
-            return back()->withErrors(['email' => "Bukan akun $role"]);
+            return $gagal();
         }
 
         $request->session()->regenerate();

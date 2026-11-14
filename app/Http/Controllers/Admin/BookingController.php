@@ -50,7 +50,8 @@ class BookingController extends Controller
     public function create()
     {
         $pelanggans = User::where('role', 4)->get();
-        $mobils = Mobil::with('masterMobil')->where('status', 1)->where('status_approval', 1)->get();
+        $mobils = Mobil::with('masterMobil')->approved()
+            ->whereNotIn('status', [Mobil::STATUS_RUSAK, Mobil::STATUS_MAINTENANCE])->get(); // bentrok tanggal dicek lewat Cek mobil tersedia
         if ($mobils->isEmpty()) {
             return redirect()->back()->with('error', 'Belum ada mobil tersedia.');
         }

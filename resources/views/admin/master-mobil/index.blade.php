@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div>
         <h2 class="text-2xl font-bold mb-6">Model Mobil</h2>
 
         @if (session('success'))
@@ -11,13 +11,13 @@
         @endif
 
         <a href="{{ route('admin.master-mobils.create') }}"
-            class="mb-6 inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-xl shadow transition">
+            class="mb-6 inline-flex items-center gap-2 bg-hk-ink hover:bg-black text-white font-medium px-5 py-2.5 rounded-xl shadow transition">
             Tambah Model Mobil
         </a>
 
 
         <table class="w-full border-collapse bg-white rounded-xl overflow-hidden shadow">
-            <thead class="bg-gradient-to-r from-emerald-500 to-green-400 text-white">
+            <thead class="bg-hk-panel text-hk-mute">
                 <tr>
                     <th class="px-4 py-3 text-left">No</th>
                     <th class="px-4 py-3 text-left">Nama</th>
@@ -33,7 +33,7 @@
                         <td class="px-4 py-3">
                             <select
                                 class="tipe-select w-full border border-gray-300 rounded-lg px-3 py-2 text-sm bg-gray-50 
-                                    focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 
+                                    focus:outline-none focus:ring-2 focus:ring-hk-ink focus:border-hk-ink 
                                     transition cursor-pointer  hover:bg-white"
                                 data-id="{{ $m->id }}"
                                 data-nama="{{ $m->nama }}">

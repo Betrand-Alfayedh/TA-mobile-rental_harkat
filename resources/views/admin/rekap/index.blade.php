@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="max-w-5xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div>
         <h2 class="text-2xl font-bold mb-4">Rekap Bulanan</h2>
 
         <form method="GET" class="mb-6 flex items-center gap-2">

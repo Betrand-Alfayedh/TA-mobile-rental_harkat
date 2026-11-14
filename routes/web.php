@@ -15,7 +15,7 @@ Route::get('/login', function () {
     return redirect()->route('login.form', ['role' => 'customer']);
 })->name('login');
 Route::get('/', [LandingController::class, 'index'])->name('landing-page');
-Route::resource('mobil', MobilController::class);
+Route::resource('mobil', MobilController::class)->only(['index', 'show']);
 // Login universal untuk semua role
 Route::middleware('guest:web')->group(function () {
     Route::get('login/google', [GoogleController::class, 'redirect'])->name('google.login');

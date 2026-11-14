@@ -61,7 +61,7 @@
                 @forelse ($bookings as $booking)
                     <tr class="bg-white hover:bg-gray-50 cursor-pointer"
                         onclick="document.getElementById('detail-{{ $booking->id }}').classList.toggle('hidden')">
-                        <td class="border px-4 py-2">{{ $loop->iteration }}</td>
+                        <td class="border px-4 py-2">#{{ $booking->id }}</td>
                         <td class="border px-4 py-2">{{ $booking->user->name ?? '-' }}</td>
                         <td class="border px-4 py-2">{{ $booking->asal_kota_label }}</td>
                         <td class="border px-4 py-2">{{ $booking->details->count() }}</td>

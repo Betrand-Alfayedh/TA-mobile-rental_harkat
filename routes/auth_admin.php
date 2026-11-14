@@ -24,9 +24,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::patch('/master-mobils/{id}/update-tipe', [MasterMobilController::class, 'updateTipe'])
         ->name('master-mobils.updateTipe');
 
-    Route::resource('mobil', MobilController::class);
-    Route::resource('supir', SupirController::class);
-    Route::resource('pelanggan', PelangganController::class);
+    Route::resource('mobil', MobilController::class)->except(['destroy']);
+    Route::resource('supir', SupirController::class)->except(['destroy']);
+    Route::resource('pelanggan', PelangganController::class)->except(['destroy']);
     // Cek ketersediaan memakai logika yang sama dengan form pelanggan.
     Route::post('booking/cek-mobil', [CekMobilController::class, 'checkMobils'])->name('booking.cekMobil');
     Route::resource('booking', BookingController::class)->only(['index', 'create', 'store']);
@@ -42,7 +42,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'role:Admin'])->grou
     Route::put('pembayaran/{pembayaran}/lunas', [PembayaranController::class, 'tandaiLunas'])->name('pembayaran.lunas');
     Route::put('pembayaran/{pembayaran}/tolak', [PembayaranController::class, 'tolak'])->name('pembayaran.tolak');
     Route::resource('pengembalian', PengembalianController::class)
-        ->only(['index', 'show', 'store', 'update']);
+        ->only(['index', 'show', 'store']);
     Route::post('/mobil/update-status/{id}', [MobilController::class, 'updateStatus'])
         ->name('mobil.updateStatus');
 

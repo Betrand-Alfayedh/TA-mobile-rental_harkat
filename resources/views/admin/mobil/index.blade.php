@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <div>
         <h2 class="text-2xl font-bold mb-6">Unit Mobil</h2>
 
         @if (session('success'))

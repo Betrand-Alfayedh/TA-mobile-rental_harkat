@@ -11,7 +11,7 @@
                     {{-- Cover Image --}}
                     @if ($mobil->gambar)
                         <div class="w-full bg-white rounded-xl shadow-md p-4 flex justify-center">
-                            <img src="{{ asset('public/gambar_mobil/' . $mobil->gambar) }}" alt="{{ $mobil->nama_mobil }}"
+                            <img src="{{ asset('gambar_mobil/' . $mobil->gambar) }}" alt="{{ $mobil->nama_mobil }}"
                                 class="max-h-72 object-contain rounded-lg">
                         </div>
                     @else
@@ -26,7 +26,7 @@
                         <div class="grid grid-cols-3 gap-3 w-full">
                             @foreach ($mobil->images as $img)
                                 <div class="bg-white rounded-lg shadow p-1 flex items-center justify-center">
-                                    <img src="{{ asset('public/gambar_mobil_additionals/' . $img->image_path) }}"
+                                    <img src="{{ asset('mobil_images_additionals/' . $img->image_path) }}"
                                         alt="Additional Image" class="w-full h-24 object-contain rounded">
                                 </div>
                             @endforeach

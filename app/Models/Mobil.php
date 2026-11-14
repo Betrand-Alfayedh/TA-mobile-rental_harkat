@@ -94,6 +94,12 @@ class Mobil extends Model
             : ($this->harga_sewa ?? 0);
     }
 
+    /** Nama tampilan diambil dari model mobil; kolom nama_mobil lama sudah dihapus. */
+    public function getNamaMobilAttribute(): string
+    {
+        return $this->masterMobil->nama ?? '-';
+    }
+
     /**
      * Relasi
      */
