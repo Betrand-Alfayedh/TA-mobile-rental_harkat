@@ -301,11 +301,7 @@
         </main>
     </div>
 
-    {{-- lucide icons --}}
-    <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/lucide.min.js"></script>
-    <script>
-        (lucide.createIcons || lucide.replace)()
-    </script>
+    {{-- Ikon lucide sudah dirender oleh bundel Vite (resources/js/app.js). --}}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('scripts')

@@ -73,7 +73,7 @@
                                     @if (in_array($mobil->status, [\App\Models\Mobil::STATUS_MAINTENANCE, \App\Models\Mobil::STATUS_TERSEDIA]))
                                         <span
                                             class="badge-toggle px-2 py-1 text-xs rounded-full {{ $mobil->status_badge_class }} cursor-pointer hover:opacity-80 transition"
-                                            data-id="{{ $mobil->id }}" data-status="{{ $mobil->status }}">
+                                            data-id="{{ $mobil->id }}" data-status="{{ $mobil->status }}" title="Klik untuk ubah status">
                                             {{ $mobil->status_text }}
                                         </span>
                                     @else
@@ -135,8 +135,8 @@
                         showCancelButton: true,
                         confirmButtonText: "Ya, ubah",
                         cancelButtonText: "Batal",
-                        confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
+                        confirmButtonColor: "#17171A",
+                        cancelButtonColor: "#86847D",
                     }).then((result) => {
                         if (result.isConfirmed) {
                             fetch(`/admin/mobil/update-status/${mobilId}`, {

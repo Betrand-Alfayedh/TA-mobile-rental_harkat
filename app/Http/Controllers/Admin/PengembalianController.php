@@ -13,6 +13,7 @@ class PengembalianController extends Controller
     {
         $pelunasan = Pembayaran::with(['booking.user', 'booking.details.mobil'])
             ->where('jenis', 2) // pelunasan
+            ->whereHas('booking.details', fn ($d) => $d->where('status', \App\Models\Booking::STATUS_ONGOING)) // belum dikembalikan
             ->get();
         return view('admin.pengembalian.index', compact('pelunasan'));
     }
