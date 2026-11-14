@@ -30,17 +30,30 @@ class ProfileTest extends TestCase
             ->patch('/profile', [
                 'name' => 'Test User',
                 'email' => 'test@example.com',
+                'no_hp' => '081234567890',
+                'alamat' => 'Jl. Malioboro No. 1',
+                'asal_kota' => 'Yogyakarta',
             ]);
 
         $response
             ->assertSessionHasNoErrors()
-            ->assertRedirect('/profile');
+            ->assertRedirect(route('profile.index'));
 
         $user->refresh();
 
         $this->assertSame('Test User', $user->name);
         $this->assertSame('test@example.com', $user->email);
-        $this->assertNull($user->email_verified_at);
+        $this->assertSame('081234567890', $user->no_hp);
+        $this->assertSame('Yogyakarta', $user->asal_kota);
+    }
+
+    public function test_profile_update_requires_phone_address_and_city(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs($user)
+            ->patch('/profile', ['name' => 'Test User', 'email' => $user->email])
+            ->assertSessionHasErrors(['no_hp', 'alamat', 'asal_kota']);
     }
 
     public function test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
@@ -52,11 +65,14 @@ class ProfileTest extends TestCase
             ->patch('/profile', [
                 'name' => 'Test User',
                 'email' => $user->email,
+                'no_hp' => '081234567890',
+                'alamat' => 'Jl. Malioboro No. 1',
+                'asal_kota' => 'Yogyakarta',
             ]);
 
         $response
             ->assertSessionHasNoErrors()
-            ->assertRedirect('/profile');
+            ->assertRedirect(route('profile.index'));
 
         $this->assertNotNull($user->refresh()->email_verified_at);
     }
