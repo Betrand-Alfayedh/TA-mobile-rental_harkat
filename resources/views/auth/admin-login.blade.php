@@ -6,34 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}">
     <title>Masuk Panel Admin - Rental Mobil Harkat Yogyakarta</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                        mono: ['"Geist Mono"', 'ui-monospace', 'monospace']
-                    },
-                    colors: {
-                        hk: {
-                            ink: '#17171A',
-                            mute: '#86847D',
-                            panel: '#F3F2EE',
-                            deep: '#EBE9E3',
-                            line: '#E2DFD8'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    @vite(['resources/css/app.css', 'resources/js/admin.js'])
     <style>
         body {
-            font-family: Geist, ui-sans-serif, system-ui, sans-serif;
+            font-family: 'Geist Variable', Geist, ui-sans-serif, system-ui, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 

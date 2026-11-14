@@ -14,8 +14,11 @@ export default {
         extend: {
             fontFamily: {
                 sans: ['"Plus Jakarta Sans"', 'Figtree', ...defaultTheme.fontFamily.sans],
+                mono: ['"Geist Mono Variable"', '"Geist Mono"', ...defaultTheme.fontFamily.mono],
             },
             colors: {
+                // Panel admin: abu hangat dengan aksen hampir hitam.
+                hk: { ink: '#17171A', mute: '#86847D', panel: '#F3F2EE', deep: '#EBE9E3', line: '#E2DFD8' },
                 // Satu keluarga hijau: gelap untuk permukaan besar, terang untuk aksi.
                 ink: '#0E1A14',
                 forest: { DEFAULT: '#0B3B2A', deep: '#06261B', soft: '#145A41' },

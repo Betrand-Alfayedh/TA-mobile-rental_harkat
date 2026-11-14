@@ -45,35 +45,10 @@
     <title>{{ end($crumb) ?: 'Panel Admin' }} - Rental Mobil Harkat Yogyakarta</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Geist', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-                        mono: ['"Geist Mono"', 'ui-monospace', 'monospace']
-                    },
-                    colors: {
-                        hk: {
-                            ink: '#17171A',
-                            mute: '#86847D',
-                            panel: '#F3F2EE',
-                            deep: '#EBE9E3',
-                            line: '#E2DFD8'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/admin.js'])
     <style>
         body {
-            font-family: Geist, ui-sans-serif, system-ui, sans-serif;
+            font-family: 'Geist Variable', Geist, ui-sans-serif, system-ui, sans-serif;
             background: #fff;
             color: #17171A;
             -webkit-font-smoothing: antialiased;
@@ -85,11 +60,11 @@
 
         /* Label kecil dan angka memakai huruf monospace, seperti di panel referensi. */
         .mono {
-            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-family: 'Geist Mono Variable', 'Geist Mono', ui-monospace, monospace;
         }
 
         .label {
-            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-family: 'Geist Mono Variable', 'Geist Mono', ui-monospace, monospace;
             font-size: .72rem;
             font-weight: 500;
             letter-spacing: .06em;
@@ -151,7 +126,7 @@
         main table th[class] {
             background: #F3F2EE;
             color: #86847D;
-            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-family: 'Geist Mono Variable', 'Geist Mono', ui-monospace, monospace;
             font-weight: 500;
             font-size: .7rem;
             text-transform: uppercase;
@@ -186,6 +161,11 @@
             border-radius: 10px !important;
             background-color: #fff;
             transition: box-shadow .2s, border-color .2s;
+        }
+
+        main ::placeholder {
+            color: #9ca3af;
+            opacity: 1;
         }
 
         main input:focus,
@@ -302,8 +282,6 @@
     </div>
 
     {{-- Ikon lucide sudah dirender oleh bundel Vite (resources/js/app.js). --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('scripts')
 </body>
 
